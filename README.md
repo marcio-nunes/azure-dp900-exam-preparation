@@ -248,18 +248,7 @@ Um Analista de Dados processa dados brutos e, com base em requisitos empresariai
 
 > Há outras funções relacionadas a dados não mencionadas aqui, como cientista de dados e arquiteto de dados, e há outros profissionais técnicos que trabalham com os dados, incluindo desenvolvedores de aplicativos e engenheiros de software.
 
-## ☁️ Identify considerations for relational data on Azure (20-25%) 
-
-### 🔸 Describe relational concepts
-
-- Identify features of relational data
-- Describe normalization and why it is used
-- Identify common structured query language (SQL) statements
-- Identify common database objects
-
-### 🔸 Describe relational Azure data services
-
-### Describe the Azure SQL family of products including Azure SQL Database, Azure SQL
+### Explorar funções e serviços de dados
 
 ### Azure SQL 
 
@@ -361,6 +350,19 @@ Os engenheiros de dados podem usar o Microsoft Purview para impor a governança 
 ### Microsoft Power BI
 
 O Microsoft Power BI é uma plataforma para modelagem de dados analíticos e relatórios que os analistas de dados podem usar para criar e compartilhar visualizações de dados interativas. Os relatórios do Power BI podem ser criados por meio do aplicativo Power BI Desktop e, em seguida, publicados e fornecidos por meio de relatórios e aplicativos baseados na Web no serviço do Power BI, bem como no aplicativo móvel do Power BI.
+
+## ☁️ Identify considerations for relational data on Azure (20-25%) 
+
+### 🔸 Describe relational concepts
+
+- Identify features of relational data
+- Describe normalization and why it is used
+- Identify common structured query language (SQL) statements
+- Identify common database objects
+
+### 🔸 Describe relational Azure data services
+
+### Describe the Azure SQL family of products including Azure SQL Database, Azure SQL
 
 - Managed Instance, and SQL Server on Azure Virtual Machines
 - Identify Azure database services for open-source database systems
