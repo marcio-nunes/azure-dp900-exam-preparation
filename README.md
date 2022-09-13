@@ -141,14 +141,14 @@ Ao longo do tempo, alguns formatos de arquivo especializados que permitem a comp
 - ORC (Optimized Row Columnar format) organiza os dados em colunas em vez de linhas. Ele foi desenvolvido pela HortonWorks para otimizar as operações de leitura e gravação no Apache Hive (o Hive é um sistema de data warehouse que dá suporte a resumos rápidos de dados e consultas em grandes conjuntos de dados). Um arquivo ORC contém faixas de dados. Cada faixa contém os dados de uma coluna ou conjunto de colunas. Uma faixa contém um índice nas linhas na faixa, os dados de cada linha e um rodapé que contém informações estatísticas (contagem, soma, máximo, mínimo e assim por diante) para cada coluna.
 - O Parquet é outro formato de dados de coluna. Ele foi criado pela Cloudera e pelo Twitter. Um arquivo Parquet contém grupos de linhas. Os dados de cada coluna são armazenados juntos no mesmo grupo de linhas. Cada grupo de linhas contém uma ou mais partes de dados. Um arquivo Parquet inclui metadados que descrevem o conjunto de linhas encontrado em cada parte. Um aplicativo pode usar esses metadados para localizar rapidamente a parte correta de um determinado conjunto de linhas e recuperar os dados nas colunas especificadas para essas linhas. O Parquet é especialista em armazenar e processar tipos de dados aninhados com eficiência. Ele dá suporte a esquemas de codificação e compactação muito eficientes.
 
-### Describe types of databases
+### 🔸 Describe types of databases
 
-### 🔸 Describe common data workloads
+### Describe common data workloads
 
 - Describe features of transactional workloads
 - Describe features of analytical workloads
 
-### 🔸 Identify roles and responsibilities for data workloads
+### Identify roles and responsibilities for data workloads
 
 - Describe responsibilities for database administrators
 - Describe responsibilities for data engineers
