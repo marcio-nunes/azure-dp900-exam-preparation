@@ -20,7 +20,7 @@ Icons: ☁️🔸
 - Describe considerations for working with non-relational data on Azure (15–20%)
 - Describe an analytics workload on Azure (25–30%)
 
-## ☁️ Describe core data concepts (25—30%)
+## ☁️ Describe core data concepts (25-30%)
 
 ### 🔸 Describe ways to represent data
 
@@ -143,6 +143,25 @@ Ao longo do tempo, alguns formatos de arquivo especializados que permitem a comp
 
 ### 🔸 Describe types of databases
 
+Um banco de dados é usado para definir um sistema central no qual dados podem ser armazenados e consultados.
+
+### Bancos de dados relacionais
+
+Os bancos de dados relacionais são comumente usados para armazenar e consultar dados estruturados. Os dados são armazenados em tabelas que representam entidades (clientes, produtos ou pedidos de venda). Cada instância de uma entidade recebe uma chave primária que a identifica de maneira exclusiva. Essas chaves são usadas para fazer referência à instância da entidade em outras tabelas. Esse uso de chaves para referenciar entidades de dados permite que um banco de dados relacional seja normalizado, o que, em parte, significa a eliminação de valores de dados duplicados. 
+
+As tabelas são gerenciadas e consultadas usando SQL (linguagem SQL), que se baseia em um padrão ANSII e que, portanto, é semelhante entre vários sistemas de banco de dados.
+
+### Bancos de dados não relacionais
+
+Os bancos de dados não relacionais (NoSQL) são sistemas de gerenciamento de dados que não aplicam um esquema relacional aos dados.
+
+- **Key-value databases** nos quais cada registro consiste em uma chave exclusiva e um valor associado, que pode estar em qualquer formato.
+
+(key-value-store)[https://docs.microsoft.com/pt-br/training/wwl-data-ai/explore-core-data-concepts/media/key-value-store.png]
+
+- **Document databases**, que são uma forma específica de banco de dados de chave-valor na qual o valor é um documento JSON (em que o sistema é otimizado para análise e consulta).
+- Column family databases, que podem armazenar dados tabulares que abrangem linhas e colunas; você também pode dividir as colunas em grupos conhecidos como famílias de colunas. Cada família de colunas contém um conjunto de colunas que estão logicamente relacionadas.
+
 ### Describe common data workloads
 
 - Describe features of transactional workloads
@@ -154,7 +173,7 @@ Ao longo do tempo, alguns formatos de arquivo especializados que permitem a comp
 - Describe responsibilities for data engineers
 - Describe responsibilities for data analysts
 
-## ☁️ Identify considerations for relational data on Azure (20—25%) 
+## ☁️ Identify considerations for relational data on Azure (20-25%) 
 
 ### 🔸 Describe relational concepts
 
@@ -169,7 +188,7 @@ Ao longo do tempo, alguns formatos de arquivo especializados que permitem a comp
 - Managed Instance, and SQL Server on Azure Virtual Machines
 - Identify Azure database services for open-source database systems
 
-## ☁️ Describe considerations for working with non-relational data on Azure (15—20%)
+## ☁️ Describe considerations for working with non-relational data on Azure (15-20%)
 
 ### 🔸 Describe capabilities of Azure storage
 
@@ -182,7 +201,7 @@ Ao longo do tempo, alguns formatos de arquivo especializados que permitem a comp
 - Identify use cases for Azure Cosmos DB
 - Describe Azure Cosmos DB APIs
 
-## ☁️ Describe an analytics workload on Azure (25—30%)
+## ☁️ Describe an analytics workload on Azure (25-30%)
 
 ### 🔸 Describe common elements of large-scale analytics
 
