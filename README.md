@@ -11,6 +11,8 @@
 - Agendamento do exame de certificação.
 - Fiquem a vontade para ajudar a melhorar o conteúdo.
 
+Icons: ☁️🔸
+
 ## Skills measured
 
 - Describe core data concepts (25–30%)
