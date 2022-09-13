@@ -216,9 +216,37 @@ Tipos diferentes de usuários podem executar trabalhos de análise de dados em d
 
 ### Identify roles and responsibilities for data workloads
 
-- Describe responsibilities for database administrators
-- Describe responsibilities for data engineers
-- Describe responsibilities for data analysts
+Os profissionais de dados executam funções distintas na criação e no gerenciamento de soluções de software e trabalham com várias tecnologias e serviços para realizar isso.
+
+Há uma ampla variedade de funções que envolvem gerenciamento, controle e uso de dados. Algumas funções são orientadas aos negócios, outras envolvem mais engenharia e as demais focam na pesquisa, já outras são funções híbridas que combinam diferentes aspectos de gerenciamento de dados. 
+
+As três funções de trabalho importantes que lidam com os dados na maioria das organizações são:
+
+- **Administradores de Banco de Dados**, que gerenciam bancos de dados, atribuindo permissões aos usuários, armazenando cópias de backup de dados e restaurando dados em caso de falhas.
+- **Engenheiros de dados**, que gerenciam a infraestrutura e os processos de integração de dados em toda a organização, aplicando rotinas de limpeza de dados, identificando regras de governança de dados e implementando pipelines para transferir e transformar dados entre sistemas.
+- Analistas de Dados, que exploram e analisam dados para criar visualizações e gráficos que permitem que as organizações tomem decisões informadas.
+
+> Em algumas organizações, a mesma pessoa pode executar várias funções
+
+### Describe responsibilities for database administrators
+
+Um Administrador de Banco de Dados do Azure é responsável pelos aspectos de design, implementação, manutenção e operação de sistemas de bancos de dados locais e baseados em nuvem. Eles são responsáveis pela disponibilidade geral e pelo desempenho e otimizações consistentes dos bancos de dados. Eles trabalham com os stakeholders para implementar políticas e ferramentas, além de processos de backup e planos de recuperação para serem usados após um desastre natural ou erro humano.
+
+O Administrador de Banco de Dados também é responsável por gerenciar a segurança dos dados nos bancos de dados, conceder privilégios sobre os dados, além de conceder ou negar acesso aos usuários conforme apropriado.
+
+### Describe responsibilities for data engineers
+
+Um Engenheiro de Dados colabora com os stakeholders para projetar e implementar cargas de trabalho relacionadas a dados, incluindo pipelines de ingestão de dados, atividades de limpeza e transformação e armazenamentos de dados para cargas de trabalho analíticas. Eles usam uma ampla variedade de tecnologias de plataforma de dados, incluindo bancos de dados relacionais e não relacionais, repositórios de arquivos e fluxos de dados.
+
+Eles também são responsáveis por garantir que a privacidade dos dados seja mantida dentro da nuvem, abrangendo armazenamentos de dados locais e na nuvem. Eles são responsáveis por gerenciar e monitorar pipelines de dados para garantir que as cargas de dados tenham o desempenho esperado.
+
+### Describe responsibilities for data analysts
+
+Um analista de dados permite que as empresas maximizem o valor dos ativos de dados. Eles são responsáveis por explorar dados para identificar tendências e relações, projetar e criar modelos analíticos e favorecer capacidades avançadas de análise por meio de relatórios e visualizações.
+
+Um Analista de Dados processa dados brutos e, com base em requisitos empresariais identificados, os transforma para fornecer insights relevantes.
+
+> Há outras funções relacionadas a dados não mencionadas aqui, como cientista de dados e arquiteto de dados, e há outros profissionais técnicos que trabalham com os dados, incluindo desenvolvedores de aplicativos e engenheiros de software.
 
 ## ☁️ Identify considerations for relational data on Azure (20-25%) 
 
@@ -231,7 +259,36 @@ Tipos diferentes de usuários podem executar trabalhos de análise de dados em d
 
 ### 🔸 Describe relational Azure data services
 
-- Describe the Azure SQL family of products including Azure SQL Database, Azure SQL
+### Describe the Azure SQL family of products including Azure SQL Database, Azure SQL
+
+### Azure SQL 
+
+Azure SQL é o nome coletivo de uma família de soluções de banco de dados relacional com base no mecanismo de banco de dados do Microsoft SQL Server. 
+
+- **Azure SQL Database** - um banco de dados de PaaS (plataforma como serviço) totalmente gerenciado hospedado no Azure.
+- **Azure SQL Managed Instance** - uma instância hospedada do SQL Server com manutenção automatizada, que permite uma configuração mais flexível do que o Azure SQL DB, mas com mais responsabilidade administrativa para o proprietário.
+- **Azure SQL VM** - uma máquina virtual com uma instalação do SQL Server, permitindo a máxima capacidade de configuração com total responsabilidade de gerenciamento.
+
+Os administradores de banco de dados normalmente provisionam e gerenciam os sistemas de banco de dados Azure SQL para dar suporte a aplicativos de LOB (linha de negócios) que precisam armazenar dados transacionais.
+
+Os engenheiros de dados podem usar os sistemas de banco de dados SQL do Azure como fontes para pipelines de dados que executam operações de ETL (extração, transformação e carregamento) para ingerir os dados transacionais em um sistema analítico.
+
+Os analistas de dados podem consultar os bancos de dados SQL do Azure diretamente para criar relatórios, no entanto, em grandes organizações, os dados geralmente são combinados com os dados de outras fontes em um armazenamento de dados analíticos para dar suporte às análises empresariais.
+
+### Azure Database for open-source relational databases
+
+O Azure inclui serviços gerenciados para sistemas de banco de dados relacionais populares de código aberto, incluindo:
+
+- **Azure Database for MySQL** - um sistema de gerenciamento de banco de dados de código aberto fácil de usar que é comumente usado em aplicativos da pilha LAMP (Linux, Apache, MySQL e PHP).
+- **Azure Database for MariaDB** - um sistema de gerenciamento de banco de dados mais recente, criado pelos desenvolvedores originais do MySQL. Desde então, o mecanismo de banco de dados foi reescrito e otimizado para aprimorar o desempenho. O MariaDB tem compatibilidade com o Oracle Database.
+- **Azure Database for PostgreSQL** - um banco de dados híbrido relacional-objeto. É possível armazenar dados em tabelas relacionais, também permite que você armazene tipos de dados personalizados, com propriedades não relacionais próprias.
+
+Assim como acontece com os sistemas de banco de dados SQL do Azure, os bancos de dados relacionais de código aberto são gerenciados por administradores de banco de dados para dar suporte a aplicativos transacionais e fornecem uma fonte de dados para engenheiros de dados, criando pipelines para soluções analíticas e analistas de dados que criam relatórios.
+
+### Azure Cosmos DB
+
+
+
 - Managed Instance, and SQL Server on Azure Virtual Machines
 - Identify Azure database services for open-source database systems
 
