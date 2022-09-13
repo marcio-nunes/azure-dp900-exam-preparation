@@ -157,7 +157,7 @@ Os bancos de dados não relacionais (NoSQL) são sistemas de gerenciamento de da
 
 - **Key-value databases** nos quais cada registro consiste em uma chave exclusiva e um valor associado, que pode estar em qualquer formato.
 
-(key-value-store)[https://docs.microsoft.com/pt-br/training/wwl-data-ai/explore-core-data-concepts/media/key-value-store.png]
+![key-value-store](https://docs.microsoft.com/pt-br/training/wwl-data-ai/explore-core-data-concepts/media/key-value-store.png)
 
 - **Document databases**, que são uma forma específica de banco de dados de chave-valor na qual o valor é um documento JSON (em que o sistema é otimizado para análise e consulta).
 - Column family databases, que podem armazenar dados tabulares que abrangem linhas e colunas; você também pode dividir as colunas em grupos conhecidos como famílias de colunas. Cada família de colunas contém um conjunto de colunas que estão logicamente relacionadas.
