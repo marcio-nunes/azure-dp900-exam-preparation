@@ -667,10 +667,11 @@ O Armazenamento de Blobs do Azure é compatível com três tipos diferentes de b
 
 Blob storage fornece três camadas de acesso, que ajudam a balancear a latência de acesso e o custo de armazenamento:
 
-- Hot tier - é a padrão. Você usa essa camada para blobs que são acessados com frequência. Os dados de blob são armazenados em mídia de alto desempenho.
-- Cool tier - A camada de acesso esporádico tem desempenho inferior e incorre em custos de armazenamento reduzidos em comparação a camada Hot. Use a camada Fria para dados que são acessados com pouca frequência. Você pode migrar um blob da camada Fria de volta para a camada Quente.
+- **Hot tier** - é a padrão. Você usa essa camada para blobs que são acessados com frequência. Os dados de blob são armazenados em mídia de alto desempenho.
 
-- Archive - oferece o menor custo de armazenamento, mas com maior latência. A camada Arquivos se destina a dados históricos que não devem ser perdidos, mas é necessária apenas raramente. Os blobs na camada Arquivos são efetivamente armazenados em um estado offline. A latência de leitura para a camada Arquivos, pode levar horas para que os dados fiquem disponíveis. Para recuperar um blob da camada Arquivos, você precisa alterar a camada de acesso para Quente ou Fria. Em seguida, o blob será reidratado.
+- **Cool tier** - A camada de acesso esporádico tem desempenho inferior e incorre em custos de armazenamento reduzidos em comparação a camada Hot. Use a camada Fria para dados que são acessados com pouca frequência. Você pode migrar um blob da camada Fria de volta para a camada Quente.
+
+- **Archive** - oferece o menor custo de armazenamento, mas com maior latência. A camada Arquivos se destina a dados históricos que não devem ser perdidos, mas é necessária apenas raramente. Os blobs na camada Arquivos são efetivamente armazenados em um estado offline. A latência de leitura para a camada Arquivos, pode levar horas para que os dados fiquem disponíveis. Para recuperar um blob da camada Arquivos, você precisa alterar a camada de acesso para Quente ou Fria. Em seguida, o blob será reidratado.
 
 Uma política de gerenciamento do ciclo de vida pode migrar automaticamente um blob da camada Quente para a Fria e para a camada Arquivos e também pode ser organizada para excluir blobs desatualizados.
 
