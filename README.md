@@ -676,10 +676,35 @@ Uma política de gerenciamento do ciclo de vida pode migrar automaticamente um b
 
 ### Describe Azure DataLake Storage Gen2
 
+O Azure Data Lake Store (Gen1) é um serviço separado de armazenamento de dados hierárquicos para data lakes analíticos, geralmente usado pelas chamadas soluções analíticas de big data que funcionam com dados estruturados, semiestruturados e não estruturados armazenados em arquivos. 
 
+O Azure Data Lake Storage Gen2 é uma versão mais recente desse serviço integrado ao Armazenamento do Azure, o que permite que você aproveite a escalabilidade do armazenamento de blobs e o controle de custos das camadas de armazenamento. Isso tudo combinado com os recursos do sistema de arquivos hierárquicos e a compatibilidade com os principais sistemas de análise do Azure Data Lake Store.
+
+Sistemas como o Hadoop no Azure HDInsight, Azure Databricks e Azure Synapse Analytics podem montar uma rede de arquivos distribuídos hospedada no Azure Data Lake Store Gen2 e usá-lo para processar grandes volumes de dados.
+
+Para criar um sistema de arquivos do Azure Data Lake Store Gen2, você deve habilitar a opção Namespace Hierárquico (Hierarchical Namespace) de uma Storage account. Você pode fazer isso ao criar inicialmente a Storage account, ou pode atualizar uma Storage account do Azure existente para dar suporte ao Data Lake Gen2. No entanto, esteja ciente de que a atualização é um processo unidirecional – depois de atualizar uma Storage account para dar suporte a um namespace hierárquico para armazenamento de blobs, você não pode revertê-lo para um namespace simples.
 
 ### Describe Azure File storage
-- Describe Azure Table storage
+
+O Azure File storage é essencialmente uma maneira de criar compartilhamentos de rede baseados em nuvem, como normalmente você encontra em organizações locais para disponibilizar documentos e outros arquivos para vários usuários. Ao hospedar Azure File storage, as organizações podem eliminar custos de hardware e sobrecarga de manutenção e se beneficiar de alta disponibilidade e armazenamento em nuvem escalonável para arquivos.
+
+![azure-files](https://docs.microsoft.com/pt-br/training/wwl-data-ai/explore-provision-deploy-non-relational-data-services-azure/media/azure-files.png)
+
+ O Azure File storage permite que você compartilhe até 100 TB de dados em uma conta de armazenamento. Esses dados podem ser distribuídos em qualquer número de file shares na conta. O tamanho máximo de um arquivo é 1 TB, mas você pode definir cotas para limitar o tamanho de cada compartilhamento embaixo desta figura. No momento, o Azure File storage dá suporte a até duas mil conexões simultâneas por arquivo compartilhado.
+
+ Depois de criar uma conta de armazenamento, você poderá carregar arquivos para o Azure File storage usando o portal do Azure ou ferramentas como o utilitário AzCopy. Você também pode usar o serviço Azure File Sync para sincronizar cópias armazenadas em cache localmente de arquivos compartilhados com os dados no Azure File storage.
+
+ O Azure File storage oferece dois níveis de desempenho. 
+ 
+ - **Standard tier** - usa um hardware baseado em disco rígido (HDD) em um datacenter.
+ - **Premium tier** - usa discos de estado sólido (SSD). A camada Premium oferece maior taxa de transferência, mas é cobrada a uma taxa mais alta.
+
+O Azure File storage dão suporte a dois protocolos de rede comuns de compartilhamento de arquivos:
+
+- **SMB (Server Message Block)** é comumente usado em vários sistemas operacionais (Windows, Linux, macOS).
+- **Network File System (NFS)** são usados por algumas versões do Linux e do macOS. Para criar um compartilhamento NFS, você deve usar uma conta de armazenamento de camada premium e criar e configurar uma rede virtual por meio da qual o acesso ao compartilhamento possa ser controlado.
+
+### Describe Azure Table storage
 
 ### 🔸 Describe capabilities and features of Azure Cosmos DB
 
