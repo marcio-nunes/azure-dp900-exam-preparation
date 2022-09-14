@@ -653,8 +653,63 @@ O Banco de Dados do Azure para PostgreSQL registra informações sobre as consul
 
 ### 🔸 Describe capabilities and features of Azure Cosmos DB
 
-- Identify use cases for Azure Cosmos DB
-- Describe Azure Cosmos DB APIs
+O Azure Cosmos DB é um sistema de banco de dados não relacional (NoSQL) de escala global que dá suporte a várias APIs (interfaces de programação de aplicativo), permitindo que você armazene e gerencie dados como documentos JSON, pares chave-valor, famílias de colunas e grafos.
+
+O Azure Cosmos DB dá suporte a várias APIs que permitem aos desenvolvedores usar a semântica de programação de muitos tipos comuns de armazenamento de dados para trabalhar com os dados no Cosmos DB. A estrutura de dados interna é abstrata, permitindo que os desenvolvedores usem o Cosmos DB para armazenar e consultar dados usando APIs com as quais já estão familiarizados.
+
+O Cosmos DB usa índices e particionamento para fornecer desempenho rápido de leitura e gravação e pode ser dimensionado para grandes volumes de dados. 
+
+O Cosmos DB é um sistema de gerenciamento de banco de dados altamente escalonável. O Cosmos DB aloca automaticamente espaço em um contêiner para suas partições, e cada partição pode crescer até 10 GB em tamanho. Os índices são criados e mantidos automaticamente. Praticamente, não há nenhuma sobrecarga administrativa.
+
+### Identify use cases for Azure Cosmos DB
+
+O Cosmos DB é altamente adequado para os seguintes cenários:
+
+- IoT e telemática. Normalmente, esses sistemas ingerem grandes quantidades de dados em picos de atividade frequentes. O Cosmos DB pode aceitar e armazenar essas informações rapidamente. Os dados podem ser usados pelos serviços de análise, como o Azure Machine Learning, o Azure HDInsight e o Microsoft Power BI. Além disso, é possível processar os dados em tempo real usando o Azure Functions, disparado à medida que os dados chegam ao banco de dados.
+- Varejo e marketing. A Microsoft usa o Cosmos DB para as próprias plataformas de comércio eletrônico que são executadas como parte da Microsoft Store e do Xbox Live. Ele também é usado no setor de varejo para armazenar dados de catálogo e para fornecimento de eventos em pipelines de processamento de pedidos.
+- Jogos. A camada de banco de dados é um componente crucial dos aplicativos de jogos. Os jogos modernos executam o processamento gráfico em clientes móveis/console, mas dependem da nuvem para fornecer conteúdo personalizado, como estatísticas de jogos, integração em mídia social e tabelas com as melhores pontuações. Os jogos geralmente exigem latências de um milissegundo para leituras e gravações a fim de fornecer uma experiência envolvente no jogo. Um banco de dados de jogo deve ser rápido e ser capaz de lidar com grandes picos de taxas de solicitação durante novos lançamentos de jogos e atualizações de recursos.
+- Aplicativos Web e móveis. O Azure Cosmos DB é normalmente usado em aplicativos Web e móveis e é bastante adequado para modelagem de interações sociais, integração com serviços de terceiros e desenvolvimento de experiências personalizadas avançadas. Os SDKs do Cosmos DB podem ser usados para criar aplicativos iOS e Android avançados usando a estrutura popular do Xamarin.
+
+### Describe Azure Cosmos DB APIs
+
+O Azure Cosmos DB dá suporte a várias APIs, permitindo que os desenvolvedores migrem facilmente os dados de repositórios NoSQL usados com frequência e apliquem as próprias habilidades de programação existentes. Ao provisionar uma nova instância do Cosmos DB, você seleciona a API que deseja usar. A escolha da API depende de vários fatores, incluindo o tipo de dados a ser armazenado, a necessidade de oferecer suporte a aplicativos existentes e as habilidades de API dos desenvolvedores que trabalharão com o armazenamento de dados.
+
+- **Core (SQL) API** - A API nativa no Cosmos DB gerencia dados no formato de documento JSON e, apesar de ser uma solução de armazenamento de dados NoSQL, usa a sintaxe SQL para trabalhar com os dados.
+
+- **MongoDB API** - O MongoDB é um banco de dados de software livre conhecido no qual são armazenados no formato JSON binário (BSON). A API do Azure Cosmos DB para MongoDB permite que os desenvolvedores usem bibliotecas de cliente do MongoDB e código para trabalhar com os dados no Azure Cosmos DB. A MQL (linguagem de consulta do MongoDB) usa uma sintaxe compacta orientada a objeto na qual os desenvolvedores usam objetos para chamar métodos. Por exemplo, a seguinte consulta usa o método find para consultar a coleção products no objeto db:
+
+```
+db.products.find({id: 123})
+
+# resultado
+{
+   "id": 123,
+   "name": "Hammer",
+   "price": 2.99
+}
+```
+
+- **Table API** - é usada para trabalhar com os dados em tabelas de chave-valor, semelhante ao Azure Table Storage. A Azure Cosmos DB Table API oferece maior escalabilidade e desempenho do que o Azure Table Storage. Abaixo uma consulta ao endpoint da tabela Customer.
+
+```URL
+https://endpoint/Customers(PartitionKey='1',RowKey='124')
+```
+
+- **Cassandra API** - O API do Cassandra é compatível com o Apache Cassandra, que é um banco de dados de software livre popular que usa uma estrutura de armazenamento de famílias de colunas. As famílias de colunas são tabelas, semelhantes àquelas em um banco de dados relacional, com a exceção de que não é obrigatório que cada linha tenha as mesmas colunas. O Cassandra dá suporte a uma sintaxe baseada em SQL.
+
+- **Gremlin API** - A API do Gremlin é usada com os dados em uma estrutura de grafo, na qual as entidades são definidas como vértices que formam nós (nodes) no grafo conectado. Os nós são conectados por bordas (edges) que representam relações, desta forma:
+
+![graph](https://docs.microsoft.com/pt-br/training/wwl-data-ai/explore-non-relational-data-stores-azure/media/graph.png)
+
+A sintaxe do Gremlin inclui funções para operar em vértices e bordas, permitindo que você insira, atualize, exclua e consulte dados no grafo. Por exemplo, você pode usar o código a seguir para adicionar um novo funcionário chamado Alice que relata ao funcionário com a ID 1 (Suzana).
+
+```
+g.addV('employee').property('id', '3').property('firstName', 'Alice')
+g.V('3').addE('reports to').to(g.V('1'))
+
+# resultado
+g.V().hasLabel('employee').order().by('id')
+```
 
 ## ☁️ Describe an analytics workload on Azure (25-30%)
 
