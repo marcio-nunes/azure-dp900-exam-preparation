@@ -706,6 +706,21 @@ O Azure File storage dão suporte a dois protocolos de rede comuns de compartilh
 
 ### Describe Azure Table storage
 
+O Azure Table storage é uma solução de armazenamento NoSQL que utiliza tabelas contendo itens de dados de chave/valor. Cada item é representado por uma linha que contém colunas para os campos de dados que precisam ser armazenados.
+
+Uma Tabela do Azure permite que você armazene dados semiestruturados.
+
+Todas as linhas de uma tabela devem ter uma chave exclusiva (composta por uma partition key e uma row key) e, quando você modifica dados em uma tabela, uma coluna de timestamp  registra a data e hora em que a modificação foi feita; mas fora isso, as colunas em cada linha podem variar. As tabelas do Azure Table storage não têm conceito de chaves estrangeiras, relacionamentos, stored procedures, views ou outros objetos que você pode encontrar em um banco de dados relacional.
+
+Os dados no Azure Table storage geralmente são desnormalizados, com cada linha contendo todos os dados de uma entidade lógica. Por exemplo, uma tabela que contém informações do cliente pode armazenar o nome, o sobrenome, um ou mais números de telefone e um ou mais endereços para cada cliente. O número de campos em cada linha pode ser diferente, dependendo da quantidade de números de telefone e endereços para cada cliente e dos detalhes registrados para cada endereço.
+
+Para ajudar a garantir o acesso rápido, o Azure Table storage divide uma tabela em partições. O particionamento é um mecanismo para agrupar linhas relacionadas, com base em uma propriedade comum ou chave de partição. O particionamento não apenas ajuda a organizar os dados, mas também pode melhorar a escalabilidade e o desempenho das seguintes maneiras:
+
+- As partições são independentes umas das outras e podem aumentar ou diminuir à medida que as linhas são adicionadas a uma partição ou removidas delas. Uma tabela pode conter qualquer número de partições.
+- Ao pesquisar dados, você pode incluir a chave de partição nos critérios de pesquisa. Isso ajuda a diminuir o volume de dados a serem examinados e melhora o desempenho reduzindo a quantidade de E/S (operações de entrada e saída ou leituras e gravações) necessária para localizar os dados.
+
+A chave em uma tabela do Azure Table storage compreende dois elementos: a chave de partição, que identifica a partição contendo a linha; e uma row key exclusiva para cada linha na mesma partição. Os itens na mesma partição são armazenados em ordem de row key. Se um aplicativo adicionar uma nova linha a uma tabela, o Azure verificará se a linha foi colocada na posição correta na tabela. Esse esquema permite que um aplicativo execute rapidamente point queries que identifiquem uma linha e range queries que busquem um bloco contíguo de linhas em uma partição.
+
 ### 🔸 Describe capabilities and features of Azure Cosmos DB
 
 O Azure Cosmos DB é um sistema de banco de dados não relacional (NoSQL) de escala global que dá suporte a várias APIs (interfaces de programação de aplicativo), permitindo que você armazene e gerencie dados como documentos JSON, pares chave-valor, famílias de colunas e grafos.
@@ -770,9 +785,52 @@ g.V().hasLabel('employee').order().by('id')
 
 ### 🔸 Describe common elements of large-scale analytics
 
-- Describe considerations for data ingestion and processing
-- Describe options for analytical data stores
-- Describe Azure services for data warehousing, including Azure Synapse Analytics, Azure Databricks, Azure HDInsight, and Azure Data Factory
+As soluções de processamento de Big Data, são usadas com grandes volumes de dados em vários formatos, que são carregados em lote ou capturados em fluxos em tempo real e armazenados em um data lake a partir do qual mecanismos de processamento distribuído, como o Apache Spark, são usados para processá-lo.
+
+A arquitetura de data warehousing em larga escala pode variar, assim como as tecnologias específicas usadas para implementá-la; mas, em geral, os seguintes elementos estão incluídos:
+
+![modern-data-warehousing](https://docs.microsoft.com/pt-br/training/wwl-data-ai/examine-components-of-modern-data-warehouse/media/modern-data-warehousing.png)
+
+- **Ingestão e processamento de dados** – os dados de várias fontes são carregados em um data lake ou um data warehouse. A operação de carregamento geralmente envolve um processo de ETL (extração, transformação e carregamento) ou ELT (extração, carregamento e transformação) no qual os dados são limpos, filtrados e reestruturados para análise. A estrutura de dados resultante é otimizada para consultas analíticas. O processamento de dados geralmente é executado por sistemas distribuídos que podem processar grandes volumes de dados em paralelo usando clusters de vários nós. A ingestão de dados inclui o processamento em lote de dados estáticos e o processamento em tempo real de dados de streaming.
+
+- **Analytical data store** – os armazenamentos de dados para análise em grande escala incluem data warehouses relacionais, data lakes baseados em sistema de arquivos e arquiteturas híbridas que combinam recursos de data warehouses e data lakes (data lakehouses ou lake databases).
+
+- **Analytical data model** - embora possamamos trabalhar com os dados diretamente no armazenamento de dados analíticos, é comum criar um ou mais modelos de dados que agregam previamente os dados para facilitar a produção de relatórios, dashboards e visualizações interativas. Geralmente, são descritos como cubos, nos quais valores de dados numéricos são agregados em uma ou mais dimensões. O modelo encapsula as relações entre valores de dados e entidades dimensionais para dar suporte à análise de "drill up/drill down".
+
+- **Visualização de dados** – os analistas de dados consomem dados de modelos analíticos e diretamente de repositórios analíticos para criar relatórios, dashboards e outras visualizações. Outros usuários podem executar relatórios e análise de dados por autoatendimento. As visualizações dos dados mostram tendências, comparações e KPIs para uma empresa ou outra organização e podem assumir a forma de relatórios impressos, grafos e gráficos em documentos ou apresentações de PowerPoint, dashboards baseados na Web.
+
+### Describe considerations for data ingestion and processing
+
+No Azure, a ingestão de dados em larga escala é melhor implementada criando pipelines que orquestram processos de ETL. Você poderá criar e executar pipelines usando o Azure Data Factory ou poderá usar o mesmo mecanismo de pipeline no Azure Synapse Analytics se desejar gerenciar todos os componentes da sua solução de data warehousing em um workspace unificado.
+
+Em ambos os casos, os pipelines consistem em uma ou mais atividades que operam nos dados. Um conjunto de dados de entrada fornece os dados de origem, e as atividades podem ser definidas como um fluxo de dados que manipula de os dados de maneira incremental até que um conjunto de dados de saída seja produzido. 
+
+Os pipelines usam serviços vinculados para carregar e processar dados, permitindo que você use a tecnologia certa para cada etapa do fluxo de trabalho. Por exemplo, você pode usar um serviço vinculado do Azure Blob Storage para ingerir o conjunto de dados de entrada e, em seguida, usar serviços como o Azure SQL Database para executar um procedimento armazenado que pesquisa os valores de dados relacionados, antes de executar uma tarefa de processamento de dados no Azure Databricks ou no Azure HDInsight, ou aplicar lógica personalizada usando uma Azure Function. Por fim, você pode salvar o conjunto de dados de saída em um serviço vinculado, como o Azure Synapse Analytics. Os pipelines também podem incluir algumas atividades internas, que não exigem um serviço vinculado.
+
+### Describe options for analytical data stores
+
+Há dois tipos comuns de armazenamento de dados analíticos.
+
+- Data warehouses - é um banco de dados relacional no qual os dados são armazenados em um esquema otimizado para análise de dados em vez de cargas de trabalho transacionais. Normalmente, os dados de um armazenamento transacional são transformados em um esquema no qual os valores numéricos são armazenados em tabelas de fatos centrais, que estão relacionadas a uma ou mais tabelas de dimensões que representam entidades pelas quais os dados podem ser agregados. Esse tipo de esquema de tabela de fatos e dimensões é chamado de esquema em estrela; embora geralmente seja estendido para um esquema floco de neve adicionando outras tabelas relacionadas às tabelas de dimensões para representar hierarquias dimensionais. Um data warehouse é uma ótima opção quando você tem dados transacionais que podem ser organizados em um esquema estruturado de tabelas e deseja usar o SQL para consultá-los. 
+
+- **Data lakes** - Um data lake é um armazenamento de arquivos, geralmente em um sistema de arquivos distribuído para acesso a dados de alto desempenho. Tecnologias como Spark ou Hadoop geralmente são usadas para processar consultas nos arquivos armazenados e retornar dados para relatórios e análises. Esses sistemas geralmente aplicam uma abordagem de esquema no ato da leitura para definir esquemas tabulares em arquivos de dados semiestruturados no ponto em que os dados são lidos para análise, sem aplicar restrições quando eles são armazenados. Os data lakes são ótimos para dar suporte a uma combinação de dados estruturados, semiestruturados e até mesmo não estruturados que você deseja analisar sem a necessidade de imposição de esquema quando os dados são gravados no repositório.
+
+- **Abordagens híbridas** - Você pode usar uma abordagem híbrida que combina recursos de data lakes e data warehouses em um banco de dados de lake ou data lakehouse. Os dados brutos são armazenados como arquivos em um data lake e uma camada de armazenamento relacional abstrai os arquivos subjacentes e os expõe como tabelas, que podem ser consultadas usando SQL. Os pools de SQL no Azure Synapse Analytics incluem o PolyBase, que permite que você defina tabelas externas com base em arquivos em um datalake (e outras fontes) e consulte-os usando SQL. O Synapse Analytics também dá suporte a uma abordagem de banco de dados de lake na qual você pode usar modelos de banco de dados para definir o esquema relacional do seu data warehouse, enquanto armazena os dados subjacentes no armazenamento do data lake – separando o armazenamento e a computação para sua solução de data warehousing. Os data lakehouses são uma abordagem relativamente nova em sistemas baseados em Spark e são habilitados por meio de tecnologias como o Delta Lake; que adiciona recursos de armazenamento relacional ao Spark, para que você possa definir tabelas que impõem esquemas e consistência transacional, dão suporte a fontes de dados carregadas em lote e streaming e fornecem uma API de SQL para consulta.
+
+### Describe Azure services for data warehousing, including Azure Synapse Analytics, Azure Databricks, Azure HDInsight, and Azure Data Factory
+
+- **Azure Synapse Analytics** - é uma solução unificada e de ponta a ponta para análise de dados em grande escala. Ele reúne várias tecnologias e funcionalidades, permitindo que você combine a integridade e a confiabilidade de dados de um data warehouse relacional escalonável e de alto desempenho baseado no SQL Server com a flexibilidade de um data lake e de um Apache Spark de código aberto. 
+  - Inclui suporte nativo para análise de log e telemetria com pools do Azure Synapse Data Explorer
+  - Pipelines de dados integrados para ingestão e transformação de dados. 
+  - **Azure Synapse Studio** - interface única e interativa para gerenciamento de todos os Azure Synapse Analytics, capacidade de criar notebooks interativos nos quais o código Spark e o conteúdo de markdown podem ser combinados. 
+
+- **Azure Databricks** - é uma solução abrangente de análise de dados criada com base no Apache Spark e que oferece funcionalidades nativas de SQL, bem como clusters Spark otimizados para carga de trabalho para análise de dados e ciência de dados. 
+  - fornece uma interface interativa do usuário por meio da qual o sistema pode ser gerenciado e os dados podem ser explorados em notebooks interativos. 
+  - Devido ao seu uso comum em várias plataformas de nuvem, talvez você queira considerar o uso dele como seu repositório analítico ou se precisar operar em um ambiente de várias nuvens ou dar suporte a uma solução portátil em nuvem.
+
+- **Azure HDInsight** - é um serviço do Azure que dá suporte a vários tipos de cluster de análise de dados de código aberto. Embora não seja tão amigável quanto o Azure Synapse Analytics e o Azure Databricks, ele poderá ser uma opção adequada se sua solução de análise se basear em várias estruturas de código-fonte aberto ou se você precisar migrar uma solução local existente baseada em Hadoop para a nuvem.
+
+> Cada um desses serviços pode ser pensado como um armazenamento de dados analíticos, no sentido de que eles fornecem um esquema e uma interface por meio dos quais os dados podem ser consultados. No entanto, em muitos casos, os dados são armazenados em um data lake e o serviço é usado para processar os dados e executar consultas. Algumas soluções podem até combinar o uso desses serviços. 
 
 ### 🔸 Describe consideration for real-time data analytics
 
