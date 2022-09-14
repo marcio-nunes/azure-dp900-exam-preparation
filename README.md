@@ -1,4 +1,4 @@
-# Preparação para o exame Azure DP-900
+# Preparação para o exame Azure DP-900 (WIP)
 
 - Todo conteúdo foi retirado dos módulos e paths do site Microsoft Learn e simulados realizados para fins de estudo.
 - Criei o [Path de estudo para a certificação DP-900](https://docs.microsoft.com/en-us/users/marcio-nunes-silva/collections/jwmdi8nw8r3ze4) e vou atualizando conforme necessidade.
