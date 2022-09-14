@@ -578,7 +578,70 @@ O Banco de Dados SQL ajuda a proteger seus dados, fornecendo criptografia que pr
 
 ### Identify Azure database services for open-source database systems
 
+Além dos serviços de SQL do Azure, há serviços de dados do Azure disponíveis para outros sistemas de bancos de dados relacionais populares, incluindo MySQL, MariaDB e PostgreSQL. O propósito desses serviços é permitir que as organizações que os usam em aplicativos locais migrem para o Azure rapidamente, sem fazer alterações significativas em seus aplicativos.
 
+MySQL, MariaDB e PostgreSQL são sistemas de gerenciamento de banco de dados relacionais personalizados para diferentes especializações.
+
+### Azure Database for MySQL
+
+O Banco de Dados do Azure para MySQL é uma implementação de PaaS do MySQL na nuvem do Azure baseada na Community Edition do MySQL.
+
+O serviço do Banco de Dados do Azure para MySQL inclui alta disponibilidade sem custo adicional e escalabilidade de acordo com a necessidade. Você paga apenas pelo que usa. É possível fazer backups automáticos com restauração pontual.
+
+O servidor fornece segurança de conexão para impor regras de firewall e, opcionalmente, exigir conexões SSL. Muitos parâmetros de servidor permitem definir as configurações do servidor, como modos de bloqueio, número máximo de conexões e tempos limite.
+
+Determinadas operações não estão disponíveis no Banco de Dados do Azure para MySQL. Essas funções se encarregam principalmente da segurança e da administração. O Azure gerencia esses aspectos do próprio servidor de banco de dados.
+
+O Banco de Dados do Azure para MySQL tem duas opções de implantação: 
+
+- **Azure Database for MySQL Flexible Server** - é uma oferta de banco de dados como serviço totalmente gerenciado com desempenho previsível e escalabilidade dinâmica. O servidor flexível oferece controle mais granular e maior flexibilidade para configuração e funções de gerenciamento de banco de dados. O servidor flexível é a opção de implantação recomendada para todos os novos desenvolvimentos ou migrações.
+- **Azure Database for MySQL Single Server** - Servidores únicos são mais adequados para aplicativos existentes que já utilizam um servidor único.
+
+Os seguintes recursos estão disponíveis no Banco de Dados do Azure para MySQL:
+
+- Recursos internos de alta disponibilidade.
+- Desempenho previsível.
+- Dimensionamento fácil que responde rapidamente à demanda.
+- Proteção dos dados, em repouso e em movimento.
+- Backups automáticos e restauração pontual dos últimos 35 dias.
+- Segurança de nível empresarial e conformidade com a legislação.
+
+O sistema usa o pay-as-you-go para que você pague apenas pelo que usar.
+
+Os servidores do Banco de Dados do Azure para MySQL oferecem recursos de monitoramento para adicionar alertas e ver métricas e logs.
+
+### Azure Database for MariaDB
+
+É uma implementação do sistema de gerenciamento de banco de dados MariaDB adaptado para execução no Azure. Baseia-se na Community Edition do MariaDB.
+
+O banco de dados é totalmente gerenciado e controlado pelo Azure. Depois de provisionar o serviço e transferir seus dados, o sistema não requer quase nenhuma administração adicional.
+
+O Banco de Dados do Azure para MariaDB oferece:
+
+- Alta disponibilidade interna sem nenhum custo adicional.
+- Desempenho previsível, com preços pré-pagos inclusivos.
+- Dimensionamento em segundos, conforme o necessário.
+- Proteção para dados confidenciais em repouso e em movimento.
+- Backups automáticos e restauração pontual por até 35 dias.
+- Segurança e conformidade de nível empresarial.
+
+### Azure Database for PostgreSQL
+
+Você poderá escolher Banco de Dados do Azure para PostgreSQL para executar uma implementação de PaaS do PostgreSQL na nuvem do Azure. Esse serviço fornece os mesmos benefícios de disponibilidade, desempenho, dimensionamento, segurança e administração que o MySQL.
+
+Alguns recursos dos bancos de dados PostgreSQL locais não estão disponíveis no Banco de Dados do Azure para PostgreSQL, extensões que os usuários podem adicionar a um banco de dados para executar tarefas especializadas, como escrever stored procedures em várias linguagens de programação (além de pgsql, que está disponível) e interagir diretamente com o sistema operacional. Há compatibilidade com um conjunto básico de extensões usadas com mais frequência e a lista de extensões disponíveis está sob análise contínua.
+
+O Banco de Dados do Azure para PostgreSQL tem três opções de implantação:
+
+- **Azure Database for PostgreSQL Single Server** - Você escolhe entre três tipos de preço: Básico, Uso Geral e Otimizado para Memória. Cada tipo é compatível com diferentes números de CPUs, memória e tamanhos de armazenamento – você seleciona uma com base na carga que espera processar.
+- **Azure Database for PostgreSQL Flexible Server** - A opção de implantação de servidor flexível para PostgreSQL é um serviço de banco de dados totalmente gerenciado. Ele fornece mais controle e personalizações de configuração do servidor e tem melhores controles de otimização de custo.
+- **Azure Database for PostgreSQL Hyperscale (Citus)** - é uma opção de implantação que dimensiona consultas em vários nós de servidor para processar grandes cargas de banco de dados. Seu banco de dados é dividido entre nós. Os dados são divididos em partes com base no valor de uma partition key ou sharding key. Considere usar essa opção de implantação para as maiores implantações de banco de dados do PostgreSQL na nuvem do Azure.
+
+O Banco de Dados do Azure para PostgreSQL é um serviço altamente disponível. Ele contém mecanismos internos de detecção de falha e failover.
+
+Os usuários do PostgreSQL conhecerão a ferramenta pgAdmin, que você pode usar para gerenciar e monitorar um banco de dados PostgreSQL. No entanto, alguns recursos voltados para o servidor, como executar backup e restauração do servidor, não estão disponíveis porque o servidor é gerenciado e mantido pela Microsoft.
+
+O Banco de Dados do Azure para PostgreSQL registra informações sobre as consultas executadas em bancos de dados no servidor e as salva em um banco de dados chamado azure_sys. Consulte a exibição query_store.qs_view para ver essas informações e usá-las para monitorar as consultas que os usuários estão executando. Essas informações podem se mostrar valiosas se você precisa ajustar as consultas executadas por seus aplicativos.
 
 ## ☁️ Describe considerations for working with non-relational data on Azure (15-20%)
 
