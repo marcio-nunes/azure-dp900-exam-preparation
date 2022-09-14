@@ -12,6 +12,8 @@
 
 Icons: ☁️🔸
 
+@@
+
 ## Skills measured
 
 - Describe core data concepts (25–30%)
@@ -501,9 +503,9 @@ Você também pode usar o SQL Server em VMs do Azure para estender aplicativos l
 - Preparar o lift-and-shift para os aplicativos existentes que exigem migração rápida para a nuvem com poucas ou nenhuma alteração.
 - Escalar verticalmente a plataforma em que o SQL Server é executado alocando mais memória, capacidade de CPU e espaço em disco à máquina virtual. É possível redimensionar rapidamente uma máquina virtual do Azure sem a necessidade de reinstalar o software que está sendo executado nela.
 
-$$ O SQL Server nas Máquinas Virtuais do Azure oferece uma experiência administrativa semelhante ao seu servidor local, o que aumentará seu esforço administrativo.
+@@ O SQL Server nas Máquinas Virtuais do Azure oferece uma experiência administrativa semelhante ao seu servidor local, o que aumentará seu esforço administrativo.
 
-### Azure SQL Managed Instance** 
+### Azure SQL Managed Instance
 
 Uma opção de PaaS (plataforma como serviço) que fornece quase 100% de compatibilidade com instâncias de SQL Server locais, abstraindo o hardware e o sistema operacional subjacentes. O serviço inclui gerenciamento automatizado de atualizações de software, backups e outras tarefas de manutenção, reduzindo a carga administrativa do suporte a uma instância de servidor de banco de dados. 
 
@@ -534,7 +536,7 @@ A Instância Gerenciada de SQL do Azure tem quase 100% de compatibilidade com a 
 
 A Instância Gerenciada de SQL do Azure dá suporte a logons do Mecanismo de banco de dados do SQL Server e logons integrados ao Azure AD (Active Directory). Os logons do Mecanismo de banco de dados do SQL Server incluem um nome de usuário e uma senha. Você deve inserir suas credenciais sempre que se conectar ao servidor. Os logons do Azure AD usam as credenciais associadas à sua entrada atual do computador e você não precisa fornecê-las sempre que se conectar ao servidor.
 
-A Instância Gerenciada de SQL do Azure é usada para implantação em que você precisa ter paridade de recursos completa com o SQL Server local. Você deve usar uma instância gerenciada se seu banco de dados usar recursos como SQL Server Agent e Database Mail.
+@@ A Instância Gerenciada de SQL do Azure é usada para implantação em que você precisa ter paridade de recursos completa com o SQL Server local. Você deve usar uma instância gerenciada se seu banco de dados usar recursos como SQL Server Agent e Database Mail.
 
 ### Azure SQL Database 
 
@@ -579,7 +581,7 @@ A auditoria rastreia eventos de banco de dados e os grava em um log de auditoria
 
 O Banco de Dados SQL ajuda a proteger seus dados, fornecendo criptografia que protege os dados armazenados no banco de dados (em repouso) e enquanto está sendo transferido pela rede (em movimento).
 
-$$ O Banco de Dados SQL do Azure oferece um único banco de dados na nuvem com custo e administração mínimos, no qual você pode criar bancos de dados e tabelas. O Azure gerencia tarefas administrativas, como backup e recuperação. No entanto, o Banco de Dados SQL do Azure não implementa recursos como SQL Server Agent e Database Mail.
+@@ O Banco de Dados SQL do Azure oferece um único banco de dados na nuvem com custo e administração mínimos, no qual você pode criar bancos de dados e tabelas. O Azure gerencia tarefas administrativas, como backup e recuperação. No entanto, o Banco de Dados SQL do Azure não implementa recursos como SQL Server Agent e Database Mail.
 
 - **Azure SQL Edge** - um mecanismo SQL que é otimizado para cenários de IoT (Internet das Coisas) que precisam trabalhar com transmissão de dados de séries temporais.
 
