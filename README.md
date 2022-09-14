@@ -7,7 +7,6 @@
 - [Microsoft Azure training and certifications](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4J5ea)
 - Façam simulados.
 - Microsoft DP-900 practice test
-- Na Udemy você também encontra alguns. Udemy Practice Test
 - Agendamento do exame de certificação.
 - Fiquem a vontade para ajudar a melhorar o conteúdo.
 
@@ -355,10 +354,116 @@ O Microsoft Power BI é uma plataforma para modelagem de dados analíticos e rel
 
 ### 🔸 Describe relational concepts
 
-- Identify features of relational data
-- Describe normalization and why it is used
-- Identify common structured query language (SQL) statements
-- Identify common database objects
+Em um banco de dados relacional, você modelará coleções de entidades do mundo real na forma de tabelas. Uma entidade pode ser qualquer coisa para a qual você deseja registrar informações; geralmente objetos e eventos importantes. Uma tabela contém linhas e cada linha representa uma instância de uma entidade. As tabelas relacionais são um formato para dados estruturados e cada linha de uma tabela tem as mesmas colunas. Cada coluna armazena dados de um tipo de dados específico (texto, datas, números inteiros e decimais). 
+
+### Identify features of relational data
+
+### Describe normalization and why it is used
+
+A normalização é um termo usado por profissionais de banco de dados para um processo de design de esquema que minimiza a duplicação de dados e impõe a integridade dos dados.
+
+- Separar cada entidade em sua própria tabela.
+- Separar cada atributo discreto em sua própria coluna.
+- Identificar exclusivamente cada instância de entidade (linha) usando uma chave primária.
+- Usar colunas de chave estrangeira para vincular entidades relacionadas.
+
+Cada entidade que é representada nos dados (cliente, produto, pedido de venda e item) é armazenada em sua própria tabela e cada atributo discreto dessas entidades está em sua própria coluna.
+
+O registro de cada instância de uma entidade como uma linha em uma tabela específica da entidade remove a duplicação dos dados. 
+
+A decomposição de atributos em colunas individuais garante que cada valor seja restrito a um tipo de dados apropriado e fornece um nível útil de granularidade nos dados para consulta.
+
+As instâncias de cada entidade são identificadas exclusivamente por uma ID ou outro valor de chave, conhecido como chave primária; e quando uma entidade faz referência a outra (por exemplo, um pedido tem um cliente associado), a chave primária da entidade relacionada é armazenada como uma chave estrangeira.
+
+Normalmente, um RDBMS (sistema de gerenciamento de banco de dados relacional) pode impor a integridade referencial para garantir que um valor inserido em um campo de chave estrangeira tenha uma chave primária correspondente existente na tabela relacionada, por exemplo, impedindo pedidos de clientes inexistentes.
+
+Em alguns casos, uma chave (primária ou estrangeira) pode ser definida como uma chave composta com base em uma combinação exclusiva de várias colunas.
+
+### Identify common structured query language (SQL) statements
+
+SQL (Structured Query Language) é usada para se comunicar com um banco de dados relacional. Ela é a linguagem padrão para sistemas de gerenciamento de banco de dados relacional. As instruções SQL são usadas para executar tarefas como atualizar dados em um banco de dados ou recuperar dados de um banco de dados. 
+
+> O SQL foi originalmente padronizado pelo ANSI (American National Standards Institute) em 1986 e pela ISO (Organização Internacional de Normalização) em 1987. Desde então, o padrão foi estendido várias vezes, pois os fornecedores de banco de dados relacional adicionaram novos recursos aos sistemas que não fazem parte do padrão, o que resultou em uma variedade de dialetos do SQL. 
+
+Alguns dialetos populares do SQL incluem:
+
+- T-SQL (Transact-SQL). Essa versão do SQL é usada pelo Microsoft SQL Server e pelos serviços de SQL do Azure.
+- pgSQL. Esse é o dialeto que tem extensões implementadas no PostgreSQL.
+- PL/SQL. Esse é o dialeto usado pela Oracle. PL/SQL significa Procedural Language/SQL.
+
+### Tipos de instrução SQL
+
+Instruções SQL são agrupadas em três grupos lógicos principais:
+
+- **DDL (linguagem de definição de dados)** - Você usa instruções DDL para criar, modificar e remover tabelas e outros objetos em um banco de dados (tabela, procedimentos armazenados, exibições, entre outros). As instruções DDL mais comuns são: 
+  - CREATE - Cria um objeto no banco de dados, como uma tabela ou uma view.
+  - ALTER - Modifica a estrutura de um objeto. Por exemplo, alterar uma tabela para adicionar uma nova coluna.
+  - DROP - Remova um objeto do banco de dados.
+  - RENAME - Renomeia um objeto existente.
+
+- **DCL (linguagem de controle de dados)** - Os administradores de banco de dados geralmente usam instruções DCL para gerenciar o acesso a objetos em um banco de dados, concedendo, negando ou revogando permissões a usuários ou grupos específicos. As três instruções DCL principais são:
+  - GRANT - Conceder permissão para executar ações específicas
+  - DENY - Negar permissão para executar ações específicas
+  - REVOKE - Remover uma permissão concedida anteriormente
+
+- **DML (linguagem de manipulação de dados)** - Você usa instruções DML para manipular as linhas em tabelas. Essas instruções permitem recuperar (consultar) dados, inserir novas linhas ou modificar linhas existentes. Você também poderá excluir linhas se não precisar mais delas.
+  - SELECT - Ler linhas de uma tabela
+  - INSERT - Inserir novas linhas em uma tabela
+  - UPDATE - Modificar dados em linhas existentes
+  - DELETE - Excluir linhas existentes
+
+A forma básica de uma instrução INSERT insere uma linha por vez. Por padrão, as instruções SELECT, UPDATE e DELETE são aplicadas a todas as linhas em uma tabela. Normalmente, você aplica uma cláusula WHERE com essas instruções para especificar critérios. Somente as linhas que correspondem a esses critérios serão selecionadas, atualizadas ou excluídas.
+
+Você também pode executar instruções SELECT que recuperam dados de várias tabelas usando uma cláusula JOIN. As junções indicam como as linhas em uma tabela são conectadas com as linhas em outra tabela a fim de determinar quais dados retornar. Uma condição de junção típica corresponde a uma chave estrangeira de uma tabela e a chave primária associada na outra tabela.
+
+A instrução INSERT tem um formato um pouco diferente. Você especifica uma tabela e as colunas em uma cláusula INTO e uma lista de valores a serem armazenados nessas colunas. O SQL Standard dá suporte apenas à inserção de uma linha por vez. Alguns dialetos permitem que você especifique várias cláusulas VALUES para adicionar várias linhas por vez.
+
+### Identify common database objects
+
+Além das tabelas, um banco de dados relacional pode conter outras estruturas que ajudam a otimizar a organização dos dados, encapsular ações programáticas e aprimorar a velocidade de acesso.
+
+### View 
+
+Uma view é uma tabela virtual com base no conjunto de resultados de uma consulta SELECT. Você pode considerar uma view como uma janela em linhas especificadas de uma ou mais tabelas subjacentes. É possível consultar a view e filtrar os dados de maneira muito semelhante à de uma tabela.
+
+### Stored procedure 
+
+Define instruções SQL que podem ser executadas sob comando. Os procedimentos armazenados são usados para encapsular lógica programática de ações em um banco de dados que os aplicativos precisam executar ao trabalhar com os dados. Você pode definir um stored procedure com parâmetros para criar uma solução flexível para ações comuns que talvez precisem ser aplicadas aos dados com base em uma chave ou em critérios específicos. Por exemplo, o procedimento armazenado a seguir pode ser definido para alterar o nome de um produto com base na ID do produto especificada.
+
+```SQL
+CREATE PROCEDURE RenameProduct
+	@ProductID INT,
+	@NewName VARCHAR(20)
+AS
+UPDATE Product
+SET Name = @NewName
+WHERE ID = @ProductID;
+```
+
+Quando um produto precisa ser renomeado, você pode executar o procedimento armazenado, passando a ID do produto e o novo nome a ser atribuído:
+
+```SQL
+EXEC RenameProduct 201, 'Spanner';
+```
+
+### Index
+
+Um índice ajuda a pesquisar dados em uma tabela. Imagine um índice em uma tabela como um índice no final de um livro. Um índice de livro contém um conjunto classificado de referências, com as páginas nas quais cada referência ocorre. Quando você deseja encontrar uma referência a um item no livro, procura por ela no índice. Você pode usar os números de página no índice para ir diretamente para as páginas corretas no livro. Sem um índice, talvez seja necessário ler todo o livro para localizar as referências que você está procurando.
+
+Quando você cria um índice em um banco de dados, especifica uma coluna da tabela e o índice contém uma cópia desses dados em uma ordem classificada, com ponteiros para as linhas correspondentes na tabela. Quando o usuário executa uma consulta que especifica essa coluna na cláusula WHERE, o sistema de gerenciamento de banco de dados pode usar esse índice para buscar os dados mais rapidamente do que se precisasse examinar toda a tabela, linha por linha.
+
+```SQL
+CREATE INDEX idx_ProductName
+ON Product(Name);
+```
+
+O índice cria uma estrutura baseada em árvore que o otimizador de consulta do sistema do banco de dados pode usar para localizar rapidamente linhas na tabela.
+
+![index](https://docs.microsoft.com/pt-br/training/wwl-data-ai/explore-relational-data-offerings/media/index.png)
+
+Em uma tabela que contém poucas linhas, o uso do índice provavelmente não será mais eficiente do que simplesmente ler a tabela inteira e localizar as linhas solicitadas pela consulta. No entanto, quando uma tabela tem muitas linhas, os índices podem melhorar drasticamente o desempenho das consultas.
+
+É possível criar vários índices em uma tabela. No entanto, os índices não são gratuitos. Um índice consome espaço de armazenamento e sempre que você insere, atualiza ou exclui dados em uma tabela, é necessário haver manutenção nos índices dessa tabela. Esse trabalho adicional pode causar lentidão nas operações de inserção, atualização e exclusão. Você precisa ter um equilíbrio entre o uso índices que aceleram suas consultas e o custo de executar outras operações.
 
 ### 🔸 Describe relational Azure data services
 
