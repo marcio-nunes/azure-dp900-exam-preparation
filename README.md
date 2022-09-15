@@ -545,25 +545,17 @@ Uma máquina virtual em execução no Azure com uma instalação do SQL Server. 
 - **Gerenciamento**	- Você deve gerenciar todos os aspectos do servidor, incluindo o sistema operacional e as atualizações, a configuração, os backups e outras tarefas de manutenção do SQL Server.
 - **Casos de uso** - Use essa opção **quando precisar migrar ou estender uma solução de SQL Server local** e manter o controle total sobre todos os aspectos da configuração do servidor e do banco de dados.
 
-Migrar do sistema em execução no local para uma máquina virtual do Azure não é diferente de mover um banco de dados de um servidor local para outro.
+Migrar do sistema em execução no local para uma máquina virtual do Azure não é diferente de mover um banco de dados de um servidor local para outro. Essa abordagem é **adequada para migrações e aplicativos que exigem acesso a recursos do sistema operacional** que podem não ser compatíveis no nível de PaaS. 
 
-Essa abordagem é adequada para migrações e aplicativos que exigem acesso a recursos do sistema operacional que podem não ser compatíveis no nível de PaaS. 
+Preparar o **lift-and-shift** de aplicativos existentes que exigem migração rápida para a nuvem com poucas ou nenhuma alteração.
 
-As máquinas virtuais do SQL são prontas para o lift-and-shift de aplicativos existentes que exigem migração rápida para a nuvem com alterações mínimas. 
+Você também pode usar o SQL Server em VMs para **estender aplicativos locais existentes** para a nuvem em implantações híbridas.
 
-Você também pode usar o SQL Server em VMs do Azure para estender aplicativos locais existentes para a nuvem em implantações híbridas.
+**Criar cenários rápidos de desenvolvimento e teste** quando você não quiser comprar hardware do SQL Server local que não seja de produção.
 
-É possível usar o SQL Server em uma máquina virtual para desenvolver e testar aplicativos SQL Server tradicionais. Com uma máquina virtual, você tem os direitos administrativos completos sobre o DBMS e o sistema operacional. É uma opção perfeita quando uma organização já tem recursos de TI disponíveis para manter as máquinas virtuais.
+**Escalar verticalmente** a plataforma em que o SQL Server é executado. É possível redimensionar rapidamente uma máquina virtual do Azure sem a necessidade de reinstalar o software que está sendo executado nela.
 
-- Criar cenários rápidos de desenvolvimento e teste quando você não quiser comprar hardware do SQL Server local que não seja de produção.
-- Preparar o lift-and-shift para os aplicativos existentes que exigem migração rápida para a nuvem com poucas ou nenhuma alteração.
-- Escalar verticalmente a plataforma em que o SQL Server é executado alocando mais memória, capacidade de CPU e espaço em disco à máquina virtual. É possível redimensionar rapidamente uma máquina virtual do Azure sem a necessidade de reinstalar o software que está sendo executado nela.
-
-@@ O SQL Server nas Máquinas Virtuais do Azure oferece uma experiência administrativa semelhante ao seu servidor local, o que aumentará seu esforço administrativo.
-
-@@ O SQL Server em Máquinas Virtuais do Azure (VMs) é um serviço de infraestrutura como serviço (IaaS). Essa forma de serviço em nuvem exige a maior responsabilidade do cliente, pois ele precisa gerenciar tudo, exceto os dispositivos físicos usados. O SQL Server nas Máquinas Virtuais do Azure cria hardware virtual para os clientes usarem como quiserem.
-
-@@
+O SQL Server nas Máquinas Virtuais do Azure oferece uma experiência administrativa semelhante ao seu servidor local, o que **aumentará seu esforço administrativo**. Essa forma de serviço em nuvem exige a maior responsabilidade do cliente, pois ele precisa gerenciar tudo, exceto os dispositivos físicos usados.
 
 ### Azure SQL Managed Instance
 
