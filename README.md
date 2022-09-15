@@ -293,13 +293,15 @@ Um Engenheiro de Dados colabora com os stakeholders para projetar e implementar 
 
 ### Describe responsibilities for data analysts
 
-Um analista de dados permite que as empresas maximizem o valor dos ativos de dados. Eles são responsáveis por explorar dados para identificar tendências e relações, projetar e criar modelos analíticos e favorecer capacidades avançadas de análise por meio de relatórios e visualizações.
-
-Um Analista de Dados processa dados brutos e, com base em requisitos empresariais identificados, os transforma para fornecer insights relevantes.
+Um analista de dados permite que as empresas maximizem o valor dos ativos de dados. 
+- Responsáveis por explorar dados para identificar tendências e relações
+- Projetar e criar modelos analíticos 
+- Favorecer capacidades avançadas de análise por meio de relatórios e visualizações.
+- Processa dados brutos e, com base em requisitos empresariais identificados, os transforma para fornecer insights relevantes.
 
 > Há outras funções relacionadas a dados não mencionadas aqui, como cientista de dados e arquiteto de dados, e há outros profissionais técnicos que trabalham com os dados, incluindo desenvolvedores de aplicativos e engenheiros de software.
 
-### Explorar funções e serviços de dados
+### Serviços de dados
 
 ### Azure SQL 
 
@@ -309,11 +311,11 @@ Azure SQL é o nome coletivo de uma família de soluções de banco de dados rel
 - **Azure SQL Managed Instance** - uma instância hospedada do SQL Server com manutenção automatizada, que permite uma configuração mais flexível do que o Azure SQL DB, mas com mais responsabilidade administrativa para o proprietário.
 - **Azure SQL VM** - uma máquina virtual com uma instalação do SQL Server, permitindo a máxima capacidade de configuração com total responsabilidade de gerenciamento.
 
-Os administradores de banco de dados normalmente provisionam e gerenciam os sistemas de banco de dados Azure SQL para dar suporte a aplicativos de LOB (linha de negócios) que precisam armazenar dados transacionais.
+Administradores de banco de dados normalmente provisionam e gerenciam os sistemas de banco de dados Azure SQL para dar suporte a aplicativos de LOB (linha de negócios) que precisam armazenar dados transacionais.
 
-Os engenheiros de dados podem usar os sistemas de banco de dados SQL do Azure como fontes para pipelines de dados que executam operações de ETL (extração, transformação e carregamento) para ingerir os dados transacionais em um sistema analítico.
+Engenheiros de dados podem usar os sistemas do Azure SQL DB como fontes para pipelines de dados que executam operações de ETL (extração, transformação e carregamento) para ingerir os dados transacionais em um sistema analítico.
 
-Os analistas de dados podem consultar os bancos de dados SQL do Azure diretamente para criar relatórios, no entanto, em grandes organizações, os dados geralmente são combinados com os dados de outras fontes em um armazenamento de dados analíticos para dar suporte às análises empresariais.
+Analistas de dados podem consultar os Azure SQL DB diretamente para criar relatórios, no entanto, em grandes organizações, os dados geralmente são combinados com os dados de outras fontes em um armazenamento de dados analíticos para dar suporte às análises empresariais.
 
 ### Azure Database for open-source relational databases
 
@@ -323,11 +325,11 @@ O Azure inclui serviços gerenciados para sistemas de banco de dados relacionais
 - **Azure Database for MariaDB** - um sistema de gerenciamento de banco de dados mais recente, criado pelos desenvolvedores originais do MySQL. Desde então, o mecanismo de banco de dados foi reescrito e otimizado para aprimorar o desempenho. O MariaDB tem compatibilidade com o Oracle Database.
 - **Azure Database for PostgreSQL** - um banco de dados híbrido relacional-objeto. É possível armazenar dados em tabelas relacionais, também permite que você armazene tipos de dados personalizados, com propriedades não relacionais próprias.
 
-Assim como acontece com os sistemas de banco de dados SQL do Azure, os bancos de dados relacionais de código aberto são gerenciados por administradores de banco de dados para dar suporte a aplicativos transacionais e fornecem uma fonte de dados para engenheiros de dados, criando pipelines para soluções analíticas e analistas de dados que criam relatórios.
+Os bancos de dados relacionais de código aberto são gerenciados por administradores de banco de dados para dar suporte a aplicativos transacionais e fornecem uma fonte de dados para engenheiros de dados, criando pipelines para soluções analíticas e analistas de dados que criam relatórios.
 
 ### Azure Cosmos DB
 
-O Azure Cosmos DB é um sistema de banco de dados não relacional (NoSQL) de escala global que dá suporte a várias APIs (interfaces de programação de aplicativo), permitindo que você armazene e gerencie dados como documentos JSON, pares chave-valor, famílias de colunas e grafos.
+O Azure Cosmos DB é um sistema de banco de dados não relacional (NoSQL) de escala global que dá suporte a várias APIs, permitindo que você armazene e gerencie dados como **documentos JSON, pares chave-valor, famílias de colunas e grafos**.
 
 Em algumas organizações, instâncias do Cosmos DB podem ser provisionadas e gerenciadas por um administrador de banco de dados, embora os desenvolvedores de software tenham o costume de gerenciar o armazenamento de dados NoSQL como parte da arquitetura geral do aplicativo. Os engenheiros de dados geralmente precisam integrar fontes de dados do Cosmos DB a soluções analíticas corporativas que dão suporte à modelagem e geração de relatórios por analistas de dados.
 
@@ -339,7 +341,7 @@ Em algumas organizações, instâncias do Cosmos DB podem ser provisionadas e ge
 - **File shares** - compartilhamentos de arquivos de rede, semelhante ao que normalmente é encontrado nas redes corporativas.
 - **Tables** - armazenamento de chave-valor para aplicativos que precisam ler e gravar valores de dados rapidamente.
 
-Os engenheiros de dados usam o Armazenamento do Azure para hospedar data lakes – armazenamentos de blobs com um namespace hierárquico que permite que os arquivos sejam organizados em pastas em um sistema de arquivos distribuído.
+Os engenheiros de dados usam o Armazenamento do Azure para hospedar data lakes - armazenamentos de blobs com um namespace hierárquico que permite que os arquivos sejam organizados em pastas em um sistema de arquivos distribuído.
 
 ### Azure Data Factory
 
@@ -354,7 +356,7 @@ O Azure Synapse Analytics é uma solução de análise de dados abrangente e uni
 - **Pipelines** - baseado na mesma tecnologia do Azure Data Factory.
 - **SQL** - um mecanismo de banco de dados SQL altamente escalonável, otimizado para cargas de trabalho de data warehouse.
 - **Apache Spark** - um sistema de processamento de dados distribuído de código aberto que dá suporte a várias linguagens de programação e APIs, incluindo Java, Scala, Python e SQL.
-- **Azure Synapse Data Explorer** - uma solução de análise de dados de alto desempenho que é otimizada para consultas em tempo real de dados de log e telemetria usando a KQL (Kusto Query Language).
+- **Azure Synapse Data Explorer** - uma solução de análise de dados de alto desempenho que é otimizada para **consultas em tempo real de dados de log e telemetria** usando a KQL (Kusto Query Language).
 
 Os engenheiros de dados podem usar o Azure Synapse Analytics para criar uma solução de análise de dados unificada que combina pipelines de ingestão de dados, armazenamento de data warehouse e armazenamento do data lake em um único serviço.
 
@@ -362,23 +364,23 @@ Os analistas de dados podem usar pools de SQL e do Spark por meio de notebooks i
 
 ### Azure Databricks
 
-O Azure Databricks é uma versão integrada do Azure da plataforma popular do Databricks, que combina a plataforma de processamento de dados Apache Spark com a semântica de banco de dados SQL e uma interface de gerenciamento integrada para permitir a análise de dados em larga escala.
+O Azure Databricks combina a plataforma de processamento de dados Apache Spark com a semântica de banco de dados SQL e uma interface Web de gerenciamento integrada para permitir a análise de dados em larga escala.
 
 Os engenheiros de dados podem usar as habilidades que já têm do Databricks e do Spark para criar armazenamentos de dados analíticos no Azure Databricks.
 
-Os analistas de dados podem usar o suporte nativo ao notebook no Azure Databricks para consultar e visualizar dados em uma interface baseada na Web fácil de usar.
+Os analistas de dados podem usar o suporte nativo ao notebook no Azure Databricks para consultar e visualizar dados em uma **interface baseada na Web fácil de usar**.
 
 ### Azure HDInsight
 
-O Azure HDInsight é um serviço do Azure que fornece clusters hospedados no Azure para tecnologias populares de código aberto de processamento de Big Data do Apache, incluindo:
+O Azure HDInsight é um serviço do Azure que fornece clusters hospedados no Azure para **tecnologias de código aberto de processamento de Big Data** do Apache, incluindo:
 
 - **Apache Spark** - um sistema de processamento de dados distribuído que dá suporte a várias linguagens de programação e APIs, incluindo Java, Scala, Python e SQL.
-- **Apache Hadoop** - um sistema distribuído que usa trabalhos MapReduce para processar grandes volumes de dados com eficiência em vários nós de cluster. Os trabalhos MapReduce podem ser escritos em Java ou abstraídos por interfaces como Apache Hive, uma API baseada em SQL que é executada no Hadoop.
+- **Apache Hadoop** - um sistema distribuído que usa trabalhos MapReduce para processar grandes volumes de dados com eficiência em vários nós de cluster. Os trabalhos MapReduce podem ser escritos em Java ou abstraídos por interfaces como Apache Hive (API baseada em SQL que é executada no Hadoop).
 - **Apache HBase** - um sistema de código aberto para armazenamento e consulta de dados NoSQL em larga escala.
 - **Apache Kafka** - um agente de mensagens para processamento de fluxo de dados.
 - **Apache Storm** - um sistema de código aberto para processamento de dados em tempo real por meio de uma topologia de spouts e bolts.
 
-Os engenheiros de dados podem usar o Azure HDInsight para dar suporte a cargas de trabalho de análise de Big Data que dependem de várias tecnologias de código aberto.
+Os engenheiros de dados podem usar o Azure HDInsight para dar suporte a **cargas de trabalho de análise de Big Data** que dependem de várias **tecnologias de código aberto**.
 
 ### Azure Stream Analytics
 
