@@ -271,15 +271,25 @@ As três funções de trabalho importantes que lidam com os dados na maioria das
 
 ### Describe responsibilities for database administrators
 
-Um Administrador de Banco de Dados do Azure é responsável pelos aspectos de design, implementação, manutenção e operação de sistemas de bancos de dados locais e baseados em nuvem. Eles são responsáveis pela disponibilidade geral e pelo desempenho e otimizações consistentes dos bancos de dados. Eles trabalham com os stakeholders para implementar políticas e ferramentas, além de processos de backup e planos de recuperação para serem usados após um desastre natural ou erro humano.
+Um Administrador de Banco de Dados do Azure é responsável pelos aspectos de design, implementação, manutenção e operação de sistemas de bancos de dados. 
 
-O Administrador de Banco de Dados também é responsável por gerenciar a segurança dos dados nos bancos de dados, conceder privilégios sobre os dados, além de conceder ou negar acesso aos usuários conforme apropriado.
+- Eles são responsáveis pela disponibilidade geral.
+- Desempenho e otimizações consistentes dos bancos de dados.
+- Eles trabalham com os stakeholders para implementar políticas e ferramentas.
+- Processos de backup.
+- Planos de recuperação para serem usados após um desastre natural ou erro humano.
+- Gerenciar a segurança dos dados nos bancos de dados.
+- Conceder privilégios sobre os dados, além de conceder ou negar acesso aos usuários conforme apropriado.
 
 ### Describe responsibilities for data engineers
 
-Um Engenheiro de Dados colabora com os stakeholders para projetar e implementar cargas de trabalho relacionadas a dados, incluindo pipelines de ingestão de dados, atividades de limpeza e transformação e armazenamentos de dados para cargas de trabalho analíticas. Eles usam uma ampla variedade de tecnologias de plataforma de dados, incluindo bancos de dados relacionais e não relacionais, repositórios de arquivos e fluxos de dados.
+Um Engenheiro de Dados colabora com os stakeholders para projetar e implementar cargas de trabalho relacionadas a dados.
 
-Eles também são responsáveis por garantir que a privacidade dos dados seja mantida dentro da nuvem, abrangendo armazenamentos de dados locais e na nuvem. Eles são responsáveis por gerenciar e monitorar pipelines de dados para garantir que as cargas de dados tenham o desempenho esperado.
+- Pipelines de ingestão de dados.
+- Gerenciar e monitorar pipelines de dados para garantir que as cargas de dados tenham o desempenho esperado.
+- Atividades de limpeza e transformação e armazenamentos de dados para cargas de trabalho analíticas. 
+- Usam uma variedade de tecnologias de plataforma de dados, bancos de dados relacionais e não relacionais, repositórios de arquivos e fluxos de dados.
+- Garantir a privacidade dos dados. 
 
 ### Describe responsibilities for data analysts
 
