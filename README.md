@@ -414,7 +414,7 @@ Em um banco de dados relacional, você modelará coleções de entidades do mund
 
 ### Describe normalization and why it is used
 
-A normalização é um termo usado por profissionais de banco de dados para um processo de design de esquema que minimiza a duplicação de dados e impõe a integridade dos dados.
+A normalização é um termo usado por profissionais de banco de dados para um processo de design de esquema que **minimiza a duplicação e impõe a integridade dos dados**.
 
 - Separar cada entidade em sua própria tabela.
 - Separar cada atributo discreto em sua própria coluna.
@@ -435,15 +435,15 @@ Em alguns casos, uma chave (primária ou estrangeira) pode ser definida como uma
 
 ### Identify common structured query language (SQL) statements
 
-SQL (Structured Query Language) é usada para se comunicar com um banco de dados relacional. Ela é a linguagem padrão para sistemas de gerenciamento de banco de dados relacional. As instruções SQL são usadas para executar tarefas como atualizar dados em um banco de dados ou recuperar dados de um banco de dados. 
+SQL (Structured Query Language) é usada para se comunicar com um banco de dados relacional. Ela é a linguagem padrão para sistemas de gerenciamento de banco de dados relacional. As instruções SQL são usadas para executar tarefas como atualizar ou recuperar dados de um banco de dados. 
 
 > O SQL foi originalmente padronizado pelo ANSI (American National Standards Institute) em 1986 e pela ISO (Organização Internacional de Normalização) em 1987. Desde então, o padrão foi estendido várias vezes, pois os fornecedores de banco de dados relacional adicionaram novos recursos aos sistemas que não fazem parte do padrão, o que resultou em uma variedade de dialetos do SQL. 
 
 Alguns dialetos populares do SQL incluem:
 
-- T-SQL (Transact-SQL). Essa versão do SQL é usada pelo Microsoft SQL Server e pelos serviços de SQL do Azure.
-- pgSQL. Esse é o dialeto que tem extensões implementadas no PostgreSQL.
-- PL/SQL. Esse é o dialeto usado pela Oracle. PL/SQL significa Procedural Language/SQL.
+- **T-SQL (Transact-SQL)** - Essa versão do SQL é usada pelo Microsoft SQL Server e pelos serviços de SQL do Azure.
+- **pgSQL** - Esse é o dialeto que tem extensões implementadas no PostgreSQL.
+- **PL/SQL** - Esse é o dialeto usado pela Oracle. PL/SQL significa Procedural Language/SQL.
 
 ### Tipos de instrução SQL
 
@@ -478,7 +478,7 @@ Além das tabelas, um banco de dados relacional pode conter outras estruturas qu
 
 ### View 
 
-Uma view é uma tabela virtual com base no conjunto de resultados de uma consulta SELECT. Você pode considerar uma view como uma janela em linhas especificadas de uma ou mais tabelas subjacentes. É possível consultar a view e filtrar os dados de maneira muito semelhante à de uma tabela.
+É uma tabela virtual com base no conjunto de resultados de uma consulta SELECT. É possível consultar a view e filtrar os dados de maneira muito semelhante à de uma tabela.
 
 ### Stored procedure 
 
@@ -515,7 +515,7 @@ O índice cria uma estrutura baseada em árvore que o otimizador de consulta do 
 
 ![index](https://docs.microsoft.com/pt-br/training/wwl-data-ai/explore-relational-data-offerings/media/index.png)
 
-Em uma tabela que contém poucas linhas, o uso do índice provavelmente não será mais eficiente do que simplesmente ler a tabela inteira e localizar as linhas solicitadas pela consulta. No entanto, quando uma tabela tem muitas linhas, os índices podem melhorar drasticamente o desempenho das consultas.
+Em uma tabela que contém poucas linhas, o uso do índice provavelmente não será eficiente. No entanto, quando uma tabela tem muitas linhas, os índices podem melhorar drasticamente o desempenho das consultas.
 
 É possível criar vários índices em uma tabela. No entanto, os índices não são gratuitos. Um índice consome espaço de armazenamento e sempre que você insere, atualiza ou exclui dados em uma tabela, é necessário haver manutenção nos índices dessa tabela. Esse trabalho adicional pode causar lentidão nas operações de inserção, atualização e exclusão. Você precisa ter um equilíbrio entre o uso índices que aceleram suas consultas e o custo de executar outras operações.
 
@@ -525,7 +525,9 @@ O Azure dá suporte a vários serviços de banco de dados, permitindo que você 
 
 A maioria dos serviços de banco de dados do Azure é totalmente gerenciada, liberando um tempo valioso que você gastaria gerenciando seu banco de dados.
 
-O desempenho de nível empresarial com alta disponibilidade interna significa que você pode escalar rapidamente e alcançar distribuição global sem se preocupar com o tempo de inatividade dispendioso. Os desenvolvedores podem aproveitar as inovações líderes do setor, como segurança interna com monitoramento automático e detecção de ameaças, além de ajuste automático para aprimorar o desempenho. Além de todos esses recursos, você tem a disponibilidade garantida. 
+O desempenho de nível empresarial com alta disponibilidade interna significa que você pode escalar rapidamente e alcançar distribuição global sem se preocupar com o tempo de inatividade dispendioso. 
+
+Os desenvolvedores podem aproveitar as inovações líderes do setor, como segurança interna com monitoramento automático e detecção de ameaças, além de ajuste automático para aprimorar o desempenho. Além de todos esses recursos, você tem a disponibilidade garantida. 
 
 ### Describe the Azure SQL family of products including Azure SQL Database, Azure SQL
 
@@ -535,13 +537,13 @@ Azure SQL é um termo coletivo para uma família de serviços de banco de dados 
 
 ### SQL Server em VMs (Máquinas Virtuais) do Azure 
 
-Uma máquina virtual em execução no Azure com uma instalação do SQL Server. O uso de uma VM torna essa opção uma solução de IaaS (infraestrutura como serviço) que virtualiza a infraestrutura de hardware para computação, armazenamento e rede no Azure, tornando-a uma ótima opção para migração **"lift-and-shift"** de instalações locais existentes do SQL Server para a nuvem.
+Uma máquina virtual em execução no Azure com uma instalação do SQL Server. Solução IaaS (infraestrutura como serviço) que virtualiza a infraestrutura de hardware para computação, armazenamento e rede no Azure, tornando-a uma ótima opção para migração **"lift-and-shift"** de instalações locais existentes do SQL Server para a nuvem.
 
 - **Compatibilidade** - Totalmente compatível com instalações físicas locais e virtualizadas. 
 - **Arquitetura** - Instâncias do SQL Server são instaladas em uma máquina virtual. Cada instância pode dar suporte a vários bancos de dados.
 - **Disponibilidade**	- 99,99%
 - **Gerenciamento**	- Você deve gerenciar todos os aspectos do servidor, incluindo o sistema operacional e as atualizações, a configuração, os backups e outras tarefas de manutenção do SQL Server.
-- **Casos de uso** - Use essa opção quando precisar migrar ou estender uma solução de SQL Server local e manter o controle total sobre todos os aspectos da configuração do servidor e do banco de dados.
+- **Casos de uso** - Use essa opção **quando precisar migrar ou estender uma solução de SQL Server local** e manter o controle total sobre todos os aspectos da configuração do servidor e do banco de dados.
 
 Migrar do sistema em execução no local para uma máquina virtual do Azure não é diferente de mover um banco de dados de um servidor local para outro.
 
