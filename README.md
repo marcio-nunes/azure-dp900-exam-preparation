@@ -4,9 +4,9 @@
 2. Criei o [Path de estudo para a certificação DP-900](https://docs.microsoft.com/en-us/users/marcio-nunes-silva/collections/jwmdi8nw8r3ze4) e vou atualizando conforme necessidade.
 3. Esse resumo não substitui os módulos completos. Recomendo fortemente estudar através dos módulos do MS Learn.
 4. Resumo baseado no [Study Guide](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4wsKZ) oficial da Microsoft.
-5. [Microsoft Azure training and certifications](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4J5ea)
+5. [Microsoft Azure training and certifications](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4J5ea).
 6. Façam simulados.
-	- [Microsoft DP-900 practice test](https://esi.microsoft.com/getcertification)
+	- [Microsoft DP-900 practice test](https://esi.microsoft.com/getcertification).
 7. [Agendamento do exame de certificação](https://esi.microsoft.com/getcertification).
 8. Fiquem a vontade para ajudar a melhorar o conteúdo.
 
@@ -71,21 +71,27 @@ Há duas categorias amplas de armazenamento de dados comuns em uso:
 
 ### Describe common formats for data files
 
-O formato de arquivo específico usado para armazenar dados depende de vários fatores, incluindo:
+O formato de arquivo específico depende de alguns fatores:
 
-- O tipo de dados que está sendo armazenado (estruturado, semiestruturado ou não estruturado).
+- O tipo de dado que está sendo armazenado (estruturado, semiestruturado ou não estruturado).
 - Os aplicativos e serviços que precisarão ler, gravar e processar os dados.
-- A necessidade de que os arquivos de dados sejam legíveis por seres humanos ou otimizados para armazenamento e processamento eficientes.
+- Legíveis por seres humanos ou otimizados para armazenamento e processamento eficientes.
 
-- Delimited text files - Geralmente, os dados são armazenados em formato de texto sem formatação com delimitadores de campo e terminadores de linha específicos. O formato mais comum para dados delimitados é CSV nos quais os campos são separados por vírgulas e as linhas terminam com um retorno de carriage return/new line. Opcionalmente, a primeira linha pode incluir os nomes de campo. Outros formatos comuns incluem 
-    - TSV (tab-separated values) e space-delimited (em que as tabulações ou os espaços são usados para separar campos) 
-    - Fixed-width data - Dados de largura fixa em que a cada campo é alocado um número fixo de caracteres. O texto delimitado é uma boa opção para dados estruturados que precisam ser acessados por uma ampla variedade de aplicativos e serviços em um formato legível.
+### Delimited text files
+
+Os dados são armazenados em formato de texto sem formatação com delimitadores de campo e terminadores de linha específicos. 
+
+- **CSV (tab-separated values)** - O formato mais comum é CSV. Opcionalmente, a primeira linha pode incluir os nomes de campo. 
+- **TSV (tab-separated values) e space-delimited** - em que as tabulações ou os espaços são usados para separar campos 
+- **Fixed-width data** - Dados de largura fixa em que a cada campo é alocado um número fixo de caracteres. Para dados estruturados que precisam ser acessados por vários aplicativos e serviços em um formato legível.
 
 ### JavaScript Object Notation (JSON)
 
-O JSON é um formato onipresente no qual um esquema de documento hierárquico é usado para definir entidades de dados (objetos) que têm vários atributos. Cada atributo pode ser um objeto (ou uma coleção de objetos), tornando o JSON um formato flexível que é bom para dados estruturados e semiestruturados.
+O JSON possui um esquema de documento hierárquico usado para definir entidades de dados (objetos) e seus atributos. Cada atributo pode ser um objeto (ou uma coleção de objetos), tornando o JSON um formato flexível que é bom para dados estruturados e semiestruturados.
 
-Observe que os objetos estão entre chaves ({..}) e as coleções estão entre colchetes ([..]). Os atributos são representados por pares nome:valor e separados por vírgulas (,).
+- Os objetos estão entre chaves {..} 
+- As coleções estão entre colchetes [..]. 
+- Os atributos são representados por pares nome:valor e separados por vírgulas.
 
 ```JSON
 {
@@ -112,7 +118,7 @@ Observe que os objetos estão entre chaves ({..}) e as coleções estão entre c
 
 ### Extensible Markup Language (XML)
 
-O XML é um formato de dados legível que foi popular nos anos 90 e 2000. Ele tem sido substituído pelo formato JSON que é menos detalhado, mas ainda há alguns sistemas que usam XML para representar dados. O XML usa marcas delimitadas por colchetes angulares (../) para definir elementos e atributos
+O XML é um formato de dados legível que foi popular nos anos 90 e 2000, mas ainda há alguns sistemas que usam XML para representar dados. O XML usa marcas delimitadas por colchetes angulares <../> para definir elementos e atributos.
 
 ```XML
 <Customers>
@@ -132,7 +138,7 @@ O XML é um formato de dados legível que foi popular nos anos 90 e 2000. Ele te
 
 ### Binary Large Object (BLOB)
 
-Todos os arquivos são armazenados como dados binários, mas nos formatos legíveis descritos acima, os bytes de dados binários são mapeados em caracteres imprimíveis (ASCII). No entanto, alguns formatos de arquivo, particularmente para dados não estruturados, armazenam os dados como binários brutos que devem ser interpretados por aplicativos e renderizados.
+Todos os arquivos são armazenados como dados binários, mas nos formatos legíveis descritos acima, os bytes de dados binários são mapeados em caracteres imprimíveis (ASCII). Alguns formatos de arquivo de dados não estruturados, armazenam os dados como binários brutos que devem ser interpretados por aplicativos e renderizados.
 
 Tipos comuns de dados armazenados como binários:
 
@@ -142,42 +148,59 @@ Tipos comuns de dados armazenados como binários:
 
 ### Formatos de arquivo otimizados
 
-Embora os formatos legíveis para dados estruturados e semiestruturados possam ser úteis, normalmente eles não são otimizados para espaço de armazenamento ou processamento. 
+Os formatos legíveis para dados estruturados e semiestruturados são úteis, mas não são otimizados para espaço de armazenamento ou processamento. Ao longo do tempo, alguns formatos de arquivo que permitem a compactação, a indexação e o armazenamento e o processamento eficientes foram desenvolvidos.
 
-Ao longo do tempo, alguns formatos de arquivo especializados que permitem a compactação, a indexação e o armazenamento e o processamento eficientes foram desenvolvidos.
+- **Avro** - é um formato baseado em linha criado pelo Apache. 
+  - Cada registro contém um cabeçalho que descreve a estrutura dos dados. 
+  - Esse cabeçalho é armazenado como JSON. 
+  - Os dados são armazenados como informações binárias. 
+  - Um aplicativo usa o cabeçalho para analisar os dados binários e extrair os campos contidos neles. 
+  - O Avro é um formato bom para compactar dados e minimizar armazenamento e largura de banda de rede.
 
-- O Avro é um formato baseado em linha. Ele foi criado pelo Apache. Cada registro contém um cabeçalho que descreve a estrutura dos dados no registro. Esse cabeçalho é armazenado como JSON. Os dados são armazenados como informações binárias. Um aplicativo usa as informações no cabeçalho para analisar os dados binários e extrair os campos contidos neles. O Avro é um formato bom para compactar dados e minimizar os requisitos de armazenamento e largura de banda de rede.
-- ORC (Optimized Row Columnar format) organiza os dados em colunas em vez de linhas. Ele foi desenvolvido pela HortonWorks para otimizar as operações de leitura e gravação no Apache Hive (o Hive é um sistema de data warehouse que dá suporte a resumos rápidos de dados e consultas em grandes conjuntos de dados). Um arquivo ORC contém faixas de dados. Cada faixa contém os dados de uma coluna ou conjunto de colunas. Uma faixa contém um índice nas linhas na faixa, os dados de cada linha e um rodapé que contém informações estatísticas (contagem, soma, máximo, mínimo e assim por diante) para cada coluna.
-- O Parquet é outro formato de dados de coluna. Ele foi criado pela Cloudera e pelo Twitter. Um arquivo Parquet contém grupos de linhas. Os dados de cada coluna são armazenados juntos no mesmo grupo de linhas. Cada grupo de linhas contém uma ou mais partes de dados. Um arquivo Parquet inclui metadados que descrevem o conjunto de linhas encontrado em cada parte. Um aplicativo pode usar esses metadados para localizar rapidamente a parte correta de um determinado conjunto de linhas e recuperar os dados nas colunas especificadas para essas linhas. O Parquet é especialista em armazenar e processar tipos de dados aninhados com eficiência. Ele dá suporte a esquemas de codificação e compactação muito eficientes.
+- **ORC (Optimized Row Columnar format)** - organiza os dados em colunas e foi desenvolvido pela HortonWorks para otimizar as operações de leitura e gravação no Apache Hive (sistema de data warehouse que dá suporte a resumos rápidos de dados e consultas em grandes conjuntos de dados). 
+  - Um arquivo ORC contém faixas de dados. 
+  - Cada faixa contém os dados de uma coluna ou conjunto de colunas. 
+  - Uma faixa contém um índice nas linhas na faixa, os dados de cada linha e um rodapé que contém informações estatísticas (contagem, soma, máximo, mínimo e assim por diante) para cada coluna.
+
+- **Parquet** - organiza os dados em colunas e foi criado pela Cloudera e Twitter. 
+  - Um arquivo Parquet contém grupos de linhas. 
+  - Os dados de cada coluna são armazenados juntos no mesmo grupo de linhas. 
+  - Cada grupo de linhas contém uma ou mais partes de dados. 
+  - Um arquivo Parquet inclui metadados que descrevem o conjunto de linhas encontrado em cada parte. 
+  - Um aplicativo pode usar esses metadados para localizar rapidamente a parte correta de um determinado conjunto de linhas e recuperar os dados nas colunas especificadas para essas linhas. 
+  - O Parquet é especialista em armazenar e processar tipos de dados aninhados com eficiência. 
+  - Suporte a esquemas de codificação e compactação muito eficientes.
 
 ### 🔸 Describe types of databases
 
 Um banco de dados é usado para definir um sistema central no qual dados podem ser armazenados e consultados.
 
-Os bancos de dados relacionais são comumente usados para armazenar e consultar dados estruturados. Os dados são armazenados em tabelas que representam entidades (clientes, produtos ou pedidos de venda). Cada instância de uma entidade recebe uma chave primária que a identifica de maneira exclusiva. Essas chaves são usadas para fazer referência à instância da entidade em outras tabelas. Esse uso de chaves para referenciar entidades de dados permite que um banco de dados relacional seja normalizado, o que, em parte, significa a eliminação de valores de dados duplicados. 
+- **Bancos de dados relacionais** são comumente usados para armazenar e consultar dados estruturados. 
+  - Os dados são armazenados em tabelas que representam entidades (clientes, produtos ou pedidos de venda). 
+  - Cada instância de uma entidade recebe uma chave primária que a identifica de maneira exclusiva. 
+    - Essas chaves são usadas para fazer referência à instância da entidade em outras tabelas. 
+    - Esse uso de chaves permite que um banco de dados relacional seja normalizado (eliminação de valores de dados duplicados.)
+  - As tabelas são gerenciadas e consultadas usando SQL (linguagem SQL) que é semelhante entre vários sistemas de banco de dados.
 
-As tabelas são gerenciadas e consultadas usando SQL (linguagem SQL), que se baseia em um padrão ANSII e que, portanto, é semelhante entre vários sistemas de banco de dados.
+- **Bancos de dados não relacionais (NoSQL)** - são sistemas de gerenciamento de dados que não aplicam um esquema relacional aos dados.
 
-### Bancos de dados não relacionais
-
-Os bancos de dados não relacionais (NoSQL) são sistemas de gerenciamento de dados que não aplicam um esquema relacional aos dados.
-
-- **Key-value databases** nos quais cada registro consiste em uma chave exclusiva e um valor associado, que pode estar em qualquer formato.
+- **Key-value databases** - cada registro consiste em uma chave exclusiva e um valor associado (**chave-valor**), que pode estar em qualquer formato.
 
 ![key-value-store](https://docs.microsoft.com/pt-br/training/wwl-data-ai/explore-core-data-concepts/media/key-value-store.png)
 
-- **Document databases**, que são uma forma específica de banco de dados de chave-valor na qual o valor é um documento JSON (em que o sistema é otimizado para análise e consulta).
+- **Document databases** - são uma forma específica de banco de dados de **chave-valor** na qual o valor é um documento JSON (em que o sistema é otimizado para análise e consulta).
 
 ![document-store](https://docs.microsoft.com/en-us/training/wwl-data-ai/explore-core-data-concepts/media/document-store.png)
 
-- **Column family databases**, que podem armazenar dados tabulares que abrangem linhas e colunas; você também pode dividir as colunas em grupos conhecidos como famílias de colunas. Cada família de colunas contém um conjunto de colunas que estão logicamente relacionadas.
+- **Column family databases** - podem armazenar dados tabulares que abrangem linhas e colunas.
+  - Você também pode dividir as colunas em grupos conhecidos como famílias de colunas. 
+  - Cada família de colunas contém um conjunto de colunas que estão logicamente relacionadas.
 
 ![column-family-store](https://docs.microsoft.com/pt-br/training/wwl-data-ai/explore-core-data-concepts/media/column-family-store.png)
 
-- **Graph databases**, que armazenam entidades como nós com links para definir relações entre eles.
+- **Graph databases** - que armazenam entidades como nós com links para definir relações entre eles.
 
 ![graph](https://docs.microsoft.com/pt-br/training/wwl-data-ai/explore-core-data-concepts/media/graph.png)
-
 
 ### Describe common data workloads
 
