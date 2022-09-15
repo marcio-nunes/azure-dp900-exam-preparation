@@ -1,14 +1,14 @@
 # Preparação para o exame Azure DP-900 (WIP)
 
-- Todo conteúdo foi retirado dos módulos e paths do site Microsoft Learn e simulados realizados para fins de estudo.
-- Criei o [Path de estudo para a certificação DP-900](https://docs.microsoft.com/en-us/users/marcio-nunes-silva/collections/jwmdi8nw8r3ze4) e vou atualizando conforme necessidade.
-- Esse resumo não substitui os módulos completos. Recomendo fortemente estudar através dos módulos do MS Learn.
-- Resumo baseado no [Study Guide](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4wsKZ) oficial da Microsoft.
-- [Microsoft Azure training and certifications](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4J5ea)
-- Façam simulados.
+1. Todo conteúdo foi retirado dos módulos e paths do site Microsoft Learn e simulados realizados para fins de estudo.
+2. Criei o [Path de estudo para a certificação DP-900](https://docs.microsoft.com/en-us/users/marcio-nunes-silva/collections/jwmdi8nw8r3ze4) e vou atualizando conforme necessidade.
+3. Esse resumo não substitui os módulos completos. Recomendo fortemente estudar através dos módulos do MS Learn.
+4. Resumo baseado no [Study Guide](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4wsKZ) oficial da Microsoft.
+5. [Microsoft Azure training and certifications](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4J5ea)
+6. Façam simulados.
   - [Microsoft DP-900 practice test](https://esi.microsoft.com/getcertification)
-- [Agendamento do exame de certificação](https://esi.microsoft.com/getcertification).
-- Fiquem a vontade para ajudar a melhorar o conteúdo.
+7. [Agendamento do exame de certificação](https://esi.microsoft.com/getcertification).
+8. Fiquem a vontade para ajudar a melhorar o conteúdo.
 
 Icons: ☁️🔸
 
