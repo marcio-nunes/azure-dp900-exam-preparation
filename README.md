@@ -6,7 +6,7 @@
 - Resumo baseado no [Study Guide](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4wsKZ) oficial da Microsoft.
 - [Microsoft Azure training and certifications](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4J5ea)
 - Façam simulados.
-- [Microsoft DP-900 practice test](https://esi.microsoft.com/getcertification)
+  - [Microsoft DP-900 practice test](https://esi.microsoft.com/getcertification)
 - [Agendamento do exame de certificação](https://esi.microsoft.com/getcertification).
 - Fiquem a vontade para ajudar a melhorar o conteúdo.
 
