@@ -384,25 +384,25 @@ Os engenheiros de dados podem usar o Azure HDInsight para dar suporte a **cargas
 
 ### Azure Stream Analytics
 
-O Azure Stream Analytics é um mecanismo de processamento de fluxo em tempo real que captura um fluxo de dados de uma entrada, aplica uma consulta para extrair e manipular os dados do fluxo de entrada e grava os resultados em uma saída para análise ou processamento adicional.
+O Azure Stream Analytics é um **mecanismo de processamento de fluxo em tempo real** que captura um fluxo de dados de uma entrada, aplica uma consulta para extrair e manipular os dados do fluxo e grava os resultados em uma saída para análise ou processamento adicional.
 
 Os engenheiros de dados podem incorporar o Azure Stream Analytics em arquiteturas de análise de dados que capturam fluxos dados para ingestão em um armazenamento de dados analíticos ou para visualização em tempo real.
 
 ### Azure Data Explorer
 
-O Azure Data Explorer é um serviço autônomo que oferece a mesma consulta de alto desempenho de dados de log e telemetria que o runtime do Azure Synapse Data Explorer no Azure Synapse Analytics.
+O Azure Data Explorer é um serviço autônomo que oferece a mesma **consulta de alto desempenho de dados de log e telemetria** que o runtime do Azure Synapse Data Explorer no Azure Synapse Analytics.
 
-Os analistas de dados podem usar o Azure Data Explorer para consultar e analisar dados que incluem um atributo de carimbo de data/hora, como normalmente é encontrado em arquivos de log e dados de telemetria da IoT (Internet das Coisas).
+Os analistas de dados podem usar o Azure Data Explorer para consultar e analisar dados que incluem um atributo de timestamp, como normalmente é encontrado em arquivos de log e dados de telemetria da IoT (Internet das Coisas).
 
 ### Microsoft Purview
 
-O Microsoft Purview fornece uma solução para governança e descoberta de dados de toda a empresa. Use o Microsoft Purview para criar um mapa de seus dados e acompanhar a linhagem de dados em várias fontes de dados e sistemas, permitindo encontrar dados confiáveis para análise e relatórios.
+O Microsoft Purview fornece uma **solução para governança e descoberta de dados** de toda a empresa. Use o Microsoft Purview para criar um mapa de seus dados e **acompanhar a linhagem de dados** em várias fontes de dados e sistemas, permitindo encontrar dados confiáveis para análise e relatórios.
 
-Os engenheiros de dados podem usar o Microsoft Purview para impor a governança de dados em toda a empresa e garantir a integridade dos dados usados para dar suporte a cargas de trabalho analíticas.
+Os engenheiros de dados podem usar o Microsoft Purview para impor a governança de dados em toda a empresa e **garantir a integridade dos dados** usados para dar suporte a cargas de trabalho analíticas.
 
 ### Microsoft Power BI
 
-O Microsoft Power BI é uma plataforma para modelagem de dados analíticos e relatórios que os analistas de dados podem usar para criar e compartilhar visualizações de dados interativas. Os relatórios do Power BI podem ser criados por meio do aplicativo Power BI Desktop e, em seguida, publicados e fornecidos por meio de relatórios e aplicativos baseados na Web no serviço do Power BI, bem como no aplicativo móvel do Power BI.
+O Microsoft Power BI é uma plataforma para modelagem de dados analíticos e relatórios que os analistas de dados podem usar para **criar e compartilhar visualizações de dados interativas**. Os relatórios do Power BI podem ser criados por meio do aplicativo Power BI Desktop e, em seguida, publicados e fornecidos por meio de relatórios e aplicativos baseados na Web no serviço do Power BI, bem como no aplicativo móvel do Power BI.
 
 ## ☁️ Identify considerations for relational data on Azure (20-25%) 
 
