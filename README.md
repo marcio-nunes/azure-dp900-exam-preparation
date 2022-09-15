@@ -7,7 +7,7 @@
 - [Microsoft Azure training and certifications](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4J5ea)
 - Façam simulados.
 - [Microsoft DP-900 practice test](https://esi.microsoft.com/getcertification)
-- Agendamento do exame de certificação.
+- [Agendamento do exame de certificação](https://esi.microsoft.com/getcertification).
 - Fiquem a vontade para ajudar a melhorar o conteúdo.
 
 Icons: ☁️🔸
@@ -25,41 +25,49 @@ Icons: ☁️🔸
 
 ### 🔸 Describe ways to represent data
 
-Os dados são uma coleção de fatos, como números, descrições e observações usados para registrar informações. As estruturas de dados geralmente representam entidades que são importantes para uma organização (clientes, produtos, pedidos de vendas, etc). Normalmente, cada entidade tem um ou mais atributos ou características (um cliente pode ter um nome, um endereço, um número de telefone, etc).
+- Os dados são uma coleção de fatos, como números, descrições e observações usados para registrar informações. 
+- As estruturas de dados representam entidades de uma organização (clientes, produtos, pedidos de vendas, etc). 
+- Cada entidade tem um ou mais atributos ou características (nome, endereço, número de telefone, etc).
 
 Podemos classificar os dados como estruturados, semiestruturados ou não estruturados.
 
 ### Describe features of structured data
 
-Dados estruturados obedecem a um esquema fixo, portanto, todos os dados têm os mesmos campos ou propriedades e  o esquema para entidades de dados estruturados é tabular. Em outras palavras, os dados são representados em uma ou mais tabelas que consistem em:
-
-- linhas para representar cada instância de uma entidade de dados.
-- colunas para representar os atributos da entidade.
-
-Os dados estruturados geralmente são armazenados em um banco de dados no qual várias tabelas podem referenciar umas às outras usando valores de chave em um modelo relacional.
+- Dados estruturados obedecem a um **esquema fixo**, possuem os mesmos campos ou propriedades
+- O esquema para entidades de dados estruturados é tabular.
+  - linhas representam cada **instância de uma entidade**.
+  - colunas representam os atributos da entidade.
+- Os dados estruturados são armazenados em um banco de dados.
+  - Várias tabelas podem referenciar umas às outras usando valores de chave em um modelo relacional.
 
 ### Describe features of semi-structured
 
-Dados semiestruturados são informações que têm alguma estrutura, mas que permitem alguma variação entre instâncias da entidade. Por exemplo, embora a maioria dos clientes possa ter um endereço de email, alguns podem ter vários endereços de email e outros podem não ter nenhum.
-
-Um formato comum para dados semiestruturados é o JSON (JavaScript Object Notation).
+- Dados semiestruturados são informações que têm alguma estrutura.
+- Permitem alguma **variação entre instâncias da entidade**. 
+  - As entidades podem ter um ou mais endereços de email e outras podem não ter nenhum.
+- Um formato comum para dados semiestruturados é o JSON (JavaScript Object Notation).
 
 > O JSON é apenas uma das muitas maneiras pelas quais os dados semiestruturados podem ser representados.
 
 ### Describe features of unstructured data
 
-Nem todos os dados são estruturados ou até mesmo semiestruturados. Por exemplo, documentos, imagens, dados de áudio e vídeo e arquivos binários podem não ter uma estrutura específica. 
+Nem todos os dados são estruturados ou até mesmo semiestruturados. 
+
+Documentos, imagens, dados de áudio e vídeo e arquivos binários podem não ter uma estrutura específica. 
 
 ### 🔸 Identify options for data storage
 
-As organizações normalmente armazenam dados em formato estruturado, semiestruturado ou não estruturado para registrar detalhes de entidades (por exemplo, clientes e produtos), eventos específicos (como transações de vendas) ou outras informações em documentos, imagens e outros formatos. Os dados armazenados podem ser recuperados para análise e relatórios posteriormente.
+Normalmente os dados são armazenados em formato estruturado, semiestruturado ou não estruturado para registrar e podem ser recuperados para análise e relatórios posteriormente:
+
+- Detalhes de entidades (clientes e produtos)
+- Eventos específicos (como transações de vendas) ou outras informações em documentos
+- Imagens e outros formatos. 
 
 Há duas categorias amplas de armazenamento de dados comuns em uso:
 
 - Armazenamentos de arquivos
+  - São armazenados de maneira centralizada em algum tipo de sistema de compartilhamento de arquivos.
 - Bancos de dados
-
-Na maioria das organizações, arquivos de dados importantes são armazenados de maneira centralizada em algum tipo de sistema de armazenamento de arquivos compartilhado. Cada vez mais, esse local de armazenamento central está sendo hospedado na nuvem.
 
 ### Describe common formats for data files
 
