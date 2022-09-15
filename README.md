@@ -559,38 +559,39 @@ O SQL Server nas Máquinas Virtuais do Azure oferece uma experiência administra
 
 ### Azure SQL Managed Instance
 
-Uma opção de PaaS (plataforma como serviço) que fornece quase 100% de compatibilidade com instâncias de SQL Server locais, abstraindo o hardware e o sistema operacional subjacentes. O serviço inclui gerenciamento automatizado de atualizações de software, backups e outras tarefas de manutenção, reduzindo a carga administrativa do suporte a uma instância de servidor de banco de dados. 
+Uma opção de PaaS (plataforma como serviço) que fornece quase 100% de compatibilidade com instâncias de SQL Server locais, abstraindo o hardware e o sistema operacional subjacentes. O serviço inclui **gerenciamento automatizado** de atualizações de software, backups e outras tarefas de manutenção, **reduzindo a carga administrativa** do suporte a uma instância de servidor de banco de dados. 
 
-- **Compatibilidade** - Quase 100% de compatibilidade com SQL Server. A maioria dos bancos de dados locais pode ser migrada com alterações mínimas no código, usando o serviço Azure Database Migration.
-- **Arquitetura** - Cada instância gerenciada pode dar suporte a vários bancos de dados. Além disso, os pools de instâncias podem ser usados para compartilhar recursos com eficiência em instâncias menores.
+- **Compatibilidade** - Quase 100% de compatibilidade com SQL Server Enterprise Edition. A maioria dos bancos de dados locais pode ser migrada com alterações mínimas no código, usando o serviço Azure Database Migration (ADM).
+- **Arquitetura** - Cada instância gerenciada pode dar suporte a vários bancos de dados. Além disso, os **pools de instâncias** podem ser usados para compartilhar recursos com eficiência em instâncias menores.
 - **Disponibilidade**	- 99,99%
-- **Gerenciamento**	- Atualizações, backups e recuperação totalmente automatizados.
-- **Casos de uso** - Use essa opção para a maioria dos cenários de migração na nuvem, especialmente quando você precisar de alterações mínimas nos aplicativos existentes.
+- **Gerenciamento**	
+  - backups e recuperação totalmente automatizados
+  - aplicação de patch/atualizações de software e OS
+  - monitoramento de banco de dados e outras tarefas gerais, mas você tem controle total sobre a segurança e a alocação de recursos para os seus bancos de dados.
+  - configuração de alta disponibilidade e de fluxo de dados de monitoramento de desempenho e integridade.
+  - redimensionamento e configuração de instâncias dinâmicas
+  - replicação de banco de dados (incluindo banco de dados do sistema)
+- **Casos de uso** - Use essa opção para a maioria dos cenários de migração na nuvem, especialmente quando você precisar de **alterações mínimas** nos aplicativos existentes.
 
-A Instância Gerenciada de SQL automatiza backups, aplicação de patch de software, monitoramento de banco de dados e outras tarefas gerais, mas você tem controle total sobre a segurança e a alocação de recursos para os seus bancos de dados. 
-
-As instâncias gerenciadas dependem de outros serviços do Azure, como o Azure Storage para backups, o Azure Event Hubs para telemetria, o Azure Active Directory para autenticação, o Azure Key Vault para TDE (Transparent Data Encryption) e alguns serviços da plataforma Azure que fornecem recursos de segurança e compatibilidade.
+As instâncias gerenciadas **dependem de outros serviços do Azure**, como o Azure Storage para backups, o Azure Event Hubs para telemetria, o Azure Active Directory para autenticação, o Azure Key Vault para TDE (Transparent Data Encryption) e alguns serviços da plataforma Azure que fornecem recursos de segurança e compatibilidade.
 
 Todas as comunicações são criptografadas e assinadas usando certificados. Para verificar a confiabilidade das partes que se comunicam, as instâncias gerenciadas verificam constantemente esses certificados por meio de listas de certificados revogados. Se os certificados forem revogados, a instância gerenciada fechará as conexões para proteger os dados.
 
-Considere a Instância Gerenciada de SQL do Azure se você quiser fazer o lift-and-shift de uma instância do SQL Server local e todos os seus bancos de dados para a nuvem, sem incorrer na sobrecarga de gerenciamento da execução do SQL Server em uma máquina virtual.
+Considere a Azure SQL Managed Instance se você quiser fazer o **lift-and-shift de uma instância do SQL Server local** e todos os seus bancos de dados para a nuvem, sem incorrer na sobrecarga de gerenciamento da execução do SQL Server em uma máquina virtual. 
 
-A Instância Gerenciada de SQL do Azure fornece recursos que não estão disponíveis no Banco de Dados SQL do Azure. Se o sistema usar recursos como servidores vinculados, Service Broker (um sistema de processamento de mensagens que pode ser usado para distribuir o trabalho entre servidores) ou Database Mail (que permite ao seu banco de dados enviar mensagens de email para os usuários), use a instância gerenciada. Para verificar a compatibilidade com um sistema local existente, instale o AMD (Assistente de Migração de Dados). Essa ferramenta analisa seus bancos de dados no SQL Server e relata problemas que possam bloquear a migração para uma instância gerenciada.
+A Azure SQL Managed Instance é usada para implantação em que você precisa ter paridade de recursos completa com o SQL Server local.
 
-A Instância Gerenciada de SQL do Azure permite que um administrador do sistema gaste menos tempo em tarefas administrativas. As tarefas automatizadas incluem 
-- instalação e aplicação de patches do software do sistema operacional e do sistema de gerenciamento de banco de dados
-- redimensionamento e configuração de instâncias dinâmicas
-- backups
-- replicação de banco de dados (incluindo banco de dados do sistema)
-- configuração de alta disponibilidade e de fluxo de dados de monitoramento de desempenho e integridade.
+A Azure SQL Managed Instance **fornece recursos que não estão disponíveis** no do Azure SQL DB. Se o sistema usar recursos como: 
+- Servidores vinculados
+- Service Broker (um sistema de processamento de mensagens que pode ser usado para distribuir o trabalho entre servidores) 
+- Database Mail (que permite ao seu banco de dados enviar mensagens de email para os usuários)
+- SQL Server Agent
 
-A Instância Gerenciada de SQL do Azure tem quase 100% de compatibilidade com a Edição do SQL Server Enterprise em execução local.
+Para verificar a compatibilidade com um sistema local existente, instale o AMD (Assistente de Migração de Dados). Essa ferramenta analisa seus bancos de dados no SQL Server e relata problemas que possam bloquear a migração para uma instância gerenciada.
 
-A Instância Gerenciada de SQL do Azure dá suporte a logons do Mecanismo de banco de dados do SQL Server e logons integrados ao Azure AD (Active Directory). Os logons do Mecanismo de banco de dados do SQL Server incluem um nome de usuário e uma senha. Você deve inserir suas credenciais sempre que se conectar ao servidor. Os logons do Azure AD usam as credenciais associadas à sua entrada atual do computador e você não precisa fornecê-las sempre que se conectar ao servidor.
-
-@@ A Instância Gerenciada de SQL do Azure é usada para implantação em que você precisa ter paridade de recursos completa com o SQL Server local. Você deve usar uma instância gerenciada se seu banco de dados usar recursos como SQL Server Agent e Database Mail.
-
-@@ A Instância Gerenciada de SQL do Azure é um serviço de Plataforma como Serviço (PaaS). Ele não exige que os clientes gerenciem hardware físico ou sistemas operacionais e inclui atualizações e backup automatizados de software; os clientes normalmente usam esse serviço para migrar sistemas existentes para a nuvem.
+A Azure SQL Managed Instance **dá suporte a logons** do Mecanismo de banco de dados do SQL Server e logons integrados ao Azure AD (Active Directory). 
+- Os logons do Mecanismo de banco de dados do SQL Server incluem um nome de usuário e uma senha. Você deve inserir suas credenciais sempre que se conectar ao servidor. 
+- Os logons do Azure AD usam as credenciais associadas à sua entrada atual do computador e você não precisa fornecê-las sempre que se conectar ao servidor.
 
 ### Azure SQL Database 
 
@@ -637,19 +638,19 @@ O Banco de Dados SQL ajuda a proteger seus dados, fornecendo criptografia que pr
 
 @@ O Banco de Dados SQL do Azure oferece um único banco de dados na nuvem com custo e administração mínimos, no qual você pode criar bancos de dados e tabelas. O Azure gerencia tarefas administrativas, como backup e recuperação. No entanto, o Banco de Dados SQL do Azure não implementa recursos como SQL Server Agent e Database Mail.
 
-@@ O Banco de Dados SQL do Azure tem um custo menor em comparação com a Instância Gerenciada de SQL do Azure. É um banco de dados relacional, projetado para aplicativos em nuvem modernos. É usado por clientes que exigem alta disponibilidade e uma camada de banco de dados escalável para sua nuvem.
+@@ O Banco de Dados SQL do Azure tem um custo menor em comparação com a Azure SQL Managed Instance. É um banco de dados relacional, projetado para aplicativos em nuvem modernos. É usado por clientes que exigem alta disponibilidade e uma camada de banco de dados escalável para sua nuvem.
 
-@@ é um serviço de plataforma como serviço (PaaS). Embora a Instância Gerenciada de SQL do Azure também seja um serviço de PaaS, o Banco de Dados SQL do Azure elimina mais tarefas administrativas, como remover a necessidade de gerenciar a configuração do SQL Server.
+@@ é um serviço de plataforma como serviço (PaaS). Embora a Azure SQL Managed Instance também seja um serviço de PaaS, o Banco de Dados SQL do Azure elimina mais tarefas administrativas, como remover a necessidade de gerenciar a configuração do SQL Server.
 
 @@ oferece 99,995% de tempo de atividade
 
-@@ O Banco de Dados SQL do Azure não é totalmente compatível com instalações locais do SQL Server. Alguns recursos estão disponíveis no SQL Server local que não estão disponíveis no Banco de Dados SQL do Azure. A Instância Gerenciada de SQL do Azure oferece quase 100% de compatibilidade, pois possui opções de configuração adicionais, enquanto o SQL Server em Máquinas Virtuais do Azure é totalmente compatível, pois permite o nível mais granular de configuração do usuário.
+@@ O Banco de Dados SQL do Azure não é totalmente compatível com instalações locais do SQL Server. Alguns recursos estão disponíveis no SQL Server local que não estão disponíveis no Banco de Dados SQL do Azure. A Azure SQL Managed Instance oferece quase 100% de compatibilidade, pois possui opções de configuração adicionais, enquanto o SQL Server em Máquinas Virtuais do Azure é totalmente compatível, pois permite o nível mais granular de configuração do usuário.
 
 @@ O Banco de Dados SQL do Azure não permite controle total sobre o mecanismo do SQL Server. O Banco de Dados SQL do Azure executa algumas tarefas para o usuário, como realizar backups e instalar patches, mas apenas o SQL Server nas Máquinas Virtuais do Azure permite controle total sobre o mecanismo. Isso ocorre porque o SQL Server nas Máquinas Virtuais do Azure é um serviço de infraestrutura como serviço (IaaS), que exige que os usuários gerenciem sistemas operacionais.
 
-@@ O Banco de Dados SQL do Azure não dá suporte ao Database Mail. Esse recurso, que permite que o banco de dados envie mensagens de email aos usuários, não está disponível no Banco de Dados SQL do Azure. No entanto, é oferecido na Instância Gerenciada de SQL do Azure e no SQL Server em Máquinas Virtuais do Azure.
+@@ O Banco de Dados SQL do Azure não dá suporte ao Database Mail. Esse recurso, que permite que o banco de dados envie mensagens de email aos usuários, não está disponível no Banco de Dados SQL do Azure. No entanto, é oferecido na Azure SQL Managed Instance e no SQL Server em Máquinas Virtuais do Azure.
 
-@@ O Banco de Dados SQL do Azure é um serviço de Plataforma como Serviço (PaaS). Semelhante à Instância Gerenciada de SQL do Azure, esta é uma solução totalmente gerenciada que lida com backups, monitoramento e atualizações para o cliente. Os clientes usam esse serviço como uma camada de dados de alta disponibilidade para seus sistemas baseados em nuvem.
+@@ O Banco de Dados SQL do Azure é um serviço de Plataforma como Serviço (PaaS). Semelhante à Azure SQL Managed Instance, esta é uma solução totalmente gerenciada que lida com backups, monitoramento e atualizações para o cliente. Os clientes usam esse serviço como uma camada de dados de alta disponibilidade para seus sistemas baseados em nuvem.
 
 ### Azure SQL Edge 
 
