@@ -593,7 +593,7 @@ A Azure SQL Managed Instance **dá suporte a logons** do Mecanismo de banco de d
 - Os logons do Mecanismo de banco de dados do SQL Server incluem um nome de usuário e uma senha. Você deve inserir suas credenciais sempre que se conectar ao servidor. 
 - Os logons do Azure AD usam as credenciais associadas à sua entrada atual do computador e você não precisa fornecê-las sempre que se conectar ao servidor.
 
-### Azure SQL Database  @@@@@@marcio-nunes
+### Azure SQL Database  @@@@@marcio-nunes
 
 Um serviço de banco de dados de PaaS totalmente gerenciado e altamente escalonável projetado para a nuvem. Esse serviço inclui os principais recursos de nível de banco de dados do SQL Server local e é uma boa opção se você precisa criar um aplicativo na nuvem.
 
