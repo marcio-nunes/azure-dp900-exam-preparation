@@ -12,8 +12,6 @@
 
 Icons: ☁️🔸
 
-@@
-
 ## Skills measured
 
 - Describe core data concepts (25–30%)
