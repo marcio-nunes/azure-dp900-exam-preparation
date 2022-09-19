@@ -1,4 +1,4 @@
-# Preparação para o exame Azure DP-900 (WIP)
+# <a name="topo"></a>Preparação para o exame Azure DP-900 (WIP)
 
 1. Todo conteúdo foi retirado dos módulos e paths do site Microsoft Learn e simulados realizados para fins de estudo.
 2. Criei o [Path de estudo para a certificação DP-900](https://docs.microsoft.com/en-us/users/marcio-nunes-silva/collections/jwmdi8nw8r3ze4) e vou atualizando conforme necessidade.
@@ -402,6 +402,8 @@ Os engenheiros de dados podem usar o Microsoft Purview para impor a governança 
 
 O Microsoft Power BI é uma plataforma para modelagem de dados analíticos e relatórios que os analistas de dados podem usar para **criar e compartilhar visualizações de dados interativas**. Os relatórios do Power BI podem ser criados por meio do aplicativo Power BI Desktop e, em seguida, publicados e fornecidos por meio de relatórios e aplicativos baseados na Web no serviço do Power BI, bem como no aplicativo móvel do Power BI.
 
+🔝 [Voltar ao topo](#topo)
+
 ## <a name="identify-considerations-for-relational-data-on-azure-20-25"></a> ☁️ Identify considerations for relational data on Azure (20-25%) 
 
 ### 🔸 Describe relational concepts
@@ -703,6 +705,8 @@ Os usuários do PostgreSQL conhecerão a ferramenta pgAdmin, que você pode usar
 
 O Banco de Dados do Azure para PostgreSQL registra informações sobre as consultas executadas e as salva em um banco de dados chamado azure_sys. Consulte a view query_store.qs_view para para monitorar as consultas que os usuários estão executando e verificar se precisa ajustar as consultas executadas por seus aplicativos.
 
+🔝 [Voltar ao topo](#topo)
+
 ## <a name="describe-considerations-for-working-with-non-relational-data-on-azure-15-20"></a> ☁️ Describe considerations for working with non-relational data on Azure (15-20%)
 
 ### 🔸 Describe capabilities of Azure storage
@@ -843,6 +847,7 @@ g.V('3').addE('reports to').to(g.V('1'))
 # resultado
 g.V().hasLabel('employee').order().by('id')
 ```
+🔝 [Voltar ao topo](#topo)
 
 ## <a name="describe-an-analytics-workload-on-azure-25-30"></a> ☁️ Describe an analytics workload on Azure (25-30%)
 
@@ -1143,3 +1148,5 @@ Os mapas são uma ótima maneira de comparar visualmente valores para diferentes
 ### Relatórios interativos no Power BI
 
 No Power BI, os elementos visuais para dados relacionados em um relatório são vinculados automaticamente uns aos outros e fornecem interatividade. Por exemplo, selecionar uma categoria individual em uma visualização filtrará e destacará automaticamente essa categoria em outras visualizações relacionadas no relatório. 
+
+🔝 [Voltar ao topo](#topo)
