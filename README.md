@@ -918,6 +918,8 @@ Há dois tipos comuns de armazenamento de dados analíticos.
 
 - **Azure HDInsight** - é um serviço do Azure que dá suporte a vários **tipos de cluster de análise de dados de código aberto**. Embora não seja tão amigável quanto o Azure Synapse Analytics e o Azure Databricks, ele poderá ser uma opção adequada se sua solução de análise se basear em várias estruturas de código-fonte aberto ou se você precisar migrar uma solução local existente baseada em Hadoop para a nuvem.
 
+- **Azure Data Factory** - é um serviço do Azure que permite definir e agendar pipelines de dados para transferir e transformar dados. Você pode integrar seus pipelines a outros serviços do Azure. A ingestão de dados é o processo de combinar seus dados estruturados, semiestruturados e não estruturados em um armazenamento de dados comum. O Azure Data Factory foi projetado especificamente para fornecer suporte de ponta a ponta para operações de extraction-transform-load (ETL) para carregamento de dados do data warehouse. Frequentemente, mover dados para um data warehouse requer limpeza e transformação mais agressivas do que as suportadas pelo Data Factory.
+
 > Cada um desses serviços pode ser pensado como um armazenamento de dados analíticos, no sentido de que eles fornecem um esquema e uma interface por meio dos quais os dados podem ser consultados. No entanto, em muitos casos, os dados são armazenados em um data lake e o serviço é usado para processar os dados e executar consultas. Algumas soluções podem até combinar o uso desses serviços. 
 
 ### 🔸 Describe consideration for real-time data analytics
