@@ -806,6 +806,13 @@ O Cosmos DB é um sistema de gerenciamento de banco de dados altamente escaloná
 
 A API de tabela do Cosmos DB dá suporte a gravações em várias regiões e réplicas de leitura. Você pode configurar réplicas de leitura em uma conta do Cosmos DB para várias regiões, incluindo suporte para criar gravações multirregionais.
 
+Uma Azure Cosmos Account está no topo da hierarquia de recursos. Você deve ter isso antes de criar uma instância de banco de dados do Azure Cosmos DB. Você pode então criar contêineres específicos de API, como tabelas, coleções ou grafos. Você cria itens, as entidades para as quais está armazenando dados, dentro de um contêiner. Os exemplos incluem documentos, nós, edges ou linhas.
+
+- Azure Cosmos Account
+  - Database
+    - Container
+      - Item
+
 ### Identify use cases for Azure Cosmos DB
 
 O Cosmos DB é altamente adequado para os seguintes cenários:
@@ -843,13 +850,13 @@ db.products.find({id: 123})
 https://endpoint/Customers(PartitionKey='1',RowKey='124')
 ```
 
-- **Cassandra API** - O API do Cassandra é compatível com o Apache Cassandra, que é um banco de dados de software livre popular que usa uma estrutura de armazenamento de famílias de colunas. As famílias de colunas são tabelas, semelhantes àquelas em um banco de dados relacional, com a exceção de que não é obrigatório que cada linha tenha as mesmas colunas. O Cassandra dá suporte a uma sintaxe baseada em SQL.
+- **Cassandra API** - O API do Cassandra é compatível com o Apache Cassandra, que é um banco de dados de software livre que usa uma estrutura de armazenamento de famílias de colunas. As famílias de colunas são tabelas, semelhantes àquelas em um banco de dados relacional, com a exceção de que não é obrigatório que cada linha tenha as mesmas colunas. O Cassandra dá suporte a uma sintaxe baseada em SQL.
 
 - **Gremlin API** - A API do Gremlin é usada com os **dados em uma estrutura de grafo**, na qual as entidades são definidas como vértices que formam nós (nodes) no grafo conectado. Os nós são conectados por bordas (edges) que representam relações, desta forma:
-  - Os nós representam instâncias de entidades de dados, como pessoas individuais. Os nós são análogos a linhas em uma tabela em um banco de dados relacional.
+  - Os nodes representam instâncias de entidades de dados, como pessoas individuais. Os nós são análogos a linhas em uma tabela em um banco de dados relacional.
   - As Edges representam os relacionamentos entre os nós; eles também são chamados de grafos ou relacionamentos. As Edges podem ser direcionadas ou não direcionadas, dependendo da estrutura do banco de dados individual.
   - Propriedades representam atributos de dados em relação a um nó. As propriedades são análogas às colunas em uma tabela em um banco de dados relacional. No entanto, lembre-se de que os bancos de dados NoSQL permitem flexibilidade nos atributos armazenados em um nó. Por exemplo, um nó pode ter muitas instâncias de um único atributo ou pode estar ausente.
-  - As direções são uma propriedade de uma Edge. As Edges podem ser direcionadas ou não direcionadas. As Edges direcionadas armazenam duas informações relacionadas a cada um dos nós que conectam. Por exemplo, uma Edge direcionada pai/filho armazenaria qual nó pessoa representa o pai e qual o filho. As Edges não direcionadas unem os nós, onde a direção do relacionamento não importa; por exemplo, uma amizade entre duas pessoas.
+  - As directions são uma propriedade de uma Edge. As Edges podem ser direcionadas ou não direcionadas. As Edges direcionadas armazenam duas informações relacionadas a cada um dos nós que conectam. Por exemplo, uma Edge direcionada pai/filho armazenaria qual nó pessoa representa o pai e qual o filho. As Edges não direcionadas unem os nós, onde a direção do relacionamento não importa; por exemplo, uma amizade entre duas pessoas.
 
 ![graph](https://docs.microsoft.com/pt-br/training/wwl-data-ai/explore-non-relational-data-stores-azure/media/graph.png)
 
@@ -913,7 +920,7 @@ Há dois tipos comuns de armazenamento de dados analíticos.
   - **Azure Synapse Studio** - **interface única e interativa para gerenciamento** de todos os Azure Synapse Analytics, capacidade de criar notebooks interativos nos quais o código Spark e o conteúdo de markdown podem ser combinados. 
 
 - **Azure Databricks** - é uma solução abrangente de **análise de dados** criada com base no Apache Spark e que oferece funcionalidades nativas de SQL, bem como clusters Spark otimizados para carga de trabalho para análise de dados e ciência de dados. 
-  - fornece uma interface interativa do usuário por meio da qual o sistema pode ser gerenciado e os dados podem ser explorados em notebooks interativos. 
+  - fornece uma interface interativa do usuário por meio da qual o sistema pode ser gerenciado e os dados podem ser explorados em notebooks interativos e data visualizations.
   - Devido ao seu uso comum em várias plataformas de nuvem, talvez você queira considerar o uso dele como seu repositório analítico ou se precisar operar em um ambiente de várias nuvens ou dar suporte a uma solução portátil em nuvem.
 
 - **Azure HDInsight** - é um serviço do Azure que dá suporte a vários **tipos de cluster de análise de dados de código aberto**. Embora não seja tão amigável quanto o Azure Synapse Analytics e o Azure Databricks, ele poderá ser uma opção adequada se sua solução de análise se basear em várias estruturas de código-fonte aberto ou se você precisar migrar uma solução local existente baseada em Hadoop para a nuvem.
