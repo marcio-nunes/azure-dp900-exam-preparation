@@ -14,12 +14,12 @@ Icons: ☁️🔸
 
 ## Skills measured
 
-- [Describe core data concepts (25-30%)](#☁️-describe-core-data-concepts-25-30)
-- [Identify considerations for relational data on Azure (20-25%)](#☁️-identify-considerations-for-relational-data-on-azure-20-25)
-- [Describe considerations for working with non-relational data on Azure (15-20%)](#☁️-describe-considerations-for-working-with-non-relational-data-on-azure-15-20)
-- [Describe an analytics workload on Azure (25-30%)](#☁️-describe-an-analytics-workload-on-azure-25-30)
+- [Describe core data concepts (25-30%)](#describe-core-data-concepts-25-30)
+- [Identify considerations for relational data on Azure (20-25%)](#identify-considerations-for-relational-data-on-azure-20-25)
+- [Describe considerations for working with non-relational data on Azure (15-20%)](#describe-considerations-for-working-with-non-relational-data-on-azure-15-20)
+- [Describe an analytics workload on Azure (25-30%)](#describe-an-analytics-workload-on-azure-25-30)
 
-## ☁️ Describe core data concepts (25-30%)
+## <a name="describe-core-data-concepts-25-30"></a> ☁️ Describe core data concepts (25-30%)
 
 ### 🔸 Describe ways to represent data
 
@@ -402,7 +402,7 @@ Os engenheiros de dados podem usar o Microsoft Purview para impor a governança 
 
 O Microsoft Power BI é uma plataforma para modelagem de dados analíticos e relatórios que os analistas de dados podem usar para **criar e compartilhar visualizações de dados interativas**. Os relatórios do Power BI podem ser criados por meio do aplicativo Power BI Desktop e, em seguida, publicados e fornecidos por meio de relatórios e aplicativos baseados na Web no serviço do Power BI, bem como no aplicativo móvel do Power BI.
 
-## ☁️ Identify considerations for relational data on Azure (20-25%) 
+## <a name="identify-considerations-for-relational-data-on-azure-20-25"></a> ☁️ Identify considerations for relational data on Azure (20-25%) 
 
 ### 🔸 Describe relational concepts
 
@@ -703,7 +703,7 @@ Os usuários do PostgreSQL conhecerão a ferramenta pgAdmin, que você pode usar
 
 O Banco de Dados do Azure para PostgreSQL registra informações sobre as consultas executadas e as salva em um banco de dados chamado azure_sys. Consulte a view query_store.qs_view para para monitorar as consultas que os usuários estão executando e verificar se precisa ajustar as consultas executadas por seus aplicativos.
 
-## ☁️ Describe considerations for working with non-relational data on Azure (15-20%)
+## <a name="describe-considerations-for-working-with-non-relational-data-on-azure-15-20"></a> ☁️ Describe considerations for working with non-relational data on Azure (15-20%)
 
 ### 🔸 Describe capabilities of Azure storage
 
@@ -844,7 +844,7 @@ g.V('3').addE('reports to').to(g.V('1'))
 g.V().hasLabel('employee').order().by('id')
 ```
 
-## ☁️ Describe an analytics workload on Azure (25-30%)
+## <a name="describe-an-analytics-workload-on-azure-25-30"></a> ☁️ Describe an analytics workload on Azure (25-30%)
 
 ### 🔸 Describe common elements of large-scale analytics
 
