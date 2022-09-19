@@ -595,15 +595,15 @@ A Azure SQL Managed Instance **dá suporte a logons** do Mecanismo de banco de d
 
 ### Azure SQL Database  @@@@@marcio-nunes
 
-Um serviço de banco de dados de PaaS totalmente gerenciado e altamente escalonável projetado para a nuvem. Esse serviço inclui os principais recursos de nível de banco de dados do SQL Server local e é uma boa opção se você precisa criar um aplicativo na nuvem.
+Um serviço de banco de dados de PaaS totalmente gerenciado e altamente escalonável. Esse serviço inclui os principais recursos de nível de banco de dados do SQL Server local e é uma boa opção se você precisa criar um aplicativo na nuvem.
 
-  - **Compatibilidade** - Dá suporte à maioria dos principais recursos de nível de banco de dados do SQL Server. Alguns recursos que dependem de um aplicativo local podem não estar disponíveis.
-  - **Arquitetura** - Você pode provisionar um banco de dados individual em um servidor dedicado e gerenciado (lógico) ou você pode usar um pool elástico para compartilhar recursos entre vários bancos de dados para aproveitar a escalabilidade sob demanda.
-  - **Disponibilidade**	- 99,995%
-  - **Gerenciamento**	- Atualizações, backups e recuperação totalmente automatizados.
-  - **Casos de uso** - Use essa opção para novas soluções de nuvem ou para migrar aplicativos que têm dependências mínimas no nível da instância.
-
-O Banco de Dados SQL do Azure está disponível como um Banco de Dados Individual ou um Pool Elástico.
+||Azure SQL Database|
+|-|-|
+|Compatibilidade|Dá suporte à maioria dos principais recursos de nível de banco de dados do SQL Server. Alguns **recursos que dependem de um aplicativo local podem não estar disponíveis**.|
+|Arquitetura|Você pode provisionar um banco de dados individual em um servidor dedicado e gerenciado (lógico) ou você pode usar um **pool elástico para compartilhar recursos** entre vários bancos de dados para aproveitar a escalabilidade sob demanda.|
+|Disponibilidade|99,995%|
+|Gerenciamento|Atualizações, backups e recuperação totalmente automatizados.|
+|Casos de uso|Use essa opção para novas soluções de nuvem ou migrar aplicativos que têm dependências mínimas no nível da instância.|
 
 > O Servidor do Banco de Dados SQL é um constructo lógico que atua como um ponto administrativo central para um banco de dados individual ou em pool, logons, regras de firewall, regras de auditoria, políticas de detecção de ameaças e grupos de failover.
 
@@ -613,17 +613,17 @@ O Banco de Dados SQL do Azure está disponível como um Banco de Dados Individua
   - Também é possível especificar uma configuração sem servidor. Nessa configuração é criado um servidor próprio, que pode ser compartilhado por bancos de dados pertencentes a outros assinantes do Azure. A Microsoft garante a privacidade do seu banco de dados. 
   - O banco de dados é dimensionado automaticamente e os recursos são alocados ou desalocados conforme necessário.
 
-- **Elastic Pool** - Essa opção é semelhante ao Banco de Dados Individual. No entanto, por padrão, vários bancos de dados podem compartilhar os mesmos recursos por meio de multilocação. Os recursos são chamados de pool. Você cria o pool e somente seus bancos de dados podem usá-lo. Esse modelo será útil se você tiver bancos de dados com requisitos de recursos que variam ao longo do tempo. Além disso, ajuda a economizar. O Pool Elástico permite usar os recursos disponíveis no pool e liberá-los após a conclusão do processamento.
+- **Elastic Pool** - Essa opção é semelhante ao Banco de Dados Individual. No entanto, por padrão, vários bancos de dados podem compartilhar os mesmos recursos por meio de multilocação. Os recursos são chamados de pool. Você cria o pool e somente seus bancos de dados podem usá-lo. Esse modelo será útil se você tiver bancos de dados com **requisitos de recursos que variam ao longo do tempo**. Além disso, ajuda a economizar. O Pool Elástico permite usar os recursos disponíveis no pool e liberá-los após a conclusão do processamento.
 
-O Banco de Dados SQL do Azure oferece a melhor opção de baixo custo com administração mínima. Não é totalmente compatível com as instalações locais do SQL Server. Geralmente, é usada em novos projetos de nuvem em que o design do aplicativo pode acomodar as alterações necessárias em seus aplicativos.
+O Azure SQL Database oferece a **melhor opção de baixo custo com administração mínima**. Não é totalmente compatível com as instalações locais do SQL Server. Geralmente, é usada em novos projetos de nuvem em que o design do aplicativo pode acomodar as alterações necessárias em seus aplicativos.
 
-O Banco de Dados SQL do Azure é muito usado para:
+O Azure SQL Database é muito usado para:
 
-- Aplicativos de nuvem modernos que precisam usar os recursos estáveis de SQL Server mais recentes.
+- Aplicativos de nuvem modernos que precisam usar os **recursos estáveis de SQL Server mais recentes**.
 - Aplicativos que exigem alta disponibilidade.
-- Sistemas com uma carga variável que precisam do servidor de banco de dados para escalar e reduzir verticalmente de modo rápido.
+- Sistemas com uma **carga variável** que precisam do servidor de banco de dados para **escalar e reduzir verticalmente** de modo rápido.
 
-O Banco de Dados SQL do Azure é compatível com a restauração pontual, o que permite recuperar um banco de dados para o estado em que estava em qualquer ponto no passado. É possível replicar bancos de dados para regiões diferentes para fornecer mais resiliência e recuperação de desastre.
+O Azure SQL Database é compatível com a restauração pontual, o que permite recuperar um banco de dados para o estado em que estava em qualquer ponto no passado. É possível replicar bancos de dados para regiões diferentes para fornecer mais resiliência e recuperação de desastre.
 
 A proteção avançada contra ameaças (Advanced threat protection) fornece recursos de segurança avançados:
 
@@ -632,25 +632,23 @@ A proteção avançada contra ameaças (Advanced threat protection) fornece recu
 - Monitora continuamente o banco de dados com relação a atividades suspeitas e fornece alertas de segurança imediatos sobre possíveis vulnerabilidades, ataques de injeção de SQL e padrões de acesso anormal do banco de dados. 
 - Os alertas da proteção contra ameaças fornecem detalhes de atividades suspeitas e recomendam ações para investigar e atenuar a ameaça.
 
-A auditoria rastreia eventos de banco de dados e os grava em um log de auditoria na Azure storage account. A auditoria pode ajudar você a manter uma conformidade regulatória, a entender a atividade do banco de dados e a obter informações sobre discrepâncias e anomalias que poderiam indicar preocupações de negócios ou suspeitas de violações de segurança.
+A auditoria rastreia eventos de banco de dados e os grava em um log de auditoria na Azure storage account. Pode ajudar a manter uma conformidade regulatória, a entender a atividade do banco de dados e a obter informações sobre discrepâncias e anomalias que poderiam indicar preocupações de negócios ou suspeitas de violações de segurança.
 
 O Banco de Dados SQL ajuda a proteger seus dados, fornecendo criptografia que protege os dados armazenados no banco de dados (em repouso) e enquanto está sendo transferido pela rede (em movimento).
 
-@@ O Banco de Dados SQL do Azure oferece um único banco de dados na nuvem com custo e administração mínimos, no qual você pode criar bancos de dados e tabelas. O Azure gerencia tarefas administrativas, como backup e recuperação. No entanto, o Banco de Dados SQL do Azure não implementa recursos como SQL Server Agent e Database Mail.
+O Azure SQL Database oferece um único banco de dados na nuvem com custo e administração mínimos. O Azure gerencia tarefas administrativas, como backup e recuperação. No entanto, não implementa recursos como SQL Server Agent e Database Mail.
 
-@@ O Banco de Dados SQL do Azure tem um custo menor em comparação com a Azure SQL Managed Instance. É um banco de dados relacional, projetado para aplicativos em nuvem modernos. É usado por clientes que exigem alta disponibilidade e uma camada de banco de dados escalável para sua nuvem.
+@@ O Azure SQL Database tem um custo menor em comparação com a Azure SQL Managed Instance. É um banco de dados relacional, projetado para aplicativos em nuvem modernos. É usado por clientes que exigem alta disponibilidade e uma camada de banco de dados escalável para sua nuvem.
 
-@@ é um serviço de plataforma como serviço (PaaS). Embora a Azure SQL Managed Instance também seja um serviço de PaaS, o Banco de Dados SQL do Azure elimina mais tarefas administrativas, como remover a necessidade de gerenciar a configuração do SQL Server.
+@@ É um serviço de plataforma como serviço (PaaS). Embora a Azure SQL Managed Instance também seja PaaS, o Azure SQL Database elimina mais tarefas administrativas, como remover a necessidade de gerenciar a configuração do SQL Server.
 
-@@ oferece 99,995% de tempo de atividade
+@@ oferece 99,995% de tempo de atividade.
 
-@@ O Banco de Dados SQL do Azure não é totalmente compatível com instalações locais do SQL Server. Alguns recursos estão disponíveis no SQL Server local que não estão disponíveis no Banco de Dados SQL do Azure. A Azure SQL Managed Instance oferece quase 100% de compatibilidade, pois possui opções de configuração adicionais, enquanto o SQL Server em Máquinas Virtuais do Azure é totalmente compatível, pois permite o nível mais granular de configuração do usuário.
+@@ O Azure SQL Database não é totalmente compatível com instalações locais do SQL Server. Alguns recursos estão disponíveis no SQL Server local que não estão disponíveis no Azure SQL Database. A Azure SQL Managed Instance oferece quase 100% de compatibilidade, pois possui opções de configuração adicionais, enquanto o SQL Server em Máquinas Virtuais do Azure é totalmente compatível, pois permite o nível mais granular de configuração do usuário.
 
-@@ O Banco de Dados SQL do Azure não permite controle total sobre o mecanismo do SQL Server. O Banco de Dados SQL do Azure executa algumas tarefas para o usuário, como realizar backups e instalar patches, mas apenas o SQL Server nas Máquinas Virtuais do Azure permite controle total sobre o mecanismo. Isso ocorre porque o SQL Server nas Máquinas Virtuais do Azure é um serviço de infraestrutura como serviço (IaaS), que exige que os usuários gerenciem sistemas operacionais.
+@@ O Azure SQL Database não permite controle total sobre o mecanismo do SQL Server. Ele executa algumas tarefas para o usuário, como realizar backups e instalar patches, mas apenas o SQL Server nas Máquinas Virtuais do Azure permite controle total sobre o mecanismo. Isso ocorre porque é um serviço de infraestrutura como serviço (IaaS), que exige que os usuários gerenciem sistemas operacionais.
 
-@@ O Banco de Dados SQL do Azure não dá suporte ao Database Mail. Esse recurso, que permite que o banco de dados envie mensagens de email aos usuários, não está disponível no Banco de Dados SQL do Azure. No entanto, é oferecido na Azure SQL Managed Instance e no SQL Server em Máquinas Virtuais do Azure.
-
-@@ O Banco de Dados SQL do Azure é um serviço de Plataforma como Serviço (PaaS). Semelhante à Azure SQL Managed Instance, esta é uma solução totalmente gerenciada que lida com backups, monitoramento e atualizações para o cliente. Os clientes usam esse serviço como uma camada de dados de alta disponibilidade para seus sistemas baseados em nuvem.
+@@ O Azure SQL Database não dá suporte ao Database Mail. Esse recurso, que permite que o banco de dados envie mensagens de email aos usuários, não está disponível. No entanto, é oferecido na Azure SQL Managed Instance e no SQL Server em Máquinas Virtuais do Azure.
 
 ### Azure SQL Edge 
 
