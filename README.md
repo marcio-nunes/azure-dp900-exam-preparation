@@ -962,7 +962,7 @@ Fontes para processamento de stream:
 
 - **Apache Kafka**: uma solução de ingestão de dados de código aberto que é comumente usada em conjunto com o Apache Spark. Você pode usar o Azure HDInsight para criar um cluster Kafka.
 
-Coletores para processamento de fluxo:
+Coletores (sinks) para processamento de fluxo:
 
 A saída do processamento de fluxo geralmente é enviada para os seguintes serviços:
 
