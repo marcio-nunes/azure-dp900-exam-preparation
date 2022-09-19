@@ -47,6 +47,8 @@ Podemos classificar os dados como estruturados, semiestruturados ou não estrutu
 
 > O JSON é apenas uma das muitas maneiras pelas quais os dados semiestruturados podem ser representados.
 
+Dados semiestruturados com cada entidade fornecendo suas próprias definições de campo são uma descrição de dados de tipo documento e, portanto, um armazenamento de documentos é sua melhor escolha. Os documentos são escritos e recuperados como documentos completos. As definições de campo incorporadas possibilitam consultar documentos para recuperar valores de campo. Normalmente, você usaria uma solução de armazenamento do Azure Cosmos DB.
+
 ### Describe features of unstructured data
 
 Nem todos os dados são estruturados ou até mesmo semiestruturados. 
@@ -843,7 +845,7 @@ https://endpoint/Customers(PartitionKey='1',RowKey='124')
   - As Edges representam os relacionamentos entre os nós; eles também são chamados de grafos ou relacionamentos. As Edges podem ser direcionadas ou não direcionadas, dependendo da estrutura do banco de dados individual.
   - Propriedades representam atributos de dados em relação a um nó. As propriedades são análogas às colunas em uma tabela em um banco de dados relacional. No entanto, lembre-se de que os bancos de dados NoSQL permitem flexibilidade nos atributos armazenados em um nó. Por exemplo, um nó pode ter muitas instâncias de um único atributo ou pode estar ausente.
   - As direções são uma propriedade de uma Edge. As Edges podem ser direcionadas ou não direcionadas. As Edges direcionadas armazenam duas informações relacionadas a cada um dos nós que conectam. Por exemplo, uma Edge direcionada pai/filho armazenaria qual nó pessoa representa o pai e qual o filho. As Edges não direcionadas unem os nós, onde a direção do relacionamento não importa; por exemplo, uma amizade entre duas pessoas.
-  
+
 ![graph](https://docs.microsoft.com/pt-br/training/wwl-data-ai/explore-non-relational-data-stores-azure/media/graph.png)
 
 A sintaxe do Gremlin inclui funções para operar em vértices e bordas, permitindo que você insira, atualize, exclua e consulte dados no grafo. Por exemplo, você pode usar o código a seguir para adicionar um novo funcionário chamado Alice que relata ao funcionário com a ID 1 (Suzana).
