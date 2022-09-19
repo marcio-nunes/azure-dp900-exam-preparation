@@ -1052,6 +1052,96 @@ LogEvents
 
 ### 🔸 Describe data visualization in Microsoft Power BI
 
-- Identify capabilities of Power BI
-- Describe features of data models in Power BI
-- Identify appropriate visualizations for data
+A modelagem e a visualização de dados são aspectos centrais das cargas de trabalho de BI (business intelligence) com suporte de soluções de análise de dados de grande escala. Basicamente, a visualização de dados capacita relatórios e tomada de decisões que ajudam a garantir o sucesso das organizações.
+
+### Identify capabilities of Power BI
+
+O Microsoft Power BI é um conjunto de ferramentas e serviços que os analistas de dados podem usar para criar visualizações de dados interativas para os usuários empresariais consumirem.
+
+- **Power BI Desktop**, um aplicativo no qual você pode importar dados de uma ampla variedade de fontes de dados, combinar e organizar os dados dessas fontes em um modelo de dados de análise e criar relatórios contendo visualizações interativas dos dados.
+
+- **Power BI service** - um serviço de nuvem no qual os relatórios podem ser publicados e usados por usuários empresariais. Você também pode fazer modelagem de dados e edição de relatório de nível básico diretamente no serviço usando um navegador da Web, mas a funcionalidade para isso é limitada em comparação com a ferramenta Power BI Desktop. Você pode usar o serviço para agendar atualizações das fontes de dados nas quais os relatórios se baseiam e compartilhar relatórios com outros usuários. Você também pode definir dashboards e aplicativos que combinam relatórios relacionados em um só local de fácil consumo.
+
+> Os usuários podem consumir relatórios, dashboards e aplicativos no serviço do Power BI por meio de um navegador da Web ou em dispositivos móveis usando o aplicativo Power BI para telefone.
+
+### Describe features of data models in Power BI
+
+Os modelos analíticos permitem estruturar dados para dar suporte à análise. Os modelos são baseados em tabelas de dados relacionadas e definem os valores numéricos que você deseja analisar ou relatar (medidas ou measures) e as entidades que serão usadas para fazer a agregação (dimensões ou dimensions). 
+
+Por exemplo, um modelo pode incluir uma tabela contendo medidas numéricas para vendas (como receita ou quantidade) e dimensões para produtos, clientes e tempo. Isso permite agregar medidas de venda em uma ou mais dimensões (por exemplo, para identificar a receita total por cliente ou o total de itens vendidos por produto, por mês).
+
+Conceitualmente, o modelo forma uma estrutura multidimensional, que normalmente é conhecida como cubo, no qual qualquer ponto em que as dimensões se cruzam representa uma medida agregada para essas dimensões.
+
+### Tabelas e esquema
+
+As tabelas de dimensões representam as entidades pelas quais as medidas numéricas são agregadas. Por exemplo, produto ou cliente. 
+
+Cada entidade é representada por uma linha com um valor de chave exclusivo. As colunas restantes representam atributos de uma entidade. É comum que os modelos analíticos incluam uma dimensão de tempo para agregar medidas numéricas associadas a eventos ao longo do tempo.
+
+As medidas numéricas que serão agregadas pelas várias dimensões no modelo são armazenadas em tabelas de fatos. Cada linha em uma tabela de fatos representa um evento gravado com medidas numéricas associadas. Por exemplo, a tabela Vendas no esquema abaixo representa as transações de vendas de itens individuais e inclui valores numéricos para quantidade vendida e receita.
+
+![star-schema](https://learn.microsoft.com/pt-br/training/wwl-data-ai/explore-fundamentals-data-visualization/media/star-schema.png)
+
+Esse tipo de esquema, em que uma tabela de fatos está relacionada a uma ou mais tabelas de dimensões, é chamado de esquema em estrela.
+
+Você também pode definir um esquema mais complexo, no qual as tabelas de dimensões estão relacionadas a tabelas adicionais que contêm mais detalhes e é chamado de esquema floco de neve.
+
+### Hierarquias de atributo
+
+Mais uma coisa que vale a pena considerar sobre os modelos analíticos é a criação de hierarquias de atributo que permitem fazer drill up ou drill down rapidamente para encontrar valores agregados em diferentes níveis em uma dimensão hierárquica.
+
+O modelo pode ser criado com valores pré-agregados para cada nível de uma hierarquia, o que permite alterar rapidamente o escopo da análise, por exemplo, exibindo o total de vendas por ano e depois fazendo drill down para ver um detalhamento maior do total de vendas por mês.
+
+![hierarchy](https://learn.microsoft.com/pt-br/training/wwl-data-ai/explore-fundamentals-data-visualization/media/hierarchy.png)
+
+### Modelagem analítica no Microsoft Power BI
+
+Você pode usar o Power BI para definir um modelo analítico usando tabelas de dados, que podem ser importadas de uma ou mais fontes de dados. Depois, você pode usar a interface de modelagem de dados na guia **Modelo** do Power BI Desktop para definir o modelo analítico criando relações entre tabelas de fatos e de dimensões, definindo hierarquias, configurando tipos de dados e formatos de exibição para campos nas tabelas e gerenciando outras propriedades dos dados que ajudam a definir um modelo rico para análise.
+
+![power-bi-model](https://learn.microsoft.com/pt-br/training/wwl-data-ai/explore-fundamentals-data-visualization/media/power-bi-model.png)
+
+### Identify appropriate visualizations for data
+
+Depois de criar um modelo, é possível usá-lo para gerar visualizações de dados que podem ser incluídas em um relatório.
+
+Há muitos tipos de visualização de dados, alguns comumente usados e outros mais especializados. O Power BI inclui um extenso conjunto de visualizações internas, que podem ser estendidas com visualizações personalizadas e de terceiros. 
+
+### Tabelas e texto 
+
+Tabelas e texto geralmente são a maneira mais simples de comunicar dados. As tabelas são úteis quando vários valores relacionados devem ser exibidos, e valores de texto individuais em cartões podem ser uma maneira útil de mostrar números ou métricas importantes.
+
+![text-table](https://learn.microsoft.com/en-us/training/wwl-data-ai/explore-fundamentals-data-visualization/media/text-table.png)
+
+### Gráficos de barras e colunas
+
+Os gráficos de barras e colunas são uma boa maneira de comparar visualmente valores numéricos para categorias discretas.
+
+![bar-column-chart](https://learn.microsoft.com/pt-br/training/wwl-data-ai/explore-fundamentals-data-visualization/media/bar-column-chart.png)
+
+### Gráficos de linhas
+
+Os gráficos de linhas também podem ser usados para comparar valores categorizados e são úteis quando você precisa examinar tendências, geralmente ao longo do tempo.
+
+![line-chart](https://learn.microsoft.com/pt-br/training/wwl-data-ai/explore-fundamentals-data-visualization/media/line-chart.png)
+
+### Gráficos de pizza
+
+Os gráficos de pizza geralmente são usados em relatórios de negócios para comparar visualmente valores categorizados como proporções de um total.
+
+![pie-chart](https://learn.microsoft.com/pt-br/training/wwl-data-ai/explore-fundamentals-data-visualization/media/pie-chart.png)
+
+### Gráficos de dispersão
+
+Os gráficos de dispersão são úteis quando você deseja comparar duas medidas numéricas e identificar uma relação ou correlação entre elas.
+
+![scatter-plot](https://learn.microsoft.com/pt-br/training/wwl-data-ai/explore-fundamentals-data-visualization/media/scatter-plot.png)
+
+### Mapas
+
+Os mapas são uma ótima maneira de comparar visualmente valores para diferentes áreas geográficas ou locais.
+
+![map](https://learn.microsoft.com/pt-br/training/wwl-data-ai/explore-fundamentals-data-visualization/media/map.png)
+
+### Relatórios interativos no Power BI
+
+No Power BI, os elementos visuais para dados relacionados em um relatório são vinculados automaticamente uns aos outros e fornecem interatividade. Por exemplo, selecionar uma categoria individual em uma visualização filtrará e destacará automaticamente essa categoria em outras visualizações relacionadas no relatório. 
