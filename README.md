@@ -638,17 +638,17 @@ Um mecanismo SQL que é otimizado para cenários de IoT (Internet das Coisas) qu
 
 ### Identify Azure database services for open-source database systems
 
-Além dos serviços de SQL do Azure, há serviços de dados do Azure disponíveis para outros sistemas de bancos de dados relacionais populares, incluindo MySQL, MariaDB e PostgreSQL. O propósito desses serviços é permitir que as organizações que os usam em aplicativos locais migrem para o Azure rapidamente, sem fazer alterações significativas em seus aplicativos.
+Além dos serviços de SQL do Azure, há serviços disponíveis para outros sistemas de DB relacionais populares, incluindo MySQL, MariaDB e PostgreSQL. O propósito desses serviços é permitir que as organizações que os usam em aplicativos locais migrem para o Azure rapidamente, sem fazer alterações significativas em seus aplicativos.
 
 MySQL, MariaDB e PostgreSQL são sistemas de gerenciamento de banco de dados relacionais personalizados para diferentes especializações.
 
 ### Azure Database for MySQL
 
-O Banco de Dados do Azure para MySQL é uma implementação de PaaS do MySQL na nuvem do Azure baseada na Community Edition do MySQL.
+O Banco de Dados do Azure para MySQL é uma implementação de PaaS do MySQL na nuvem do Azure baseada na **Community Edition** do MySQL.
 
-O serviço do Banco de Dados do Azure para MySQL inclui alta disponibilidade sem custo adicional e escalabilidade de acordo com a necessidade. Você paga apenas pelo que usa. É possível fazer backups automáticos com restauração pontual.
+O serviço inclui alta disponibilidade sem custo adicional e escalabilidade de acordo com a necessidade. Você paga apenas pelo que usa. É possível fazer backups automáticos com restauração pontual.
 
-O servidor fornece segurança de conexão para impor regras de firewall e, opcionalmente, exigir conexões SSL. Muitos parâmetros de servidor permitem definir as configurações do servidor, como modos de bloqueio, número máximo de conexões e tempos limite.
+O servidor fornece segurança de conexão para impor regras de firewall e, opcionalmente, exigir conexões SSL. Permite definir configurações do servidor, como modos de bloqueio, número máximo de conexões e tempos limite.
 
 Determinadas operações não estão disponíveis no Banco de Dados do Azure para MySQL. Essas funções se encarregam principalmente da segurança e da administração. O Azure gerencia esses aspectos do próprio servidor de banco de dados.
 
@@ -672,7 +672,7 @@ Os servidores do Banco de Dados do Azure para MySQL oferecem recursos de monitor
 
 ### Azure Database for MariaDB
 
-É uma implementação do sistema de gerenciamento de banco de dados MariaDB adaptado para execução no Azure. Baseia-se na Community Edition do MariaDB.
+É uma implementação do sistema de gerenciamento de banco de dados MariaDB adaptado para execução no Azure. Baseia-se na **Community Edition** do MariaDB.
 
 O banco de dados é totalmente gerenciado e controlado pelo Azure. Depois de provisionar o serviço e transferir seus dados, o sistema não requer quase nenhuma administração adicional.
 
@@ -689,19 +689,21 @@ O Banco de Dados do Azure para MariaDB oferece:
 
 Você poderá escolher Banco de Dados do Azure para PostgreSQL para executar uma implementação de PaaS do PostgreSQL na nuvem do Azure. Esse serviço fornece os mesmos benefícios de disponibilidade, desempenho, dimensionamento, segurança e administração que o MySQL.
 
-Alguns recursos dos bancos de dados PostgreSQL locais não estão disponíveis no Banco de Dados do Azure para PostgreSQL, extensões que os usuários podem adicionar a um banco de dados para executar tarefas especializadas, como escrever stored procedures em várias linguagens de programação (além de pgsql, que está disponível) e interagir diretamente com o sistema operacional. Há compatibilidade com um conjunto básico de extensões usadas com mais frequência e a lista de extensões disponíveis está sob análise contínua.
+Alguns recursos dos bancos de dados PostgreSQL locais não estão disponíveis Azure PostgreSQL, extensões que os usuários podem adicionar a um banco de dados, escrever stored procedures em várias linguagens de programação (além de pgsql, que está disponível) e interagir diretamente com o sistema operacional. Há compatibilidade com um conjunto básico de extensões usadas com mais frequência e a lista de extensões disponíveis está sob análise contínua.
 
 O Banco de Dados do Azure para PostgreSQL tem três opções de implantação:
 
-- **Azure Database for PostgreSQL Single Server** - Você escolhe entre três tipos de preço: Básico, Uso Geral e Otimizado para Memória. Cada tipo é compatível com diferentes números de CPUs, memória e tamanhos de armazenamento – você seleciona uma com base na carga que espera processar.
+- **Azure Database for PostgreSQL Single Server** - Você escolhe entre **três tipos de preço: Básico, Uso Geral e Otimizado para Memória**. Cada tipo é compatível com diferentes números de CPUs, memória e tamanhos de armazenamento – você seleciona uma com base na carga que espera processar.
+
 - **Azure Database for PostgreSQL Flexible Server** - A opção de implantação de servidor flexível para PostgreSQL é um serviço de banco de dados totalmente gerenciado. Ele fornece mais controle e personalizações de configuração do servidor e tem melhores controles de otimização de custo.
-- **Azure Database for PostgreSQL Hyperscale (Citus)** - é uma opção de implantação que dimensiona consultas em vários nós de servidor para processar grandes cargas de banco de dados. Seu banco de dados é dividido entre nós. Os dados são divididos em partes com base no valor de uma partition key ou sharding key. Considere usar essa opção de implantação para as maiores implantações de banco de dados do PostgreSQL na nuvem do Azure.
+
+- **Azure Database for PostgreSQL Hyperscale (Citus)** - é uma opção de implantação que **dimensiona consultas em vários nós** de servidor para processar grandes cargas de banco de dados. Seu banco de dados é dividido entre nós. Os dados são divididos em partes com base no valor de uma partition key ou sharding key. Considere usar essa opção de implantação para as maiores implantações de banco de dados do PostgreSQL na nuvem do Azure.
 
 O Banco de Dados do Azure para PostgreSQL é um serviço altamente disponível. Ele contém mecanismos internos de detecção de falha e failover.
 
 Os usuários do PostgreSQL conhecerão a ferramenta pgAdmin, que você pode usar para gerenciar e monitorar um banco de dados PostgreSQL. No entanto, alguns recursos voltados para o servidor, como executar backup e restauração do servidor, não estão disponíveis porque o servidor é gerenciado e mantido pela Microsoft.
 
-O Banco de Dados do Azure para PostgreSQL registra informações sobre as consultas executadas em bancos de dados no servidor e as salva em um banco de dados chamado azure_sys. Consulte a exibição query_store.qs_view para ver essas informações e usá-las para monitorar as consultas que os usuários estão executando. Essas informações podem se mostrar valiosas se você precisa ajustar as consultas executadas por seus aplicativos.
+O Banco de Dados do Azure para PostgreSQL registra informações sobre as consultas executadas e as salva em um banco de dados chamado azure_sys. Consulte a view query_store.qs_view para para monitorar as consultas que os usuários estão executando e verificar se precisa ajustar as consultas executadas por seus aplicativos.
 
 ## ☁️ Describe considerations for working with non-relational data on Azure (15-20%)
 
@@ -713,11 +715,11 @@ Azure Blob Storage é um serviço que permite armazenar grandes quantidades de d
 
 ![azure-blob-storage](https://docs.microsoft.com/pt-br/training/wwl-data-ai/explore-provision-deploy-non-relational-data-services-azure/media/azure-blob-storage.png)
 
-Em uma Azure storage account  você armazena blobs em contêineres. Um contêiner oferece uma maneira prática de agrupar blobs relacionados. Você controla quem pode ler e gravar blobs dentro de um contêiner no nível do contêiner. 
+Em uma Azure storage account você armazena blobs em contêineres. Um contêiner oferece uma maneira prática de agrupar blobs relacionados. Você controla quem pode ler e gravar blobs dentro de um contêiner no nível do contêiner. 
 
-Dentro de um contêiner, você pode organizar blobs em uma hierarquia de pastas virtuais. As pastas são puramente virtuais, e você não pode executar operações no nível da pasta para controlar o acesso ou executar operações em massa.
+Dentro de um contêiner, você pode organizar blobs em uma hierarquia de pastas virtuais. Você não pode executar operações no nível da pasta para controlar o acesso ou executar operações em massa.
 
-O Armazenamento de Blobs do Azure é compatível com três tipos diferentes de blob:
+O Azure Blob storage é compatível com três tipos diferentes de blob:
 
 - **Block blobs** - Um blob de blocos é tratado como um conjunto de blocos. Cada bloco pode variar em tamanho, até 100 MB. Um blob de blocos pode conter até 50 mil blocos, fornecendo um tamanho máximo de mais de 4,7 TB. O bloco é a menor quantidade de dados que podem ser lidos ou gravados como uma unidade individual. Os blobs de blocos são mais bem usados para armazenar objetos binários, grandes e discretos que são alterados com pouca frequência.
 
@@ -731,7 +733,7 @@ Blob storage fornece três camadas de acesso, que ajudam a balancear a latência
 
 - **Cool tier** - A camada de acesso esporádico tem desempenho inferior e incorre em custos de armazenamento reduzidos em comparação a camada Hot. Use a camada Fria para dados que são acessados com pouca frequência. Você pode migrar um blob da camada Fria de volta para a camada Quente.
 
-- **Archive** - oferece o menor custo de armazenamento, mas com maior latência. A camada Arquivos se destina a dados históricos que não devem ser perdidos, mas é necessária apenas raramente. Os blobs na camada Arquivos são efetivamente armazenados em um estado offline. A latência de leitura para a camada Arquivos, pode levar horas para que os dados fiquem disponíveis. Para recuperar um blob da camada Arquivos, você precisa alterar a camada de acesso para Quente ou Fria. Em seguida, o blob será reidratado.
+- **Archive** - oferece o menor custo de armazenamento, mas com maior latência. A camada Arquivos se destina a dados históricos que não devem ser perdidos, mas é necessária apenas raramente. Os blobs na camada Arquivos são efetivamente armazenados em um estado offline. A latência de leitura pode levar horas para que os dados fiquem disponíveis. Para recuperar um blob da camada Arquivos, você precisa alterar a camada de acesso para Quente ou Fria. Em seguida, o blob será **reidratado**.
 
 Uma política de gerenciamento do ciclo de vida pode migrar automaticamente um blob da camada Quente para a Fria e para a camada Arquivos e também pode ser organizada para excluir blobs desatualizados.
 
@@ -739,11 +741,11 @@ Uma política de gerenciamento do ciclo de vida pode migrar automaticamente um b
 
 O Azure Data Lake Store (Gen1) é um serviço separado de armazenamento de dados hierárquicos para data lakes analíticos, geralmente usado pelas chamadas soluções analíticas de big data que funcionam com dados estruturados, semiestruturados e não estruturados armazenados em arquivos. 
 
-O Azure Data Lake Storage Gen2 é uma versão mais recente desse serviço integrado ao Armazenamento do Azure, o que permite que você aproveite a escalabilidade do armazenamento de blobs e o controle de custos das camadas de armazenamento. Isso tudo combinado com os recursos do sistema de arquivos hierárquicos e a compatibilidade com os principais sistemas de análise do Azure Data Lake Store.
+O **Azure Data Lake Storage Gen2** é uma versão mais recente desse serviço integrado ao Azure Storage, o que permite que você aproveite a escalabilidade do armazenamento de blobs e o controle de custos das camadas de armazenamento. Isso tudo combinado com os recursos do sistema de arquivos hierárquicos e a compatibilidade com os principais sistemas de análise do Azure Data Lake Store.
 
 Sistemas como o Hadoop no Azure HDInsight, Azure Databricks e Azure Synapse Analytics podem montar uma rede de arquivos distribuídos hospedada no Azure Data Lake Store Gen2 e usá-lo para processar grandes volumes de dados.
 
-Para criar um sistema de arquivos do Azure Data Lake Store Gen2, você deve habilitar a opção Namespace Hierárquico (Hierarchical Namespace) de uma Storage account. Você pode fazer isso ao criar inicialmente a Storage account, ou pode atualizar uma Storage account do Azure existente para dar suporte ao Data Lake Gen2. No entanto, esteja ciente de que a atualização é um processo unidirecional – depois de atualizar uma Storage account para dar suporte a um namespace hierárquico para armazenamento de blobs, você não pode revertê-lo para um namespace simples.
+Para criar um sistema de arquivos do Azure Data Lake Store Gen2, você deve habilitar a opção Namespace Hierárquico (Hierarchical Namespace) de uma Storage account. Você pode fazer isso ao criar inicialmente a Storage account, ou pode atualizar uma Storage account existente para dar suporte ao Data Lake Gen2. No entanto, esteja ciente de que **a atualização é um processo unidirecional** – depois de atualizar uma Storage account para dar suporte a um namespace hierárquico para armazenamento de blobs, você não pode revertê-lo para um namespace simples.
 
 ### Describe Azure File storage
 
@@ -753,7 +755,7 @@ O Azure File storage é essencialmente uma maneira de criar compartilhamentos de
 
  O Azure File storage permite que você compartilhe até 100 TB de dados em uma conta de armazenamento. Esses dados podem ser distribuídos em qualquer número de file shares na conta. O tamanho máximo de um arquivo é 1 TB, mas você pode definir cotas para limitar o tamanho de cada compartilhamento embaixo desta figura. No momento, o Azure File storage dá suporte a até duas mil conexões simultâneas por arquivo compartilhado.
 
- Depois de criar uma conta de armazenamento, você poderá carregar arquivos para o Azure File storage usando o portal do Azure ou ferramentas como o utilitário AzCopy. Você também pode usar o serviço Azure File Sync para sincronizar cópias armazenadas em cache localmente de arquivos compartilhados com os dados no Azure File storage.
+ Depois de criar uma Storage Account, você poderá carregar arquivos para o Azure File storage usando o portal do Azure ou ferramentas como o utilitário AzCopy. Você também pode usar o serviço Azure File Sync para sincronizar cópias armazenadas em cache localmente de arquivos compartilhados com os dados no Azure File storage.
 
  O Azure File storage oferece dois níveis de desempenho. 
  
@@ -763,19 +765,19 @@ O Azure File storage é essencialmente uma maneira de criar compartilhamentos de
 O Azure File storage dão suporte a dois protocolos de rede comuns de compartilhamento de arquivos:
 
 - **SMB (Server Message Block)** é comumente usado em vários sistemas operacionais (Windows, Linux, macOS).
-- **Network File System (NFS)** são usados por algumas versões do Linux e do macOS. Para criar um compartilhamento NFS, você deve usar uma conta de armazenamento de camada premium e criar e configurar uma rede virtual por meio da qual o acesso ao compartilhamento possa ser controlado.
+- **Network File System (NFS)** são usados por algumas versões do Linux e do macOS. Para criar um compartilhamento NFS, você deve usar uma Storage Account de camada premium e criar e configurar uma rede virtual por meio da qual o acesso ao compartilhamento possa ser controlado.
 
 ### Describe Azure Table storage
 
-O Azure Table storage é uma solução de armazenamento NoSQL que utiliza tabelas contendo itens de dados de chave/valor. Cada item é representado por uma linha que contém colunas para os campos de dados que precisam ser armazenados.
+O Azure Table storage é uma solução de armazenamento NoSQL que utiliza tabelas contendo itens de dados de **chave/valor**. Cada item é representado por uma linha que contém colunas para os campos de dados que precisam ser armazenados.
 
 Uma Tabela do Azure permite que você armazene dados semiestruturados.
 
 Todas as linhas de uma tabela devem ter uma chave exclusiva (composta por uma partition key e uma row key) e, quando você modifica dados em uma tabela, uma coluna de timestamp  registra a data e hora em que a modificação foi feita; mas fora isso, as colunas em cada linha podem variar. As tabelas do Azure Table storage não têm conceito de chaves estrangeiras, relacionamentos, stored procedures, views ou outros objetos que você pode encontrar em um banco de dados relacional.
 
-Os dados no Azure Table storage geralmente são desnormalizados, com cada linha contendo todos os dados de uma entidade lógica. Por exemplo, uma tabela que contém informações do cliente pode armazenar o nome, o sobrenome, um ou mais números de telefone e um ou mais endereços para cada cliente. O número de campos em cada linha pode ser diferente, dependendo da quantidade de números de telefone e endereços para cada cliente e dos detalhes registrados para cada endereço.
+Os dados no Azure Table storage **geralmente são desnormalizados**, com cada linha contendo todos os dados de uma entidade lógica. Por exemplo, uma tabela que contém informações do cliente pode armazenar o nome, o sobrenome, um ou mais números de telefone e um ou mais endereços para cada cliente. O número de campos em cada linha pode ser diferente, dependendo da quantidade de números de telefone e endereços para cada cliente e dos detalhes registrados para cada endereço.
 
-Para ajudar a garantir o acesso rápido, o Azure Table storage divide uma tabela em partições. O particionamento é um mecanismo para agrupar linhas relacionadas, com base em uma propriedade comum ou chave de partição. O particionamento não apenas ajuda a organizar os dados, mas também pode melhorar a escalabilidade e o desempenho das seguintes maneiras:
+Para ajudar a garantir o acesso rápido, o Azure Table storage divide uma tabela em partições. O **particionamento** é um mecanismo para agrupar linhas relacionadas, com base em uma propriedade comum ou chave de partição. O particionamento não apenas ajuda a organizar os dados, mas também pode melhorar a escalabilidade e o desempenho das seguintes maneiras:
 
 - As partições são independentes umas das outras e podem aumentar ou diminuir à medida que as linhas são adicionadas a uma partição ou removidas delas. Uma tabela pode conter qualquer número de partições.
 - Ao pesquisar dados, você pode incluir a chave de partição nos critérios de pesquisa. Isso ajuda a diminuir o volume de dados a serem examinados e melhora o desempenho reduzindo a quantidade de E/S (operações de entrada e saída ou leituras e gravações) necessária para localizar os dados.
@@ -784,7 +786,7 @@ A chave em uma tabela do Azure Table storage compreende dois elementos: a chave 
 
 ### 🔸 Describe capabilities and features of Azure Cosmos DB
 
-O Azure Cosmos DB é um sistema de banco de dados não relacional (NoSQL) de escala global que dá suporte a várias APIs (interfaces de programação de aplicativo), permitindo que você armazene e gerencie dados como documentos JSON, pares chave-valor, famílias de colunas e grafos.
+O Azure Cosmos DB é um sistema de banco de dados não relacional (NoSQL) de escala global que dá suporte a várias APIs, permitindo que você armazene e gerencie dados como documentos **JSON, pares chave-valor, famílias de colunas e grafos**.
 
 O Azure Cosmos DB dá suporte a várias APIs que permitem aos desenvolvedores usar a semântica de programação de muitos tipos comuns de armazenamento de dados para trabalhar com os dados no Cosmos DB. A estrutura de dados interna é abstrata, permitindo que os desenvolvedores usem o Cosmos DB para armazenar e consultar dados usando APIs com as quais já estão familiarizados.
 
@@ -796,10 +798,12 @@ O Cosmos DB é um sistema de gerenciamento de banco de dados altamente escaloná
 
 O Cosmos DB é altamente adequado para os seguintes cenários:
 
-- IoT e telemática. Normalmente, esses sistemas ingerem grandes quantidades de dados em picos de atividade frequentes. O Cosmos DB pode aceitar e armazenar essas informações rapidamente. Os dados podem ser usados pelos serviços de análise, como o Azure Machine Learning, o Azure HDInsight e o Microsoft Power BI. Além disso, é possível processar os dados em tempo real usando o Azure Functions, disparado à medida que os dados chegam ao banco de dados.
-- Varejo e marketing. A Microsoft usa o Cosmos DB para as próprias plataformas de comércio eletrônico que são executadas como parte da Microsoft Store e do Xbox Live. Ele também é usado no setor de varejo para armazenar dados de catálogo e para fornecimento de eventos em pipelines de processamento de pedidos.
-- Jogos. A camada de banco de dados é um componente crucial dos aplicativos de jogos. Os jogos modernos executam o processamento gráfico em clientes móveis/console, mas dependem da nuvem para fornecer conteúdo personalizado, como estatísticas de jogos, integração em mídia social e tabelas com as melhores pontuações. Os jogos geralmente exigem latências de um milissegundo para leituras e gravações a fim de fornecer uma experiência envolvente no jogo. Um banco de dados de jogo deve ser rápido e ser capaz de lidar com grandes picos de taxas de solicitação durante novos lançamentos de jogos e atualizações de recursos.
-- Aplicativos Web e móveis. O Azure Cosmos DB é normalmente usado em aplicativos Web e móveis e é bastante adequado para modelagem de interações sociais, integração com serviços de terceiros e desenvolvimento de experiências personalizadas avançadas. Os SDKs do Cosmos DB podem ser usados para criar aplicativos iOS e Android avançados usando a estrutura popular do Xamarin.
+- **IoT e telemática**. Normalmente, esses sistemas ingerem grandes quantidades de dados em picos de atividade frequentes. O Cosmos DB pode aceitar e armazenar essas informações rapidamente. Os dados podem ser usados pelos serviços de análise, como o Azure Machine Learning, o Azure HDInsight e o Microsoft Power BI. Além disso, é possível processar os dados em tempo real usando o Azure Functions, disparado à medida que os dados chegam ao banco de dados.
+
+- **Varejo e marketing**. A Microsoft usa o Cosmos DB para as próprias plataformas de comércio eletrônico que são executadas como parte da Microsoft Store e do Xbox Live. Ele também é usado no setor de varejo para armazenar dados de catálogo e para fornecimento de eventos em pipelines de processamento de pedidos.
+
+- **Jogos**. Os jogos modernos executam o processamento gráfico em clientes móveis/console, mas dependem da nuvem para fornecer conteúdo personalizado, como estatísticas de jogos, integração em mídia social e tabelas com as melhores pontuações. Os jogos geralmente exigem latências de um milissegundo para leituras e gravações a fim de fornecer uma experiência envolvente no jogo. Um banco de dados de jogo deve ser rápido e ser capaz de lidar com grandes picos de taxas de solicitação durante novos lançamentos de jogos e atualizações de recursos.
+- **Aplicativos Web e móveis**. O Azure Cosmos DB é normalmente usado em aplicativos Web e móveis e é bastante adequado para modelagem de interações sociais, integração com serviços de terceiros e desenvolvimento de experiências personalizadas avançadas. Os SDKs do Cosmos DB podem ser usados para criar aplicativos iOS e Android avançados usando a estrutura popular do Xamarin.
 
 ### Describe Azure Cosmos DB APIs
 
@@ -828,7 +832,7 @@ https://endpoint/Customers(PartitionKey='1',RowKey='124')
 
 - **Cassandra API** - O API do Cassandra é compatível com o Apache Cassandra, que é um banco de dados de software livre popular que usa uma estrutura de armazenamento de famílias de colunas. As famílias de colunas são tabelas, semelhantes àquelas em um banco de dados relacional, com a exceção de que não é obrigatório que cada linha tenha as mesmas colunas. O Cassandra dá suporte a uma sintaxe baseada em SQL.
 
-- **Gremlin API** - A API do Gremlin é usada com os dados em uma estrutura de grafo, na qual as entidades são definidas como vértices que formam nós (nodes) no grafo conectado. Os nós são conectados por bordas (edges) que representam relações, desta forma:
+- **Gremlin API** - A API do Gremlin é usada com os **dados em uma estrutura de grafo**, na qual as entidades são definidas como vértices que formam nós (nodes) no grafo conectado. Os nós são conectados por bordas (edges) que representam relações, desta forma:
 
 ![graph](https://docs.microsoft.com/pt-br/training/wwl-data-ai/explore-non-relational-data-stores-azure/media/graph.png)
 
@@ -852,19 +856,19 @@ A arquitetura de data warehousing em larga escala pode variar, assim como as tec
 
 ![modern-data-warehousing](https://docs.microsoft.com/pt-br/training/wwl-data-ai/examine-components-of-modern-data-warehouse/media/modern-data-warehousing.png)
 
-- **Ingestão e processamento de dados** – os dados de várias fontes são carregados em um data lake ou um data warehouse. A operação de carregamento geralmente envolve um processo de ETL (extração, transformação e carregamento) ou ELT (extração, carregamento e transformação) no qual os dados são limpos, filtrados e reestruturados para análise. A estrutura de dados resultante é otimizada para consultas analíticas. O processamento de dados geralmente é executado por sistemas distribuídos que podem processar grandes volumes de dados em paralelo usando clusters de vários nós. A ingestão de dados inclui o processamento em lote de dados estáticos e o processamento em tempo real de dados de streaming.
+1. **Ingestão e processamento de dados** – os dados de várias fontes são carregados em um data lake ou um data warehouse. A operação de carregamento geralmente envolve um processo de ETL (extração, transformação e carregamento) ou ELT (extração, carregamento e transformação) no qual os dados são limpos, filtrados e reestruturados para análise. A estrutura de dados resultante é otimizada para consultas analíticas. O processamento de dados geralmente é executado por sistemas distribuídos que podem processar grandes volumes de dados em paralelo usando clusters de vários nós. A ingestão de dados inclui o processamento em lote de dados estáticos e o processamento em tempo real de dados de streaming.
 
-- **Analytical data store** – os armazenamentos de dados para análise em grande escala incluem data warehouses relacionais, data lakes baseados em sistema de arquivos e arquiteturas híbridas que combinam recursos de data warehouses e data lakes (data lakehouses ou lake databases).
+2. **Analytical data store** – os armazenamentos de dados para análise em grande escala incluem data warehouses relacionais, data lakes baseados em sistema de arquivos e arquiteturas híbridas que combinam recursos de data warehouses e data lakes (data lakehouses ou lake databases).
 
-- **Analytical data model** - embora possamamos trabalhar com os dados diretamente no armazenamento de dados analíticos, é comum criar um ou mais modelos de dados que agregam previamente os dados para facilitar a produção de relatórios, dashboards e visualizações interativas. Geralmente, são descritos como cubos, nos quais valores de dados numéricos são agregados em uma ou mais dimensões. O modelo encapsula as relações entre valores de dados e entidades dimensionais para dar suporte à análise de "drill up/drill down".
+3. **Analytical data model** - embora possamamos trabalhar com os dados diretamente no armazenamento de dados analíticos, é comum criar um ou mais modelos de dados que agregam previamente os dados para facilitar a produção de relatórios, dashboards e visualizações interativas. Geralmente, são descritos como cubos, nos quais valores de dados numéricos são agregados em uma ou mais dimensões. O modelo encapsula as relações entre valores de dados e entidades dimensionais para dar suporte à análise de "drill up/drill down".
 
-- **Visualização de dados** – os analistas de dados consomem dados de modelos analíticos e diretamente de repositórios analíticos para criar relatórios, dashboards e outras visualizações. Outros usuários podem executar relatórios e análise de dados por autoatendimento. As visualizações dos dados mostram tendências, comparações e KPIs para uma empresa ou outra organização e podem assumir a forma de relatórios impressos, grafos e gráficos em documentos ou apresentações de PowerPoint, dashboards baseados na Web.
+4. **Visualização de dados** – os analistas de dados consomem dados de modelos analíticos e diretamente de repositórios analíticos para criar relatórios, dashboards e outras visualizações. Outros usuários podem executar relatórios e análise de dados por autoatendimento. As visualizações dos dados mostram tendências, comparações e KPIs para uma empresa ou outra organização e podem assumir a forma de relatórios impressos, grafos e gráficos em documentos ou apresentações de PowerPoint, dashboards baseados na Web.
 
 ### Describe considerations for data ingestion and processing
 
-No Azure, a ingestão de dados em larga escala é melhor implementada criando pipelines que orquestram processos de ETL. Você poderá criar e executar pipelines usando o Azure Data Factory ou poderá usar o mesmo mecanismo de pipeline no Azure Synapse Analytics se desejar gerenciar todos os componentes da sua solução de data warehousing em um workspace unificado.
+No Azure, a ingestão de dados em larga escala é melhor implementada criando pipelines que orquestram processos de ETL. Você poderá criar e executar pipelines usando o **Azure Data Factory** ou poderá usar o mesmo mecanismo de pipeline no **Azure Synapse Analytics** se desejar gerenciar todos os componentes da sua solução de data warehousing em um workspace unificado.
 
-Em ambos os casos, os pipelines consistem em uma ou mais atividades que operam nos dados. Um conjunto de dados de entrada fornece os dados de origem, e as atividades podem ser definidas como um fluxo de dados que manipula de os dados de maneira incremental até que um conjunto de dados de saída seja produzido. 
+Em ambos os casos, os **pipelines consistem em uma ou mais atividades que operam nos dados**. Um conjunto de dados de entrada fornece os dados de origem, e as atividades podem ser definidas como um fluxo de dados que manipula os dados de maneira incremental até que um conjunto de dados de saída seja produzido. 
 
 Os pipelines usam serviços vinculados para carregar e processar dados, permitindo que você use a tecnologia certa para cada etapa do fluxo de trabalho. Por exemplo, você pode usar um serviço vinculado do Azure Blob Storage para ingerir o conjunto de dados de entrada e, em seguida, usar serviços como o Azure SQL Database para executar um procedimento armazenado que pesquisa os valores de dados relacionados, antes de executar uma tarefa de processamento de dados no Azure Databricks ou no Azure HDInsight, ou aplicar lógica personalizada usando uma Azure Function. Por fim, você pode salvar o conjunto de dados de saída em um serviço vinculado, como o Azure Synapse Analytics. Os pipelines também podem incluir algumas atividades internas, que não exigem um serviço vinculado.
 
@@ -872,24 +876,26 @@ Os pipelines usam serviços vinculados para carregar e processar dados, permitin
 
 Há dois tipos comuns de armazenamento de dados analíticos.
 
-- **Data warehouses** - é um banco de dados relacional no qual os dados são armazenados em um esquema otimizado para análise de dados em vez de cargas de trabalho transacionais. Normalmente, os dados de um armazenamento transacional são transformados em um esquema no qual os valores numéricos são armazenados em tabelas de fatos centrais, que estão relacionadas a uma ou mais tabelas de dimensões que representam entidades pelas quais os dados podem ser agregados. Esse tipo de esquema de tabela de fatos e dimensões é chamado de esquema em estrela; embora geralmente seja estendido para um esquema floco de neve adicionando outras tabelas relacionadas às tabelas de dimensões para representar hierarquias dimensionais. Um data warehouse é uma ótima opção quando você tem dados transacionais que podem ser organizados em um esquema estruturado de tabelas e deseja usar o SQL para consultá-los. 
+- **Data warehouses** - é um banco de dados relacional no qual os **dados são armazenados em um esquema otimizado para análise de dados** em vez de cargas de trabalho transacionais. Normalmente, os dados de um armazenamento transacional são transformados em um esquema no qual os valores numéricos são armazenados em tabelas de fatos centrais, que estão relacionadas a uma ou mais tabelas de dimensões que representam entidades pelas quais os dados podem ser agregados. Esse tipo de esquema de tabela de fatos e dimensões é chamado de esquema em estrela; embora geralmente seja estendido para um esquema floco de neve adicionando outras tabelas relacionadas às tabelas de dimensões para representar hierarquias dimensionais. 
+  - Um data warehouse é uma ótima opção quando você tem dados transacionais que podem ser organizados em um esquema estruturado de tabelas e deseja usar o SQL para consultá-los. 
 
-- **Data lakes** - Um data lake é um armazenamento de arquivos, geralmente em um sistema de arquivos distribuído para acesso a dados de alto desempenho. Tecnologias como Spark ou Hadoop geralmente são usadas para processar consultas nos arquivos armazenados e retornar dados para relatórios e análises. Esses sistemas geralmente aplicam uma abordagem de esquema no ato da leitura para definir esquemas tabulares em arquivos de dados semiestruturados no ponto em que os dados são lidos para análise, sem aplicar restrições quando eles são armazenados. Os data lakes são ótimos para dar suporte a uma combinação de dados estruturados, semiestruturados e até mesmo não estruturados que você deseja analisar sem a necessidade de imposição de esquema quando os dados são gravados no repositório.
+- **Data lakes** - Um data lake **é um armazenamento de arquivos**, geralmente em um sistema de arquivos distribuído para acesso a dados de alto desempenho. Tecnologias como Spark ou Hadoop geralmente são usadas para processar consultas nos arquivos armazenados e retornar dados para relatórios e análises. Esses sistemas geralmente aplicam uma abordagem de **esquema no ato da leitura** para definir esquemas tabulares em arquivos de dados semiestruturados no ponto em que os dados são lidos para análise, sem aplicar restrições quando eles são armazenados. 
+  - Os data lakes são ótimos para dar suporte a uma combinação de dados estruturados, semiestruturados e até mesmo não estruturados que você deseja analisar sem a necessidade de imposição de esquema quando os dados são gravados no repositório.
 
-- **Abordagens híbridas** - Você pode usar uma abordagem híbrida que combina recursos de data lakes e data warehouses em um banco de dados de lake ou data lakehouse. Os dados brutos são armazenados como arquivos em um data lake e uma camada de armazenamento relacional abstrai os arquivos subjacentes e os expõe como tabelas, que podem ser consultadas usando SQL. Os pools de SQL no Azure Synapse Analytics incluem o PolyBase, que permite que você defina tabelas externas com base em arquivos em um datalake (e outras fontes) e consulte-os usando SQL. O Synapse Analytics também dá suporte a uma abordagem de banco de dados de lake na qual você pode usar modelos de banco de dados para definir o esquema relacional do seu data warehouse, enquanto armazena os dados subjacentes no armazenamento do data lake – separando o armazenamento e a computação para sua solução de data warehousing. Os data lakehouses são uma abordagem relativamente nova em sistemas baseados em Spark e são habilitados por meio de tecnologias como o Delta Lake; que adiciona recursos de armazenamento relacional ao Spark, para que você possa definir tabelas que impõem esquemas e consistência transacional, dão suporte a fontes de dados carregadas em lote e streaming e fornecem uma API de SQL para consulta.
+- **Abordagens híbridas** - Você pode usar uma abordagem híbrida que combina recursos de data lakes e data warehouses em um banco de dados de lake ou data lakehouse. Os dados brutos são armazenados como arquivos em um data lake e uma camada de armazenamento relacional abstrai os arquivos subjacentes e os expõe como tabelas, que podem ser consultadas usando SQL. Os pools de SQL no Azure Synapse Analytics incluem o PolyBase, que permite que você defina tabelas externas com base em arquivos em um datalake (e outras fontes) e consulte-os usando SQL. O Synapse Analytics também dá suporte a uma abordagem de banco de dados de lake na qual você pode usar modelos de banco de dados para definir o esquema relacional do seu data warehouse, enquanto armazena os dados subjacentes no armazenamento do data lake - separando o armazenamento e a computação para sua solução de data warehousing. Os data lakehouses são uma abordagem relativamente nova em sistemas baseados em Spark e são habilitados por meio de tecnologias como o Delta Lake; que adiciona recursos de armazenamento relacional ao Spark, para que você possa definir tabelas que impõem esquemas e consistência transacional, dão suporte a fontes de dados carregadas em lote e streaming e fornecem uma API de SQL para consulta.
 
 ### Describe Azure services for data warehousing, including Azure Synapse Analytics, Azure Databricks, Azure HDInsight, and Azure Data Factory
 
-- **Azure Synapse Analytics** - é uma solução unificada e de ponta a ponta para análise de dados em grande escala. Ele reúne várias tecnologias e funcionalidades, permitindo que você combine a integridade e a confiabilidade de dados de um data warehouse relacional escalonável e de alto desempenho baseado no SQL Server com a flexibilidade de um data lake e de um Apache Spark de código aberto. 
+- **Azure Synapse Analytics** - é uma **solução unificada** e de ponta a ponta para análise de dados em grande escala. Ele reúne várias tecnologias e funcionalidades, permitindo que você combine a integridade e a confiabilidade de dados de um data warehouse relacional escalonável e de alto desempenho baseado no SQL Server com a flexibilidade de um data lake e de um Apache Spark de código aberto. 
   - Inclui suporte nativo para análise de log e telemetria com pools do Azure Synapse Data Explorer
   - Pipelines de dados integrados para ingestão e transformação de dados. 
-  - **Azure Synapse Studio** - interface única e interativa para gerenciamento de todos os Azure Synapse Analytics, capacidade de criar notebooks interativos nos quais o código Spark e o conteúdo de markdown podem ser combinados. 
+  - **Azure Synapse Studio** - **interface única e interativa para gerenciamento** de todos os Azure Synapse Analytics, capacidade de criar notebooks interativos nos quais o código Spark e o conteúdo de markdown podem ser combinados. 
 
-- **Azure Databricks** - é uma solução abrangente de análise de dados criada com base no Apache Spark e que oferece funcionalidades nativas de SQL, bem como clusters Spark otimizados para carga de trabalho para análise de dados e ciência de dados. 
+- **Azure Databricks** - é uma solução abrangente de **análise de dados** criada com base no Apache Spark e que oferece funcionalidades nativas de SQL, bem como clusters Spark otimizados para carga de trabalho para análise de dados e ciência de dados. 
   - fornece uma interface interativa do usuário por meio da qual o sistema pode ser gerenciado e os dados podem ser explorados em notebooks interativos. 
   - Devido ao seu uso comum em várias plataformas de nuvem, talvez você queira considerar o uso dele como seu repositório analítico ou se precisar operar em um ambiente de várias nuvens ou dar suporte a uma solução portátil em nuvem.
 
-- **Azure HDInsight** - é um serviço do Azure que dá suporte a vários tipos de cluster de análise de dados de código aberto. Embora não seja tão amigável quanto o Azure Synapse Analytics e o Azure Databricks, ele poderá ser uma opção adequada se sua solução de análise se basear em várias estruturas de código-fonte aberto ou se você precisar migrar uma solução local existente baseada em Hadoop para a nuvem.
+- **Azure HDInsight** - é um serviço do Azure que dá suporte a vários **tipos de cluster de análise de dados de código aberto**. Embora não seja tão amigável quanto o Azure Synapse Analytics e o Azure Databricks, ele poderá ser uma opção adequada se sua solução de análise se basear em várias estruturas de código-fonte aberto ou se você precisar migrar uma solução local existente baseada em Hadoop para a nuvem.
 
 > Cada um desses serviços pode ser pensado como um armazenamento de dados analíticos, no sentido de que eles fornecem um esquema e uma interface por meio dos quais os dados podem ser consultados. No entanto, em muitos casos, os dados são armazenados em um data lake e o serviço é usado para processar os dados e executar consultas. Algumas soluções podem até combinar o uso desses serviços. 
 
