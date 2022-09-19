@@ -1002,7 +1002,7 @@ Apache Spark é uma estrutura de processamento distribuído para análise de dad
 
 O Spark pode ser usado para executar código (geralmente escrito em Python, Scala ou Java) em paralelo em vários nós de cluster, permitindo que ele processe volumes muito grandes de dados com eficiência. O Spark pode ser usado para processamento em lotes e de fluxo.
 
-#### Spark Structured Streaming
+### Spark Structured Streaming
 
 Para processar dados de streaming no Spark, você pode usar a biblioteca *Spark Structured Streaming*, que fornece uma API para ingestão, processamento e saída de resultados de fluxos perpétuos de dados.
 
@@ -1010,7 +1010,45 @@ Spark Structured Streaming é criado em uma estrutura no Spark chamada dataframe
 
 O Spark Structured Streaming é uma ótima opção para análise em tempo real quando você precisa incorporar dados de streaming em um repositório de dados analíticos ou data lake baseado no Spark.
 
-#### Delta Lake
+### Delta Lake
+
+Delta Lake é uma camada de armazenamento de código aberto que adiciona suporte para consistência transacional, aplicação de esquema e outros recursos comuns de data warehouse ao armazenamento de data lake. 
+
+Ele também unifica o armazenamento para dados em lote e streaming e pode ser usado no Spark para definir tabelas relacionais para processamento em lotes e em stream. Quando usada para processamento de fluxo, uma tabela Delta Lake pode ser usada como fonte de streaming para consultas em dados em tempo real ou como um coletor no qual um fluxo de dados é gravado.
+
+Os tempos de execução do Spark no Azure Synapse Analytics e Azure Databricks incluem suporte para Delta Lake.
+
+O Delta Lake combinado com o Spark Structured Streaming é uma boa solução quando você precisa abstrair processos batch e stream em um data lake por um esquema relacional para análise e consulta baseada em SQL.
+
+### Azure Data Explorer
+
+O Azure Data Explorer é um serviço autônomo do Azure de análise de dados com eficiência. Você pode usar o serviço como saída para analisar grandes volumes de diversas fontes de dados, como sites, aplicativos, dispositivos IoT e muito mais. 
+
+Por exemplo, ao gerar logs do Azure Stream Analytics para o Azure Data Explorer, você pode complementar o tratamento de alertas de baixa latência do Stream Analytics com os recursos de investigação profunda do Data Explorer.
+
+O serviço também é encapsulado como um runtime no Azure Synapse Analytics, onde é referido como Azure Synapse Data Explorer, permitindo que você crie e gerencie soluções analíticas que combinam análises do SQL, do Spark e do Data Explorer em um único workspace.
+
+Os dados são ingeridos no Data Explorer por meio de conectores ou escrevendo uma quantidade mínima de código. Isso permite que haja a ingestão rápida de dados de uma ampla variedade de fontes de dados, incluindo fontes estáticas e de streaming. 
+
+O Data Explorer oferece suporte a lotes e streaming quase em tempo real para otimizar a ingestão de dados. Os dados ingeridos são armazenados em tabelas em um banco de dados do Data Explorer, onde a indexação automática permite consultas de alto desempenho.
+
+O Azure Data Explorer é uma ótima opção de tecnologia quando você precisa:
+
+- Colete e analise dados em tempo real ou em lote que incluam um elemento de série temporal, como telemetria de log ou valores emitidos por dispositivos IoT (Internet das Coisas).
+- Explore, filtre e agregue dados rapidamente usando avançada e intuitiva KQL (Linguagem de Consulta Kusto).
+
+#### KQL (Kusto Query Language)
+
+Uma linguagem especificamente otimizada para desempenho de leitura rápida – principalmente com dados de telemetria que incluem atributos de timestamp.
+
+A consulta a seguir retorna as colunas StartTime, EventType e Message da tabela LogEvents de erros registrados após 31 de dezembro de 2021.
+
+```KQL
+LogEvents
+| where StartTime > datetime(2021-12-31) 
+| where EventType == 'Error'
+| project StartTime, EventType , Message
+```
 
 ### 🔸 Describe data visualization in Microsoft Power BI
 
