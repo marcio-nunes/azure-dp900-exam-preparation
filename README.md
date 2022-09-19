@@ -901,8 +901,66 @@ Há dois tipos comuns de armazenamento de dados analíticos.
 
 ### 🔸 Describe consideration for real-time data analytics
 
-- Describe the difference between batch and streaming data
-- Describe technologies for real-time analytics including Azure Stream Analytics, Azure Synapse Data Explorer, and Spark structured streaming
+Grande parte desses dados pode ser processada em tempo real (ou pelo menos quase em tempo real) como um fluxo perpétuo de dados, permitindo a criação de sistemas que revelam insights e tendências instantâneas, ou toma ações imediatas de resposta aos eventos à medida que eles ocorrem.
+
+### Describe the difference between batch and streaming data
+
+O processamento de dados é simplesmente a conversão de dados brutos em informações relevantes por meio de um processo. Há duas maneiras gerais de processar dados:
+
+### Processamento em lotes (batch)
+
+No processamento em lotes, os elementos de dados que chegam recentemente são coletados e armazenados e o grupo inteiro é processado juntos como um lote. 
+
+Há várias maneiras de determinar o momento exato em que cada grupo é processado. Por exemplo, você pode processar dados com base em um intervalo de tempo agendado (por exemplo, a cada hora), ou o processamento pode ser disparado quando determinada quantidade de dados tiver chegado ou ainda como resultado de algum outro evento.
+
+As vantagens do processamento em lotes incluem:
+
+- Grandes volumes de dados podem ser processados em um momento conveniente.
+- Ele pode ser agendado para execução em momentos em que os computadores ou os sistemas estão ociosos, como durante a noite ou fora do horário de pico.
+
+As desvantagens do processamento em lotes incluem:
+
+- O intervalo de tempo existente entre a ingestão dos dados e a obtenção dos resultados.
+- Todos os dados de entrada de um trabalho em lotes devem estar prontos para que o lote seja processado. Isso significa que os dados devem ser cuidadosamente verificados. Eventuais problemas com erros, dados e falhas do programa durante os jobs em lotes levam todo o processo a uma parada. Os dados de entrada devem ser cuidadosamente verificados para que o job possa ser executado novamente. Mesmo pequenos erros de dados podem impedir a execução de um trabalho em lotes.
+
+### Processamento em Stream
+
+No processamento de streaming, cada parte dos dados é processada ao chegar. Ao contrário do processamento em lotes, não há espera até o próximo intervalo de processamento de lotes — os dados são processados como unidades individuais em tempo real, em vez de serem processados um lote por vez. O processamento de dados de streaming é benéfico nos cenários em que dados dinâmicos são gerados de maneira contínua.
+
+Exemplos do mundo real de dados de streaming incluem:
+
+- Uma instituição financeira controla as alterações do mercado de ações em tempo real, computa o valor em risco e reequilibra automaticamente os portfólios com base nos movimentos de preço das ações.
+- Uma empresa de jogos online coleta dados em tempo real sobre as interações do jogador com os jogos e alimenta os dados na plataforma de jogos. Então, a empresa analisa os dados em tempo real e oferece incentivos e experiências dinâmicas para envolver os jogadores.
+- Um site de imóveis que acompanha um subconjunto de dados dos dispositivos móveis e faz recomendações em tempo real sobre propriedades a serem visitadas com base na localização geográfica do consumidor.
+
+Diferenças entre dados de lote e dados de streaming:
+
+- **Escopo de dados**: o processamento em lotes pode processar todos os dados no conjunto de dados. O processamento de streaming normalmente só tem acesso aos dados mais recentes recebidos ou aos dados que estão dentro de uma janela de tempo contínua (os últimos 30 segundos, por exemplo).
+- **Tamanho dos dados**: o processamento em lotes é adequado para lidar de maneira eficiente com grandes conjuntos de dados. O processamento de streaming destina-se a registros individuais ou micro lotes, formados por poucos registros.
+- **Desempenho**: a latência é o tempo necessário para que os dados sejam recebidos e processados. A latência do processamento em lotes normalmente é de algumas horas. O processamento de streaming normalmente ocorre imediatamente, com latência na ordem de segundos ou milissegundos.
+- **Análise**: normalmente você usa o processamento em lotes para executar análises complexas. O processamento de streaming é usado para funções de resposta simples, agregações ou cálculos como médias móveis.
+
+> Muitas soluções de análise em larga escala incluem uma combinação de processamento em lotes e de stream, permitindo a análise de dados históricos e em tempo real. É comum para soluções de processamento de fluxo capturar dados em tempo real, processá-los filtrando ou agregando-os, e apresentá-los por meio de painéis e visualizações em tempo real, enquanto também persiste os resultados processados em um armazenamento de dados para análise histórica junto com os dados processados em lote.
+
+### Describe technologies for real-time analytics including Azure Stream Analytics, Azure Synapse Data Explorer, and Spark structured streaming
+
+Análise em tempo real no Azure: 
+
+- **Azure Stream Analytics**: uma solução de plataforma como serviço (PaaS) que você pode usar para definir trabalhos de streaming que ingerem dados de uma fonte de streaming, aplicam uma consulta perpétua e gravam os resultados em uma saída.
+
+- **Spark Structured Streaming**: uma biblioteca de código aberto que permite desenvolver soluções de streaming complexas em serviços baseados no Apache Spark, incluindo o Azure Synapse Analytics, o Azure Databricks e o Azure HDInsight.
+
+- **Azure Data Explorer**: um serviço de análise e banco de dados de alto desempenho otimizado para ingestão e consulta de dados em lote ou streaming com um elemento de série temporal e que pode ser usado como um serviço autônomo do Azure ou como um tempo de execução do Azure Synapse Data Explorer em um espaço de trabalho do Azure Synapse Analytics.
+
+Fontes para processamento de stream:
+
+- **Azure Event Hubs**: um serviço de ingestão de dados que você pode usar para gerenciar filas de dados de eventos, garantindo que cada evento seja processado em ordem, exatamente uma vez.
+
+- **Azure IoT Hub**: um serviço de ingestão de dados semelhante aos Hubs de Eventos do Azure, mas otimizado para gerenciar dados de eventos de dispositivos da Internet das Coisas (IoT).
+
+- **Azure Data Lake Store Gen 2**: um serviço de armazenamento altamente escalonável que é frequentemente usado em cenários de processamento em lotes, mas que também pode ser usado como fonte de dados de streaming.
+
+- **Apache Kafka**: uma solução de ingestão de dados de código aberto que é comumente usada em conjunto com o Apache Spark. Você pode usar o Azure HDInsight para criar um cluster Kafka.
 
 ### 🔸 Describe data visualization in Microsoft Power BI
 
