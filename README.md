@@ -55,6 +55,8 @@ Nem todos os dados são estruturados ou até mesmo semiestruturados.
 
 Documentos, imagens, dados de áudio e vídeo e arquivos binários podem não ter uma estrutura específica. 
 
+Para grandes arquivos de áudio e vídeo que são usados ​​como fonte para conteúdo de streaming, você deve escolher um armazenamento de dados de objeto. Arquivos desse tipo são dados não estruturados e não relacionais. A solução de armazenamento típica para esse tipo de arquivo é um armazenamento de objetos, como o armazenamento de BLOBs do Azure.
+
 ### 🔸 Identify options for data storage
 
 Normalmente os dados são armazenados em formato estruturado, semiestruturado ou não estruturado para registrar e podem ser recuperados para análise e relatórios posteriormente:
@@ -723,6 +725,8 @@ Em uma Azure storage account você armazena blobs em contêineres. Um contêiner
 
 Dentro de um contêiner, você pode organizar blobs em uma hierarquia de pastas virtuais. Você não pode executar operações no nível da pasta para controlar o acesso ou executar operações em massa.
 
+Para implementar a segurança de nível de pasta e diretório no Azure Storage, você precisa habilitar o namespace hierárquico. A habilitação do namespace hierárquico permite que você organize seus contêineres de blob em pastas e diretórios, permitindo definir permissões compatíveis com POSIX e controle de acesso baseado em função (RBAC) em seu contêiner.
+
 O Azure Blob storage é compatível com três tipos diferentes de blob:
 
 - **Block blobs** - Um blob de blocos é tratado como um conjunto de blocos. Cada bloco pode variar em tamanho, até 100 MB. Um blob de blocos pode conter até 50 mil blocos, fornecendo um tamanho máximo de mais de 4,7 TB. O bloco é a menor quantidade de dados que podem ser lidos ou gravados como uma unidade individual. Os blobs de blocos são mais bem usados para armazenar objetos binários, grandes e discretos que são alterados com pouca frequência.
@@ -811,13 +815,14 @@ O Cosmos DB é altamente adequado para os seguintes cenários:
 - **Varejo e marketing**. A Microsoft usa o Cosmos DB para as próprias plataformas de comércio eletrônico que são executadas como parte da Microsoft Store e do Xbox Live. Ele também é usado no setor de varejo para armazenar dados de catálogo e para fornecimento de eventos em pipelines de processamento de pedidos.
 
 - **Jogos**. Os jogos modernos executam o processamento gráfico em clientes móveis/console, mas dependem da nuvem para fornecer conteúdo personalizado, como estatísticas de jogos, integração em mídia social e tabelas com as melhores pontuações. Os jogos geralmente exigem latências de um milissegundo para leituras e gravações a fim de fornecer uma experiência envolvente no jogo. Um banco de dados de jogo deve ser rápido e ser capaz de lidar com grandes picos de taxas de solicitação durante novos lançamentos de jogos e atualizações de recursos.
+
 - **Aplicativos Web e móveis**. O Azure Cosmos DB é normalmente usado em aplicativos Web e móveis e é bastante adequado para modelagem de interações sociais, integração com serviços de terceiros e desenvolvimento de experiências personalizadas avançadas. Os SDKs do Cosmos DB podem ser usados para criar aplicativos iOS e Android avançados usando a estrutura popular do Xamarin.
 
 ### Describe Azure Cosmos DB APIs
 
 O Azure Cosmos DB dá suporte a várias APIs, permitindo que os desenvolvedores migrem facilmente os dados de repositórios NoSQL usados com frequência e apliquem as próprias habilidades de programação existentes. Ao provisionar uma nova instância do Cosmos DB, você seleciona a API que deseja usar. A escolha da API depende de vários fatores, incluindo o tipo de dados a ser armazenado, a necessidade de oferecer suporte a aplicativos existentes e as habilidades de API dos desenvolvedores que trabalharão com o armazenamento de dados.
 
-- **Core (SQL) API** - A API nativa no Cosmos DB gerencia dados no formato de documento JSON e, apesar de ser uma solução de armazenamento de dados NoSQL, usa a sintaxe SQL para trabalhar com os dados.
+- **Core (SQL) API** - A API nativa no Cosmos DB gerencia dados no formato de documento JSON e, apesar de ser uma solução de armazenamento de dados NoSQL, usa a sintaxe SQL para trabalhar com os dados. Isso inclui aplicativos com dados de chave/valor. Esse tipo de aplicativo também é suportado pela Table API, mas a API Core (SQL) é recomendada como a melhor solução, pois fornece indexação aprimorada e uma experiência de consulta mais rica. A Microsoft recomenda que qualquer novo projeto de dados criado do zero use a API Core (SQL). 
 
 - **MongoDB API** - O MongoDB é um banco de dados de software livre conhecido no qual são armazenados no formato JSON binário (BSON). A API do Azure Cosmos DB para MongoDB permite que os desenvolvedores usem bibliotecas de cliente do MongoDB e código para trabalhar com os dados no Azure Cosmos DB. A MQL (linguagem de consulta do MongoDB) usa uma sintaxe compacta orientada a objeto na qual os desenvolvedores usam objetos para chamar métodos. Por exemplo, a seguinte consulta usa o método find para consultar a coleção products no objeto db:
 
@@ -857,6 +862,9 @@ g.V('3').addE('reports to').to(g.V('1'))
 # resultado
 g.V().hasLabel('employee').order().by('id')
 ```
+
+Ao criar um novo aplicativo que analisa **informações detalhadas de relacionamento para dados não relacionais**, você deve usar a API Gremlin. Este é um dos poucos casos em que a API Core (SQL) não é recomendada como a melhor solução. 
+
 🔝 [Voltar ao topo](#topo)
 
 ## <a name="describe-an-analytics-workload-on-azure-25-30"></a> ☁️ Describe an analytics workload on Azure (25-30%)
@@ -1073,7 +1081,7 @@ O Microsoft Power BI é um conjunto de ferramentas e serviços que os analistas 
 
 - **Power BI Desktop**, um aplicativo no qual você pode importar dados de uma ampla variedade de fontes de dados, combinar e organizar os dados dessas fontes em um modelo de dados de análise e criar relatórios contendo visualizações interativas dos dados.
 
-- **Power BI service** - um serviço de nuvem no qual os relatórios podem ser publicados e usados por usuários empresariais. Você também pode fazer modelagem de dados e edição de relatório de nível básico diretamente no serviço usando um navegador da Web, mas a funcionalidade para isso é limitada em comparação com a ferramenta Power BI Desktop. Você pode usar o serviço para agendar atualizações das fontes de dados nas quais os relatórios se baseiam e compartilhar relatórios com outros usuários. Você também pode definir dashboards e aplicativos que combinam relatórios relacionados em um só local de fácil consumo.
+- **Power BI service** - um serviço de nuvem no qual os relatórios podem ser publicados e usados por usuários empresariais. Você também pode fazer modelagem de dados e edição de relatório de nível básico diretamente no serviço usando um navegador da Web, mas a funcionalidade para isso é limitada em comparação com a ferramenta Power BI Desktop. Você pode usar o serviço para agendar atualizações das fontes de dados nas quais os relatórios se baseiam e compartilhar relatórios com outros usuários. Você também pode definir dashboards e aplicativos que combinam relatórios relacionados em um só local de fácil consumo. Você pode aplicar segurança baseada em função aos dados. O Power BI service é um SaaS que permite que os usuários compartilhem e colaborem em relatórios e painéis do Power BI e também permite que os administradores atribuam usuários a funções para um relatório específico. Essas funções são criadas pelo autor do relatório no Power BI Desktop durante a modelagem de dados, permitindo que você filtre dados nos visuais que usuários específicos podem acessar e interagir.
 
 > Os usuários podem consumir relatórios, dashboards e aplicativos no serviço do Power BI por meio de um navegador da Web ou em dispositivos móveis usando o aplicativo Power BI para telefone.
 
