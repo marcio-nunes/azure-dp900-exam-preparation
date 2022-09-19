@@ -561,17 +561,19 @@ O SQL Server nas Máquinas Virtuais do Azure oferece uma experiência administra
 
 Uma opção de PaaS (plataforma como serviço) que fornece quase 100% de compatibilidade com instâncias de SQL Server locais, abstraindo o hardware e o sistema operacional subjacentes. O serviço inclui **gerenciamento automatizado** de atualizações de software, backups e outras tarefas de manutenção, **reduzindo a carga administrativa** do suporte a uma instância de servidor de banco de dados. 
 
-- **Compatibilidade** - Quase 100% de compatibilidade com SQL Server Enterprise Edition. A maioria dos bancos de dados locais pode ser migrada com alterações mínimas no código, usando o serviço Azure Database Migration (ADM).
-- **Arquitetura** - Cada instância gerenciada pode dar suporte a vários bancos de dados. Além disso, os **pools de instâncias** podem ser usados para compartilhar recursos com eficiência em instâncias menores.
-- **Disponibilidade**	- 99,99%
-- **Gerenciamento**	
-  - backups e recuperação totalmente automatizados
-  - aplicação de patch/atualizações de software e OS
-  - monitoramento de banco de dados e outras tarefas gerais, mas você tem controle total sobre a segurança e a alocação de recursos para os seus bancos de dados.
-  - configuração de alta disponibilidade e de fluxo de dados de monitoramento de desempenho e integridade.
-  - redimensionamento e configuração de instâncias dinâmicas
-  - replicação de banco de dados (incluindo banco de dados do sistema)
-- **Casos de uso** - Use essa opção para a maioria dos cenários de migração na nuvem, especialmente quando você precisar de **alterações mínimas** nos aplicativos existentes.
+||Azure SQL Managed Instance|
+|-|-|
+|Compatibilidade|Quase 100% de compatibilidade com SQL Server Enterprise Edition. A maioria dos bancos de dados locais pode ser migrada com alterações mínimas no código, usando o serviço Azure Database Migration (ADM).|
+|Arquitetura|Cada instância gerenciada pode dar suporte a vários bancos de dados. Além disso, os **pools de instâncias** podem ser usados para compartilhar recursos com eficiência em instâncias menores.|
+|Disponibilidade|99,99%|
+|Gerenciamento|
+- backups e recuperação totalmente automatizados
+- aplicação de patch/atualizações de software e OS
+- monitoramento de banco de dados e outras tarefas gerais, mas você tem controle total sobre a segurança e a alocação de recursos para os seus bancos de dados.
+- configuração de alta disponibilidade e de fluxo de dados de monitoramento de desempenho e integridade.
+- redimensionamento e configuração de instâncias dinâmicas
+- replicação de banco de dados (incluindo banco de dados do sistema)|
+|Casos de uso|Use essa opção para a maioria dos cenários de migração na nuvem, especialmente quando você precisar de **alterações mínimas** nos aplicativos existentes.|
 
 As instâncias gerenciadas **dependem de outros serviços do Azure**, como o Azure Storage para backups, o Azure Event Hubs para telemetria, o Azure Active Directory para autenticação, o Azure Key Vault para TDE (Transparent Data Encryption) e alguns serviços da plataforma Azure que fornecem recursos de segurança e compatibilidade.
 
