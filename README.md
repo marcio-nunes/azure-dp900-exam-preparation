@@ -539,11 +539,13 @@ Azure SQL é um termo coletivo para uma família de serviços de banco de dados 
 
 Uma máquina virtual em execução no Azure com uma instalação do SQL Server. Solução IaaS (infraestrutura como serviço) que virtualiza a infraestrutura de hardware para computação, armazenamento e rede no Azure, tornando-a uma ótima opção para migração **"lift-and-shift"** de instalações locais existentes do SQL Server para a nuvem.
 
-- **Compatibilidade** - Totalmente compatível com instalações físicas locais e virtualizadas. 
-- **Arquitetura** - Instâncias do SQL Server são instaladas em uma máquina virtual. Cada instância pode dar suporte a vários bancos de dados.
-- **Disponibilidade**	- 99,99%
-- **Gerenciamento**	- Você deve gerenciar todos os aspectos do servidor, incluindo o sistema operacional e as atualizações, a configuração, os backups e outras tarefas de manutenção do SQL Server.
-- **Casos de uso** - Use essa opção **quando precisar migrar ou estender uma solução de SQL Server local** e manter o controle total sobre todos os aspectos da configuração do servidor e do banco de dados.
+||Azure SQL Server em VMs (Máquinas Virtuais)|
+|-|-|
+|Compatibilidade|Totalmente compatível com instalações físicas locais e virtualizadas. |
+|Arquitetura|Instâncias do SQL Server são instaladas em uma máquina virtual. Cada instância pode dar suporte a vários bancos de dados.|
+|Disponibilidade|99,99%|
+|Gerenciamento|Você deve gerenciar todos os aspectos do servidor, incluindo o sistema operacional e as atualizações, a configuração, os backups e outras tarefas de manutenção do SQL Server.|
+|Casos de uso|Use essa opção **quando precisar migrar ou estender uma solução de SQL Server local** e manter o controle total sobre todos os aspectos da configuração do servidor e do banco de dados.|
 
 Migrar do sistema em execução no local para uma máquina virtual do Azure não é diferente de mover um banco de dados de um servidor local para outro. Essa abordagem é **adequada para migrações e aplicativos que exigem acesso a recursos do sistema operacional** que podem não ser compatíveis no nível de PaaS. 
 
