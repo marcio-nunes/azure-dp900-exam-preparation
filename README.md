@@ -786,6 +786,8 @@ Para ajudar a garantir o acesso rápido, o Azure Table storage divide uma tabela
 
 A chave em uma tabela do Azure Table storage compreende dois elementos: a chave de partição, que identifica a partição contendo a linha; e uma row key exclusiva para cada linha na mesma partição. Os itens na mesma partição são armazenados em ordem de row key. Se um aplicativo adicionar uma nova linha a uma tabela, o Azure verificará se a linha foi colocada na posição correta na tabela. Esse esquema permite que um aplicativo execute rapidamente point queries que identifiquem uma linha e range queries que busquem um bloco contíguo de linhas em uma partição.
 
+O Azure Table storage dá suporte apenas a réplicas de leituras de várias regiões. Você pode configurar réplicas de leitura no Azure Table storage configurando a conta de armazenamento para usar a redundância de armazenamento com redundância geográfica de acesso de leitura (RA-GRS). Isso habilita uma réplica legível em uma região secundária. No entanto, você não pode gravar dados na região secundária.
+
 ### 🔸 Describe capabilities and features of Azure Cosmos DB
 
 O Azure Cosmos DB é um sistema de banco de dados não relacional (NoSQL) de escala global que dá suporte a várias APIs, permitindo que você armazene e gerencie dados como documentos **JSON, pares chave-valor, famílias de colunas e grafos**.
@@ -795,6 +797,8 @@ O Azure Cosmos DB dá suporte a várias APIs que permitem aos desenvolvedores us
 O Cosmos DB usa índices e particionamento para fornecer desempenho rápido de leitura e gravação e pode ser dimensionado para grandes volumes de dados. 
 
 O Cosmos DB é um sistema de gerenciamento de banco de dados altamente escalonável. O Cosmos DB aloca automaticamente espaço em um contêiner para suas partições, e cada partição pode crescer até 10 GB em tamanho. Os índices são criados e mantidos automaticamente. Praticamente, não há nenhuma sobrecarga administrativa.
+
+A API de tabela do Cosmos DB dá suporte a gravações em várias regiões e réplicas de leitura. Você pode configurar réplicas de leitura em uma conta do Cosmos DB para várias regiões, incluindo suporte para criar gravações multirregionais.
 
 ### Identify use cases for Azure Cosmos DB
 
@@ -835,7 +839,11 @@ https://endpoint/Customers(PartitionKey='1',RowKey='124')
 - **Cassandra API** - O API do Cassandra é compatível com o Apache Cassandra, que é um banco de dados de software livre popular que usa uma estrutura de armazenamento de famílias de colunas. As famílias de colunas são tabelas, semelhantes àquelas em um banco de dados relacional, com a exceção de que não é obrigatório que cada linha tenha as mesmas colunas. O Cassandra dá suporte a uma sintaxe baseada em SQL.
 
 - **Gremlin API** - A API do Gremlin é usada com os **dados em uma estrutura de grafo**, na qual as entidades são definidas como vértices que formam nós (nodes) no grafo conectado. Os nós são conectados por bordas (edges) que representam relações, desta forma:
-
+  - Os nós representam instâncias de entidades de dados, como pessoas individuais. Os nós são análogos a linhas em uma tabela em um banco de dados relacional.
+  - As Edges representam os relacionamentos entre os nós; eles também são chamados de grafos ou relacionamentos. As Edges podem ser direcionadas ou não direcionadas, dependendo da estrutura do banco de dados individual.
+  - Propriedades representam atributos de dados em relação a um nó. As propriedades são análogas às colunas em uma tabela em um banco de dados relacional. No entanto, lembre-se de que os bancos de dados NoSQL permitem flexibilidade nos atributos armazenados em um nó. Por exemplo, um nó pode ter muitas instâncias de um único atributo ou pode estar ausente.
+  - As direções são uma propriedade de uma Edge. As Edges podem ser direcionadas ou não direcionadas. As Edges direcionadas armazenam duas informações relacionadas a cada um dos nós que conectam. Por exemplo, uma Edge direcionada pai/filho armazenaria qual nó pessoa representa o pai e qual o filho. As Edges não direcionadas unem os nós, onde a direção do relacionamento não importa; por exemplo, uma amizade entre duas pessoas.
+  
 ![graph](https://docs.microsoft.com/pt-br/training/wwl-data-ai/explore-non-relational-data-stores-azure/media/graph.png)
 
 A sintaxe do Gremlin inclui funções para operar em vértices e bordas, permitindo que você insira, atualize, exclua e consulte dados no grafo. Por exemplo, você pode usar o código a seguir para adicionar um novo funcionário chamado Alice que relata ao funcionário com a ID 1 (Suzana).
