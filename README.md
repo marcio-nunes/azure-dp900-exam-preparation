@@ -974,6 +974,44 @@ A saída do processamento de fluxo geralmente é enviada para os seguintes servi
 
 - **Microsoft Power BI**: usado para gerar visualizações de dados em tempo real em relatórios e painéis.
 
+### Azure Stream Analytics
+
+O Azure Stream Analytics é um serviço para processamento de eventos complexos e análise de dados de streaming. O Stream Analytics é usado para:
+
+- Ingerir dados de uma entrada, como um Azure event hub, Azure IoT Hub ou contêiner de Azure Storage blob.
+- Processar os dados usando uma consulta para selecionar, projetar e agregar valores de dados.
+- Gravar os resultados em uma saída, como Azure Data Lake Gen 2, Azure SQL Database, Azure Synapse Analytics, Azure Functions, Azure event hub, Microsoft Power BI ou outros.
+
+Uma vez iniciada, uma consulta do Stream Analytics será executada perpetuamente, processando novos dados à medida que chegam na entrada e armazenando os resultados na saída.
+
+O Azure Stream Analytics é uma ótima opção para quem precisa capturar dados continuamente de uma fonte de streaming, filtrá-los ou agregá-los e enviar os resultados para um armazenamento de dados ou processo downstream para análise e geração de relatórios.
+
+### Azure Stream Analytics jobs e clusters
+
+A maneira mais fácil de usar o Azure Stream Analytics é criar um job do Stream Analytics em uma assinatura do Azure, configurar suas entradas e saídas e definir a consulta que o job usará para processar os dados. A consulta é expressa usando SQL e pode incorporar dados de referência estática de várias fontes para fornecer valores de pesquisa que podem ser combinados com os dados de streaming ingeridos de uma entrada.
+
+Se os requisitos do processo de fluxo forem complexos ou consumirem muitos recursos, você poderá criar um cluster do Stream Analysis, que usa o mesmo mecanismo de processamento subjacente de um job do Stream Analytics, mas em um **locatário dedicado** (para que seu processamento não seja afetado por outros clientes) e com escalabilidade configurável que permite definir o equilíbrio certo de taxa de transferência (throughput) e custo para seu cenário específico.
+
+### Apache Spark no Azure
+
+Apache Spark é uma estrutura de processamento distribuído para análise de dados em larga escala. Você pode usar o Spark no Microsoft Azure nos seguintes serviços:
+
+- Azure Synapse Analytics
+- Azure Databricks
+- Azure HDInsight
+
+O Spark pode ser usado para executar código (geralmente escrito em Python, Scala ou Java) em paralelo em vários nós de cluster, permitindo que ele processe volumes muito grandes de dados com eficiência. O Spark pode ser usado para processamento em lotes e de fluxo.
+
+#### Spark Structured Streaming
+
+Para processar dados de streaming no Spark, você pode usar a biblioteca *Spark Structured Streaming*, que fornece uma API para ingestão, processamento e saída de resultados de fluxos perpétuos de dados.
+
+Spark Structured Streaming é criado em uma estrutura no Spark chamada dataframe, que encapsula uma tabela de dados. Você usa a API do Spark Structured Streaming para ler dados de uma fonte de dados em tempo real, como um hub Kafka, um armazenamento de arquivos ou uma porta de rede, em um dataframe "sem limites" que é continuamente preenchido com novos dados do fluxo. Você define uma consulta no dataframe que seleciona, projeta ou agrega os dados - geralmente em janelas temporais. Os resultados da consulta geram outro dataframe, que pode ser persistido para análise ou processamento adicional.
+
+O Spark Structured Streaming é uma ótima opção para análise em tempo real quando você precisa incorporar dados de streaming em um repositório de dados analíticos ou data lake baseado no Spark.
+
+#### Delta Lake
+
 ### 🔸 Describe data visualization in Microsoft Power BI
 
 - Identify capabilities of Power BI
