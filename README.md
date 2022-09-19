@@ -962,6 +962,18 @@ Fontes para processamento de stream:
 
 - **Apache Kafka**: uma solução de ingestão de dados de código aberto que é comumente usada em conjunto com o Apache Spark. Você pode usar o Azure HDInsight para criar um cluster Kafka.
 
+Coletores para processamento de fluxo:
+
+A saída do processamento de fluxo geralmente é enviada para os seguintes serviços:
+
+- **Azure Event Hubs**: usados para enfileirar os dados processados para processamento posterior.
+
+- **Azure Data Lake Store Gen 2 ou Azure blob storage**: usados para manter os resultados processados como um arquivo.
+
+- **Azure SQL Database ou Azure Synapse Analytics, ou Azure Databricks**: usados para manter os resultados processados em uma tabela de banco de dados para consulta e análise.
+
+- **Microsoft Power BI**: usado para gerar visualizações de dados em tempo real em relatórios e painéis.
+
 ### 🔸 Describe data visualization in Microsoft Power BI
 
 - Identify capabilities of Power BI
