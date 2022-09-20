@@ -43,9 +43,10 @@ Podemos classificar os dados como estruturados, semiestruturados ou não estrutu
 - Dados semiestruturados são informações que têm alguma estrutura.
 - Permitem alguma **variação entre instâncias da entidade**. 
   - As entidades podem ter um ou mais endereços de email e outras podem não ter nenhum.
-- Um formato comum para dados semiestruturados é o JSON (JavaScript Object Notation).
+- Formatos comuns para dados semiestruturados: JSON e XML.
+- Pode conter grandes variações na estrutura dos dados.
 
-> O JSON é apenas uma das muitas maneiras pelas quais os dados semiestruturados podem ser representados.
+> O JSON (JavaScript Object Notation) é apenas uma das muitas maneiras pelas quais os dados semiestruturados podem ser representados.
 
 Dados semiestruturados com cada entidade fornecendo suas próprias definições de campo são uma descrição de dados de tipo documento e, portanto, um armazenamento de documentos é sua melhor escolha. Os documentos são escritos e recuperados como documentos completos. As definições de campo incorporadas possibilitam consultar documentos para recuperar valores de campo. Normalmente, você usaria uma solução de armazenamento do Azure Cosmos DB.
 
@@ -249,7 +250,12 @@ Uma arquitetura comum de análise de escala empresarial tem esta aparência:
 
 **Data warehouses** são uma forma estabelecida de armazenar dados em um esquema relacional otimizado para operações de leitura - principalmente consultas para dar suporte a relatórios e à visualização de dados. O esquema do data warehouse pode exigir alguma desnormalização de dados em uma fonte de dados OLTP (apresentando algumas duplicações para fazer com que as consultas sejam executadas mais rapidamente).
 
-**Modelo OLAP** é um tipo agregado de armazenamento de dados que é otimizado para cargas de trabalho analíticas. As agregações de dados são feitas entre dimensões em diferentes níveis, permitindo que você faça drill up/down para exibir agregações em vários níveis hierárquicos; por exemplo, para localizar o total de vendas por região, por cidade ou por um endereço individual. Como os dados do OLAP são previamente agregados, as consultas para retornar os resumos que ele contém podem ser executadas rapidamente.
+**Modelo OLAP** é um tipo agregado de armazenamento de dados que é otimizado para cargas de trabalho analíticas. As agregações de dados são feitas entre dimensões em diferentes níveis, permitindo que você faça drill up/down para exibir agregações em vários níveis hierárquicos; por exemplo, para localizar o total de vendas por região, por cidade ou por um endereço individual. Como os dados do OLAP são previamente agregados, as consultas para retornar os resumos que ele contém podem ser executadas rapidamente. Os sistemas de processamento analítico online (OLAP) são projetados para realizar análises complexas e fornecer inteligência de negócios. O OLAP é usado para cargas de trabalho analíticas, como:
+
+- Gerando relatórios ad-hoc complexos que incluem várias agregações.
+- Executando análise de big data em um banco de dados NoSQL.
+- Um aplicativo para realizar mineração de dados em dados históricos coletados de várias fontes relacionais e não relacionais.
+- Um aplicativo para fornecer dados sem normalização para dar suporte à geração de relatórios.
 
 Tipos diferentes de usuários podem executar trabalhos de análise de dados em diferentes estágios da arquitetura geral. Por exemplo:
 
