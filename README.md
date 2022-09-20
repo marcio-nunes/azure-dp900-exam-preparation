@@ -365,12 +365,19 @@ Pipeline é um agrupamento lógico de atividades que executa uma tarefa. Você p
 
 O Azure Data Factory é usado por engenheiros de dados para criar soluções de ETL (extração, transformação e carregamento) que preenchem os armazenamentos de dados analíticos com os dados de sistemas transacionais na organização.
 
+O Azure Data Factory pode carregar dados do Azure Blob Storage, Azure Data Lake Storage, Azure Cosmos DB e Azure Synapse Analytics. Você pode até carregar dados de serviços fora do Azure, como o Amazon S3.
+
+O Azure Data Factory pode exportar dados para o Azure Data Lake Storage, Azure Synapse Analytics e muitos outros destinos, como Azure SQL Database, Azure Blob Storage e Azure Cosmos DB.
+
+O Azure Data Factory pode executar pacotes do SQL Server Integration Service (SSIS) usando a atividade Executar Pacote SSIS. Para usar a atividade você precisa configurar o tempo de execução (IR) de integração Azure-SSIS.
+
 ### Azure Synapse Analytics
 
 O Azure Synapse Analytics é uma solução de análise de dados abrangente e unificada que oferece uma interface de serviço única para vários recursos analíticos, incluindo:
 
 - **Pipelines** - baseado na mesma tecnologia do Azure Data Factory.
 - **SQL** - um mecanismo de banco de dados SQL altamente escalonável, otimizado para cargas de trabalho de data warehouse.
+  - Realizar consultas e agregações muito complexas em uma grande quantidade de dados relacionais. Você pode provisionar pools do Synapse SQL para executar rapidamente consultas complexas em vários nós de computador, graças ao processamento paralelo massivo (MPP) do Synapse SQL.
 - **Apache Spark** - um sistema de processamento de dados distribuído de código aberto que dá suporte a várias linguagens de programação e APIs, incluindo Java, Scala, Python e SQL.
 - **Azure Synapse Data Explorer** - uma solução de análise de dados de alto desempenho que é otimizada para **consultas em tempo real de dados de log e telemetria** usando a KQL (Kusto Query Language).
 - **Workspaces** - espaços de trabalho no Synapse Studio.
@@ -1116,7 +1123,16 @@ O Microsoft Power BI é um conjunto de ferramentas e serviços que os analistas 
 
 - **Power BI Desktop**, um aplicativo no qual você pode importar dados de uma ampla variedade de fontes de dados, combinar e organizar os dados dessas fontes em um modelo de dados de análise e criar relatórios contendo visualizações interativas dos dados.
 
-- **Power BI service** - um serviço de nuvem no qual os relatórios podem ser publicados e usados por usuários empresariais. Você também pode fazer modelagem de dados e edição de relatório de nível básico diretamente no serviço usando um navegador da Web, mas limitado em comparação com a ferramenta Power BI Desktop. Você pode usar o serviço para agendar atualizações das fontes de dados nas quais os relatórios se baseiam e compartilhar relatórios com outros usuários. Você também pode definir dashboards e aplicativos que combinam relatórios relacionados em um workspace de fácil consumo. Você pode aplicar segurança baseada em função aos dados. O Power BI service é um SaaS que permite que os usuários compartilhem e colaborem em relatórios e painéis do Power BI e também permite que os administradores atribuam usuários a funções para um relatório específico. Essas funções são criadas pelo autor do relatório no Power BI Desktop durante a modelagem de dados, permitindo que você filtre dados nos visuais que usuários específicos podem acessar e interagir.
+- **Power BI service** - um serviço de nuvem no qual os relatórios podem ser publicados e usados por usuários empresariais. 
+  - Você também pode fazer modelagem de dados e edição de relatório de nível básico diretamente no serviço usando um navegador da Web, mas limitado em comparação com a ferramenta Power BI Desktop. 
+  - Você pode usar o serviço para agendar atualizações das fontes de dados nas quais os relatórios se baseiam e compartilhar relatórios com outros usuários. 
+  - Você também pode definir dashboards e aplicativos que combinam relatórios relacionados em um workspace de fácil consumo. 
+  - Você pode aplicar segurança baseada em função aos dados. 
+  - O Power BI service é um SaaS que permite que os usuários compartilhem e colaborem em relatórios e painéis do Power BI.
+    - Os dashboards são compostos por Tiles, que podem ser criados fixando visuais de relatórios e widgets do Power BI.
+  - Também permite que os administradores atribuam usuários a funções para um relatório específico. Essas funções são criadas pelo autor do relatório no Power BI Desktop durante a modelagem de dados, permitindo que você filtre dados nos visuais que usuários específicos podem acessar e interagir.
+  - Os dashboards podem ser criados no Power BI Service, o componente SaaS do Power BI.
+    - Os dashboards são uma única tela (single canvas). Eles têm apenas uma página, ao contrário dos relatórios do Power BI, que podem ter várias páginas.
 
 > Os usuários podem consumir relatórios, dashboards e aplicativos no serviço do Power BI por meio de um navegador da Web ou em dispositivos móveis usando o aplicativo Power BI para telefone.
 
@@ -1205,5 +1221,9 @@ Os mapas são uma ótima maneira de comparar visualmente valores para diferentes
 ### Relatórios interativos no Power BI
 
 No Power BI, os elementos visuais para dados relacionados em um relatório são vinculados automaticamente uns aos outros e fornecem interatividade. Por exemplo, selecionar uma categoria individual em uma visualização filtrará e destacará automaticamente essa categoria em outras visualizações relacionadas no relatório. 
+
+### QA
+
+O visual de perguntas e respostas oferece aos usuários uma caixa de perguntas (entrada de texto) que eles podem usar para fazer perguntas em linguagem natural, bem como uma lista pré-preenchida de perguntas sugeridas e receber respostas visuais.
 
 🔝 [Voltar ao topo](#topo)
