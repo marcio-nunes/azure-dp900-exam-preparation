@@ -781,7 +781,7 @@ O Azure File storage é essencialmente uma maneira de criar compartilhamentos de
 
  O Azure File storage permite que você compartilhe até 100 TB de dados em uma conta de armazenamento. Esses dados podem ser distribuídos em qualquer número de file shares na conta. O tamanho máximo de um arquivo é 1 TB, mas você pode definir cotas para limitar o tamanho de cada compartilhamento embaixo desta figura. No momento, o Azure File storage dá suporte a até duas mil conexões simultâneas por arquivo compartilhado.
 
- Depois de criar uma Storage Account, você poderá carregar arquivos para o Azure File storage usando o portal do Azure ou ferramentas como o utilitário AzCopy. Você também pode usar o serviço Azure File Sync para sincronizar cópias armazenadas em cache localmente de arquivos compartilhados com os dados no Azure File storage.
+ Depois de criar uma Storage Account, você poderá carregar arquivos para o Azure File storage usando o portal do Azure ou ferramentas como o utilitário AzCopy. Você também pode usar o serviço Azure File Sync para **sincronizar cópias armazenadas em cache localmente** de arquivos compartilhados com os dados no Azure File storage.
 
  O Azure File storage oferece dois níveis de desempenho. 
  
@@ -822,7 +822,9 @@ O Cosmos DB usa índices e particionamento para fornecer desempenho rápido de l
 
 O Cosmos DB é um sistema de gerenciamento de banco de dados altamente escalonável. O Cosmos DB aloca automaticamente espaço em um contêiner para suas partições, e cada partição pode crescer até 10 GB em tamanho. Os índices são criados e mantidos automaticamente. Praticamente, não há nenhuma sobrecarga administrativa.
 
-A API de tabela do Cosmos DB dá suporte a gravações em várias regiões e réplicas de leitura. Você pode configurar réplicas de leitura em uma conta do Cosmos DB para várias regiões, incluindo suporte para criar gravações multirregionais.
+O Azure Cosmos DB dá suporte a gravações em várias regiões, permitindo que os usuários trabalhem com um conjunto replicado de dados em sua própria região.
+
+A API de tabela do Cosmos DB dá suporte a gravações em várias regiões e réplicas de leitura. Você pode configurar réplicas de leitura em uma conta do Cosmos DB para várias regiões, incluindo suporte para criar gravações multirregionais. 
 
 Uma Azure Cosmos Account está no topo da hierarquia de recursos. Você deve ter isso antes de criar uma instância de banco de dados do Azure Cosmos DB. Você pode então criar contêineres específicos de API, como tabelas, coleções ou grafos. Você cria itens, as entidades para as quais está armazenando dados, dentro de um contêiner. Os exemplos incluem documentos, nós, edges ou linhas.
 
