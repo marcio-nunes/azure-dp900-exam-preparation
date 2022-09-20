@@ -619,7 +619,7 @@ Um serviço de banco de dados de PaaS totalmente gerenciado e altamente escalon�
 |Gerenciamento|Atualizações, backups e recuperação totalmente automatizados.|
 |Casos de uso|Use essa opção para novas soluções de nuvem ou migrar aplicativos que têm dependências mínimas no nível da instância. Aplicativos de nuvem modernos que precisam usar os **recursos estáveis de SQL Server mais recentes**. Aplicativos que exigem alta disponibilidade. Sistemas com uma **carga variável** que precisam do servidor de banco de dados para **escalar e reduzir verticalmente** de modo rápido.|
 
-O Azure SQL Database tem um **custo menor** em comparação com a Instância Gerenciada de SQL do Azure. Embora a Instância Gerenciada de SQL do Azure também seja um PaaS, o Azure SQL Database **elimina mais tarefas administrativas**, como remover a necessidade de gerenciar a configuração do SQL Server e o **SLA é maior**.
+O Azure SQL Database tem um **custo menor** em comparação com a Instância Gerenciada de SQL do Azure. Embora a Instância Gerenciada de SQL do Azure também seja um PaaS, o Azure SQL Database **elimina mais tarefas administrativas**, como remover a necessidade de gerenciar a configuração do SQL Server e **maior disponibilidade**.
 
 > O Servidor do Banco de Dados SQL é um constructo lógico que atua como um ponto administrativo central para um banco de dados individual ou em pool, logons, regras de firewall, regras de auditoria, políticas de detecção de ameaças e grupos de failover.
 
