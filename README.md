@@ -779,14 +779,14 @@ O Azure File storage é essencialmente uma maneira de criar compartilhamentos de
 
 ![azure-files](https://docs.microsoft.com/pt-br/training/wwl-data-ai/explore-provision-deploy-non-relational-data-services-azure/media/azure-files.png)
 
- O Azure File storage permite que você compartilhe até 100 TB de dados em uma conta de armazenamento. Esses dados podem ser distribuídos em qualquer número de file shares na conta. O tamanho máximo de um arquivo é 1 TB, mas você pode definir cotas para limitar o tamanho de cada compartilhamento embaixo desta figura. No momento, o Azure File storage dá suporte a até duas mil conexões simultâneas por arquivo compartilhado.
+O Azure File storage permite que você compartilhe até 100 TB de dados em uma conta de armazenamento. Esses dados podem ser distribuídos em qualquer número de file shares na conta. O tamanho máximo de um arquivo é 1 TB, mas você pode definir cotas para limitar o tamanho de cada compartilhamento embaixo desta figura. No momento, o Azure File storage dá suporte a até duas mil conexões simultâneas por arquivo compartilhado.
 
- Depois de criar uma Storage Account, você poderá carregar arquivos para o Azure File storage usando o portal do Azure ou ferramentas como o utilitário AzCopy. Você também pode usar o serviço Azure File Sync para **sincronizar cópias armazenadas em cache localmente** de arquivos compartilhados com os dados no Azure File storage.
+Depois de criar uma Storage Account, você poderá carregar arquivos para o Azure File storage usando o portal do Azure ou ferramentas como o utilitário AzCopy. Você também pode usar o serviço Azure File Sync para **sincronizar cópias armazenadas em cache localmente** de arquivos compartilhados com os dados no Azure File storage.
 
- O Azure File storage oferece dois níveis de desempenho. 
+O Azure File storage oferece dois níveis de desempenho. 
  
- - **Standard tier** - usa um hardware baseado em disco rígido (HDD) em um datacenter.
- - **Premium tier** - usa discos de estado sólido (SSD). A camada Premium oferece maior taxa de transferência, mas é cobrada a uma taxa mais alta.
+- **Standard tier** - usa um hardware baseado em disco rígido (HDD) em um datacenter.
+- **Premium tier** - usa discos de estado sólido (SSD). A camada Premium oferece maior taxa de transferência, mas é cobrada a uma taxa mais alta.
 
 O Azure File storage dão suporte a dois protocolos de rede comuns de compartilhamento de arquivos:
 
@@ -814,17 +814,17 @@ O Azure Table storage dá suporte apenas a réplicas de leituras de várias regi
 
 ### 🔸 Describe capabilities and features of Azure Cosmos DB
 
-O Azure Cosmos DB é um sistema de banco de dados não relacional (NoSQL) de escala global que dá suporte a várias APIs, permitindo que você armazene e gerencie dados como documentos **JSON, pares chave-valor, famílias de colunas e grafos**.
+O Azure Cosmos DB é um sistema de banco de dados não relacional (NoSQL) de escala global que dá suporte a várias APIs, permitindo que você armazene e gerencie dados como documentos **JSON, pares chave-valor, famílias de colunas e grafos** com baixa latência para escrita e leitura.
 
 O Azure Cosmos DB dá suporte a várias APIs que permitem aos desenvolvedores usar a semântica de programação de muitos tipos comuns de armazenamento de dados para trabalhar com os dados no Cosmos DB. A estrutura de dados interna é abstrata, permitindo que os desenvolvedores usem o Cosmos DB para armazenar e consultar dados usando APIs com as quais já estão familiarizados.
+
+O Azure Cosmos DB dá suporte à desnormalização de dados, o que aumenta a necessidade de duplicação de dados, mas também reduz a complexidade do esquema e, portanto, as consultas necessárias para manipulá-lo.
 
 O Cosmos DB usa índices e particionamento para fornecer desempenho rápido de leitura e gravação e pode ser dimensionado para grandes volumes de dados. 
 
 O Cosmos DB é um sistema de gerenciamento de banco de dados altamente escalonável. O Cosmos DB aloca automaticamente espaço em um contêiner para suas partições, e cada partição pode crescer até 10 GB em tamanho. Os índices são criados e mantidos automaticamente. Praticamente, não há nenhuma sobrecarga administrativa.
 
-O Azure Cosmos DB dá suporte a gravações em várias regiões, permitindo que os usuários trabalhem com um conjunto replicado de dados em sua própria região.
-
-A API de tabela do Cosmos DB dá suporte a gravações em várias regiões e réplicas de leitura. Você pode configurar réplicas de leitura em uma conta do Cosmos DB para várias regiões, incluindo suporte para criar gravações multirregionais. 
+A Table API do Cosmos DB dá suporte a gravações em várias regiões e réplicas de leitura. 
 
 Uma Azure Cosmos Account está no topo da hierarquia de recursos. Você deve ter isso antes de criar uma instância de banco de dados do Azure Cosmos DB. Você pode então criar contêineres específicos de API, como tabelas, coleções ou grafos. Você cria itens, as entidades para as quais está armazenando dados, dentro de um contêiner. Os exemplos incluem documentos, nós, edges ou linhas.
 
@@ -864,7 +864,7 @@ db.products.find({id: 123})
 }
 ```
 
-- **Table API** - é usada para trabalhar com os dados em tabelas de chave-valor, semelhante ao Azure Table Storage. A Azure Cosmos DB Table API oferece maior escalabilidade e desempenho do que o Azure Table Storage. Abaixo uma consulta ao endpoint da tabela Customer.
+- **Table API** - é usada para trabalhar com os dados em tabelas de chave-valor, semelhante ao Azure Table Storage. A Azure Cosmos DB Table API oferece maior escalabilidade e desempenho do que o Azure Table Storage. O Azure Table Storage dá suporte apenas a réplicas de leituras de várias regiões configurando a conta de armazenamento para usar a redundância geográfica de acesso de leitura (RA-GRS). No entanto, você **não pode gravar dados na região secundária**. Abaixo uma consulta ao endpoint da tabela Customer.
 
 ```URL
 https://endpoint/Customers(PartitionKey='1',RowKey='124')
