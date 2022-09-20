@@ -143,6 +143,8 @@ O XML é um formato de dados legível que foi popular nos anos 90 e 2000, mas ai
 
 Todos os arquivos são armazenados como dados binários, mas nos formatos legíveis descritos acima, os bytes de dados binários são mapeados em caracteres imprimíveis (ASCII). Alguns formatos de arquivo de dados não estruturados, armazenam os dados como binários brutos que devem ser interpretados por aplicativos e renderizados.
 
+Para grandes arquivos de áudio e vídeo que são usados ​​como fonte para conteúdo de streaming, você deve escolher um armazenamento de dados de **objeto**. Arquivos desse tipo são dados não estruturados e não relacionais. A solução de armazenamento para esse tipo de arquivo é um armazenamento de objetos, como o armazenamento de BLOBs do Azure.
+
 Tipos comuns de dados armazenados como binários:
 
 - Imagens
@@ -187,7 +189,7 @@ Um banco de dados é usado para definir um sistema central no qual dados podem s
 
 - **Bancos de dados não relacionais (NoSQL)** - são sistemas de gerenciamento de dados que não aplicam um esquema relacional aos dados.
 
-- **Key-value databases** - cada registro consiste em uma chave exclusiva e um valor associado (**chave-valor**), que pode estar em qualquer formato.
+- **Key-value databases** - cada registro consiste em uma chave exclusiva e um valor associado (**chave-valor**), que pode estar em qualquer formato. Um armazenamento de chave/valor funciona como uma grande tabela de hash e é otimizado para gravações de dados rápidas. Cada linha de dados é referenciada por um único valor de chave. As únicas operações suportadas são operações simples de consulta, inserção e exclusão. As atualizações de dados exigem que o aplicativo reescreva os dados para o valor inteiro. As consultas podem ser executadas por chave ou por um intervalo de chaves.
 
 ![key-value-store](https://docs.microsoft.com/pt-br/training/wwl-data-ai/explore-core-data-concepts/media/key-value-store.png)
 
