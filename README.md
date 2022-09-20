@@ -958,6 +958,7 @@ Há dois tipos comuns de armazenamento de dados analíticos.
 - **Azure Databricks** - é uma solução abrangente de **análise de dados** criada com base no Apache Spark e que oferece funcionalidades nativas de SQL, bem como clusters Spark otimizados para carga de trabalho para análise de dados e ciência de dados. 
   - fornece uma interface interativa do usuário por meio da qual o sistema pode ser gerenciado e os dados podem ser explorados em notebooks interativos e data visualizations.
   - Devido ao seu uso comum em várias plataformas de nuvem, talvez você queira considerar o uso dele como seu repositório analítico ou se precisar operar em um ambiente de várias nuvens ou dar suporte a uma solução portátil em nuvem.
+  - Azure Databricks pode lidar com processamento batch e stream. Você também pode executar processamento de dados em tempo real e streaming de eventos do Azure Event Hub.
 
 - **Azure HDInsight** - é um serviço do Azure que dá suporte a vários **tipos de cluster de análise de dados de código aberto**. Embora não seja tão amigável quanto o Azure Synapse Analytics e o Azure Databricks, ele poderá ser uma opção adequada se sua solução de análise se basear em várias estruturas de código-fonte aberto ou se você precisar migrar uma solução local existente baseada em Hadoop para a nuvem.
 
