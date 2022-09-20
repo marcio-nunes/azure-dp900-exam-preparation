@@ -191,7 +191,7 @@ Um banco de dados é usado para definir um sistema central no qual dados podem s
 
 ![key-value-store](https://docs.microsoft.com/pt-br/training/wwl-data-ai/explore-core-data-concepts/media/key-value-store.png)
 
-- **Document databases** - são uma forma específica de banco de dados de **chave-valor** na qual o valor é um documento JSON (em que o sistema é otimizado para análise e consulta).
+- **Document databases** - são uma forma específica de banco de dados de **chave-valor** na qual o valor é um documento JSON (em que o sistema é otimizado para análise e consulta). Bancos de dados de documentos é um exemplo de armazenamento de dados não relacional. Armazenam dados no formato JSON ou XML e não exigem que todos os documentos tenham a mesma estrutura.
 
 ![document-store](https://docs.microsoft.com/en-us/training/wwl-data-ai/explore-core-data-concepts/media/document-store.png)
 
@@ -201,7 +201,7 @@ Um banco de dados é usado para definir um sistema central no qual dados podem s
 
 ![column-family-store](https://docs.microsoft.com/pt-br/training/wwl-data-ai/explore-core-data-concepts/media/column-family-store.png)
 
-- **Graph databases** - que armazenam entidades como nós com links para definir relações entre eles.
+- **Graph databases** - que armazenam entidades como nós com links para definir relações entre eles. Bancos de dados de grafos são exemplos de armazenamentos de dados não relacional. Armazenam informações na forma de Edges e Nodes. Eles são usados ​​para representar relacionamentos complexos, como interatividade social.
 
 ![graph](https://docs.microsoft.com/pt-br/training/wwl-data-ai/explore-core-data-concepts/media/graph.png)
 
