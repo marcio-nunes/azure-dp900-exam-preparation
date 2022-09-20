@@ -329,8 +329,8 @@ Analistas de dados podem consultar os Azure SQL DB diretamente para criar relat�
 
 O Azure inclui serviços gerenciados para sistemas de banco de dados relacionais populares de código aberto, incluindo:
 
-- **Azure Database for MySQL** - um sistema de gerenciamento de banco de dados de código aberto fácil de usar que é comumente usado em aplicativos da pilha LAMP (Linux, Apache, MySQL e PHP).
-- **Azure Database for MariaDB** - um sistema de gerenciamento de banco de dados mais recente, criado pelos desenvolvedores originais do MySQL. Desde então, o mecanismo de banco de dados foi reescrito e otimizado para aprimorar o desempenho. O MariaDB tem compatibilidade com o Oracle Database.
+- **Azure Database for MySQL** - um sistema de gerenciamento de banco de dados relacional de código aberto fácil de usar que é comumente usado em aplicativos da pilha LAMP (Linux, Apache, MySQL e PHP).
+- **Azure Database for MariaDB** - um sistema de gerenciamento de banco de dados relacional mais recente, criado pelos desenvolvedores originais do MySQL. O MariaDB tem compatibilidade com o Oracle Database.
 - **Azure Database for PostgreSQL** - um banco de dados híbrido relacional-objeto. É possível armazenar dados em tabelas relacionais, também permite que você armazene tipos de dados personalizados, com propriedades não relacionais próprias.
 
 Os bancos de dados relacionais de código aberto são gerenciados por administradores de banco de dados para dar suporte a aplicativos transacionais e fornecem uma fonte de dados para engenheiros de dados, criando pipelines para soluções analíticas e analistas de dados que criam relatórios.
