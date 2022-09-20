@@ -713,13 +713,17 @@ O Banco de Dados do Azure para PostgreSQL tem três opções de implantação:
 
 - **Azure Database for PostgreSQL Flexible Server** - A opção de implantação de servidor flexível para PostgreSQL é um serviço de banco de dados totalmente gerenciado. Ele fornece mais controle e personalizações de configuração do servidor e tem melhores controles de otimização de custo.
 
-- **Azure Database for PostgreSQL Hyperscale (Citus)** - é uma opção de implantação que **dimensiona consultas em vários nós** de servidor para processar grandes cargas de banco de dados. Seu banco de dados é dividido entre nós. Os dados são divididos em partes com base no valor de uma partition key ou sharding key. Considere usar essa opção de implantação para as maiores implantações de banco de dados do PostgreSQL na nuvem do Azure.
+- **Azure Database for PostgreSQL Hyperscale (Citus)** - é uma opção de implantação que **dimensiona consultas em vários nós** de servidor (cluster) para processar grandes cargas de banco de dados. Seu banco de dados é dividido horizontalmente entre nós. Os dados são divididos em partes com base no valor de uma partition key ou sharding key. Considere usar essa opção de implantação para as maiores implantações de banco de dados do PostgreSQL na nuvem do Azure.
 
 O Banco de Dados do Azure para PostgreSQL é um serviço altamente disponível. Ele contém mecanismos internos de detecção de falha e failover.
 
 Os usuários do PostgreSQL conhecerão a ferramenta pgAdmin, que você pode usar para gerenciar e monitorar um banco de dados PostgreSQL. No entanto, alguns recursos voltados para o servidor, como executar backup e restauração do servidor, não estão disponíveis porque o servidor é gerenciado e mantido pela Microsoft.
 
 O Banco de Dados do Azure para PostgreSQL registra informações sobre as consultas executadas e as salva em um banco de dados chamado azure_sys. Consulte a view query_store.qs_view para para monitorar as consultas que os usuários estão executando e verificar se precisa ajustar as consultas executadas por seus aplicativos.
+
+O Banco de Dados do Azure para PostgreSQL impõe conexões TLS por padrão, melhora a segurança criptografando a conexão entre o cliente e o servidor de banco de dados. 
+
+O Banco de Dados do Azure para PostgreSQL dá suporte à autenticação do Azure AD.
 
 🔝 [Voltar ao topo](#topo)
 
