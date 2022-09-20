@@ -776,13 +776,16 @@ Uma política de gerenciamento do ciclo de vida pode migrar automaticamente um b
 
 ### Describe Azure DataLake Storage Gen2
 
-O Azure Data Lake Store (Gen1) é um serviço separado de armazenamento de dados hierárquicos para data lakes analíticos, geralmente usado pelas chamadas soluções analíticas de big data que funcionam com dados estruturados, semiestruturados e não estruturados armazenados em arquivos. 
+O Azure Data Lake Store (Gen1) é um serviço separado de armazenamento de dados hierárquicos para data lakes analíticos criado com base no armazenamento de BLOBs do Azure, geralmente usado pelas chamadas soluções analíticas de big data que funcionam com dados estruturados, semiestruturados e não estruturados armazenados em arquivos.
 
 O **Azure Data Lake Storage Gen2** é uma versão mais recente desse serviço integrado ao Azure Storage, o que permite que você aproveite a escalabilidade do armazenamento de blobs e o controle de custos das camadas de armazenamento. Isso tudo combinado com os recursos do sistema de arquivos hierárquicos e a compatibilidade com os principais sistemas de análise do Azure Data Lake Store.
 
 Sistemas como o Hadoop no Azure HDInsight, Azure Databricks e Azure Synapse Analytics podem montar uma rede de arquivos distribuídos hospedada no Azure Data Lake Store Gen2 e usá-lo para processar grandes volumes de dados.
 
-Para criar um sistema de arquivos do Azure Data Lake Store Gen2, você deve habilitar a opção Namespace Hierárquico (Hierarchical Namespace) de uma Storage account. Você pode fazer isso ao criar inicialmente a Storage account, ou pode atualizar uma Storage account existente para dar suporte ao Data Lake Gen2. No entanto, esteja ciente de que **a atualização é um processo unidirecional** – depois de atualizar uma Storage account para dar suporte a um namespace hierárquico para armazenamento de blobs, você não pode revertê-lo para um namespace simples.
+Para criar um sistema de arquivos do Azure Data Lake Store Gen2, você deve habilitar a opção Namespace Hierárquico (Hierarchical Namespace) de uma Storage account. No entanto, esteja ciente de que **a atualização é um processo unidirecional** – depois de atualizar uma Storage account para dar suporte a um namespace hierárquico para armazenamento de blobs, você não pode revertê-lo para um namespace simples.
+- O Azure Data Lake Storage permite namespace hierárquico compatível com o Hadoop Distributed File System (HDFS). O Azure Data Lake Storage fornece uma camada para acessar os dados do Azure Blob Storage como um armazenamento HDFS, incluindo suporte para organizar arquivos em diretórios e subdiretórios.
+
+Você pode **reduzir ainda mais o custo de armazenamento** usando recursos como o ciclo de vida do armazenamento para arquivar ou mover dados que não são usados ​​com frequência para camadas de armazenamento mais baratas.
 
 ### Describe Azure File storage
 
