@@ -359,7 +359,9 @@ Os engenheiros de dados usam o Armazenamento do Azure para hospedar data lakes -
 
 ### Azure Data Factory
 
-O Azure Data Factory é um serviço do Azure que permite definir e agendar pipelines de dados para transferir e transformar dados. Você pode integrar seus pipelines a outros serviços do Azure, possibilitando a ingestão de dados de armazenamentos de dados na nuvem, o processamento dos dados usando a computação baseada em nuvem e a manutenção dos resultados em outro armazenamento de dados.
+O Azure Data Factory é um serviço do Azure que permite definir e agendar pipelines de dados para transferir e transformar dados. Você pode integrar seus pipelines a outros serviços do Azure, possibilitando a ingestão de dados de armazenamentos de dados na nuvem, o processamento dos dados usando a computação baseada em nuvem e a manutenção dos resultados em outro armazenamento de dados. O Azure Data Factory é usado para ingerir dados de fontes de dados. Você pode ingerir dados de dados relacionais e dados não estruturados de várias fontes.
+
+Pipeline é um agrupamento lógico de atividades que executa uma tarefa. Você pode ter várias atividades em um pipeline. As atividades podem ser executadas sequencialmente ou em paralelo. Uma atividade representa uma etapa em um pipeline.
 
 O Azure Data Factory é usado por engenheiros de dados para criar soluções de ETL (extração, transformação e carregamento) que preenchem os armazenamentos de dados analíticos com os dados de sistemas transacionais na organização.
 
@@ -371,6 +373,8 @@ O Azure Synapse Analytics é uma solução de análise de dados abrangente e uni
 - **SQL** - um mecanismo de banco de dados SQL altamente escalonável, otimizado para cargas de trabalho de data warehouse.
 - **Apache Spark** - um sistema de processamento de dados distribuído de código aberto que dá suporte a várias linguagens de programação e APIs, incluindo Java, Scala, Python e SQL.
 - **Azure Synapse Data Explorer** - uma solução de análise de dados de alto desempenho que é otimizada para **consultas em tempo real de dados de log e telemetria** usando a KQL (Kusto Query Language).
+- **Workspaces** - espaços de trabalho no Synapse Studio.
+- **Azure Data Lake Storage Gen 2** - É aqui que os dados, scripts e outros itens são armazenados no Azure Synapse Analytics.
 
 Os engenheiros de dados podem usar o Azure Synapse Analytics para criar uma solução de análise de dados unificada que combina pipelines de ingestão de dados, armazenamento de data warehouse e armazenamento do data lake em um único serviço.
 
@@ -929,6 +933,7 @@ Há dois tipos comuns de armazenamento de dados analíticos.
 
 - **Data lakes** - Um data lake **é um armazenamento de arquivos**, geralmente em um sistema de arquivos distribuído para acesso a dados de alto desempenho. Tecnologias como Spark ou Hadoop geralmente são usadas para processar consultas nos arquivos armazenados e retornar dados para relatórios e análises. Esses sistemas geralmente aplicam uma abordagem de **esquema no ato da leitura** para definir esquemas tabulares em arquivos de dados semiestruturados no ponto em que os dados são lidos para análise, sem aplicar restrições quando eles são armazenados. 
   - Os data lakes são ótimos para dar suporte a uma combinação de dados estruturados, semiestruturados e até mesmo não estruturados que você deseja analisar sem a necessidade de imposição de esquema quando os dados são gravados no repositório.
+  - O Azure Data Lake Storage é usado para armazenar dados brutos e não estruturados, como arquivos de texto, logs e imagens, para permitir que sejam processados ​​rapidamente em um estágio posterior.
 
 - **Abordagens híbridas** - Você pode usar uma abordagem híbrida que combina recursos de data lakes e data warehouses em um banco de dados de lake ou data lakehouse. Os dados brutos são armazenados como arquivos em um data lake e uma camada de armazenamento relacional abstrai os arquivos subjacentes e os expõe como tabelas, que podem ser consultadas usando SQL. Os pools de SQL no Azure Synapse Analytics incluem o PolyBase, que permite que você defina tabelas externas com base em arquivos em um datalake (e outras fontes) e consulte-os usando SQL. O Synapse Analytics também dá suporte a uma abordagem de banco de dados de lake na qual você pode usar modelos de banco de dados para definir o esquema relacional do seu data warehouse, enquanto armazena os dados subjacentes no armazenamento do data lake - separando o armazenamento e a computação para sua solução de data warehousing. Os data lakehouses são uma abordagem relativamente nova em sistemas baseados em Spark e são habilitados por meio de tecnologias como o Delta Lake; que adiciona recursos de armazenamento relacional ao Spark, para que você possa definir tabelas que impõem esquemas e consistência transacional, dão suporte a fontes de dados carregadas em lote e streaming e fornecem uma API de SQL para consulta.
 
@@ -938,6 +943,7 @@ Há dois tipos comuns de armazenamento de dados analíticos.
   - Inclui suporte nativo para análise de log e telemetria com pools do Azure Synapse Data Explorer
   - Pipelines de dados integrados para ingestão e transformação de dados. 
   - **Azure Synapse Studio** - **interface única e interativa para gerenciamento** de todos os Azure Synapse Analytics, capacidade de criar notebooks interativos nos quais o código Spark e o conteúdo de markdown podem ser combinados. 
+  - É usado para modelar e fornecer dados. Você pode carregar dados relacionais ingeridos do Azure Data Factory usando o pool Synapse SQL e também pode ler dados não estruturados armazenados no Azure Data Lake Storage usando o Polybase.
 
 - **Azure Databricks** - é uma solução abrangente de **análise de dados** criada com base no Apache Spark e que oferece funcionalidades nativas de SQL, bem como clusters Spark otimizados para carga de trabalho para análise de dados e ciência de dados. 
   - fornece uma interface interativa do usuário por meio da qual o sistema pode ser gerenciado e os dados podem ser explorados em notebooks interativos e data visualizations.
@@ -1110,7 +1116,7 @@ O Microsoft Power BI é um conjunto de ferramentas e serviços que os analistas 
 
 - **Power BI Desktop**, um aplicativo no qual você pode importar dados de uma ampla variedade de fontes de dados, combinar e organizar os dados dessas fontes em um modelo de dados de análise e criar relatórios contendo visualizações interativas dos dados.
 
-- **Power BI service** - um serviço de nuvem no qual os relatórios podem ser publicados e usados por usuários empresariais. Você também pode fazer modelagem de dados e edição de relatório de nível básico diretamente no serviço usando um navegador da Web, mas a funcionalidade para isso é limitada em comparação com a ferramenta Power BI Desktop. Você pode usar o serviço para agendar atualizações das fontes de dados nas quais os relatórios se baseiam e compartilhar relatórios com outros usuários. Você também pode definir dashboards e aplicativos que combinam relatórios relacionados em um só local de fácil consumo. Você pode aplicar segurança baseada em função aos dados. O Power BI service é um SaaS que permite que os usuários compartilhem e colaborem em relatórios e painéis do Power BI e também permite que os administradores atribuam usuários a funções para um relatório específico. Essas funções são criadas pelo autor do relatório no Power BI Desktop durante a modelagem de dados, permitindo que você filtre dados nos visuais que usuários específicos podem acessar e interagir.
+- **Power BI service** - um serviço de nuvem no qual os relatórios podem ser publicados e usados por usuários empresariais. Você também pode fazer modelagem de dados e edição de relatório de nível básico diretamente no serviço usando um navegador da Web, mas limitado em comparação com a ferramenta Power BI Desktop. Você pode usar o serviço para agendar atualizações das fontes de dados nas quais os relatórios se baseiam e compartilhar relatórios com outros usuários. Você também pode definir dashboards e aplicativos que combinam relatórios relacionados em um workspace de fácil consumo. Você pode aplicar segurança baseada em função aos dados. O Power BI service é um SaaS que permite que os usuários compartilhem e colaborem em relatórios e painéis do Power BI e também permite que os administradores atribuam usuários a funções para um relatório específico. Essas funções são criadas pelo autor do relatório no Power BI Desktop durante a modelagem de dados, permitindo que você filtre dados nos visuais que usuários específicos podem acessar e interagir.
 
 > Os usuários podem consumir relatórios, dashboards e aplicativos no serviço do Power BI por meio de um navegador da Web ou em dispositivos móveis usando o aplicativo Power BI para telefone.
 
@@ -1148,6 +1154,10 @@ O modelo pode ser criado com valores pré-agregados para cada nível de uma hier
 
 Você pode usar o Power BI para definir um modelo analítico usando tabelas de dados, que podem ser importadas de uma ou mais fontes de dados. Depois, você pode usar a interface de modelagem de dados na guia **Modelo** do Power BI Desktop para definir o modelo analítico criando relações entre tabelas de fatos e de dimensões, definindo hierarquias, configurando tipos de dados e formatos de exibição para campos nas tabelas e gerenciando outras propriedades dos dados que ajudam a definir um modelo rico para análise.
 
+**Power Query Editor** - é uma ferramenta do Power BI Desktop que permite interagir com os dados aplicando uma série de transformações que são registradas para você como etapas, que podem ser desfeitas, se necessário.
+
+**Report View** - Esta é a tela onde você pode arrastar seus visuais para criar seu relatório usando dados que você já importou, transformou e modelou.
+
 ![power-bi-model](https://learn.microsoft.com/pt-br/training/wwl-data-ai/explore-fundamentals-data-visualization/media/power-bi-model.png)
 
 ### Identify appropriate visualizations for data
@@ -1156,7 +1166,7 @@ Depois de criar um modelo, é possível usá-lo para gerar visualizações de da
 
 Há muitos tipos de visualização de dados, alguns comumente usados e outros mais especializados. O Power BI inclui um extenso conjunto de visualizações internas, que podem ser estendidas com visualizações personalizadas e de terceiros. 
 
-### Tabelas e texto 
+### Tables e Cards 
 
 Tabelas e texto geralmente são a maneira mais simples de comunicar dados. As tabelas são úteis quando vários valores relacionados devem ser exibidos, e valores de texto individuais em cartões podem ser uma maneira útil de mostrar números ou métricas importantes.
 
