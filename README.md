@@ -217,6 +217,10 @@ Um sistema transacional registra transações que encapsulam eventos específico
 
 Os sistemas transacionais geralmente são de alto volume, às vezes manipulando muitos milhões de transações em um dia. Os dados que estão sendo processados têm que estar acessíveis com rapidez. O trabalho executado por sistemas transacionais é geralmente conhecido como **OLTP (Online Transactional Processing)**.
 
+Em um sistema OLTP, os dados são altamente normalizados com o esquema fortemente aplicado na gravação. Em um ambiente OLTP, as alterações feitas são revertidas automaticamente se uma transação não for concluída, de modo que nenhuma transação seja deixada em um estado parcialmente concluído. 
+
+Uma workload OLTP tem requisitos de gravação pesados ​​com requisitos de leitura mínimos.
+
 As soluções OLTP dependem de um sistema de banco de dados no qual o armazenamento de dados é otimizado para operações de leitura e gravação para dar suporte aos workloads transacionais nas quais os registros de dados são criados, recuperados, atualizados e excluídos (CRUD). 
 
 Essas operações são aplicadas de maneira transacional para garantir a integridade dos dados armazenados no banco de dados. Para fazer isso, os sistemas OLTP impõem transações compatíveis com a semântica conhecida como ACID:
