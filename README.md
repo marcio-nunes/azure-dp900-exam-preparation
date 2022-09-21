@@ -243,7 +243,7 @@ Essas operações são aplicadas de maneira transacional para garantir a integri
 
 ### Describe features of analytical workloads
 
-O processamento de dados analíticos normalmente usa sistemas somente leitura (ou read-mostly) que armazenam grandes volumes de dados históricos ou métricas de negócios. A análise pode ser baseada em um snapshot dos dados em um determinado momento ou em uma série de snapshots.
+**OLAP** - O processamento de dados analíticos normalmente usa sistemas somente leitura (ou read-mostly) que armazenam grandes volumes de dados históricos ou métricas de negócios. A análise pode ser baseada em um snapshot dos dados em um determinado momento ou em uma série de snapshots.
 
 Uma arquitetura comum de análise de escala empresarial tem esta aparência:
 
@@ -281,7 +281,7 @@ As três funções de trabalho importantes que lidam com os dados na maioria das
 
 - **Administradores de Banco de Dados**, que gerenciam bancos de dados, atribuindo permissões aos usuários, armazenando cópias de backup de dados e restaurando dados em caso de falhas.
 - **Engenheiros de dados**, que gerenciam a infraestrutura e os processos de integração de dados em toda a organização, aplicando rotinas de limpeza de dados, identificando regras de governança de dados e implementando pipelines para transferir e transformar dados entre sistemas.
-- Analistas de Dados, que exploram e analisam dados para criar visualizações e gráficos que permitem que as organizações tomem decisões informadas.
+- **Analistas de Dados**, que exploram e analisam dados para criar visualizações e gráficos que permitem que as organizações tomem decisões informadas.
 
 > Em algumas organizações, a mesma pessoa pode executar várias funções
 
