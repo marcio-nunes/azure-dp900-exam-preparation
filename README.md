@@ -752,7 +752,7 @@ Azure Blob Storage é um serviço que permite armazenar grandes quantidades de d
 
 ![azure-blob-storage](https://docs.microsoft.com/pt-br/training/wwl-data-ai/explore-provision-deploy-non-relational-data-services-azure/media/azure-blob-storage.png)
 
-Em uma Azure storage account você armazena blobs em contêineres. Um contêiner oferece uma maneira prática de agrupar blobs relacionados. Você controla quem pode ler e gravar blobs dentro de um contêiner no nível do contêiner. 
+Em uma Azure storage account você armazena blobs em contêineres. Um contêiner oferece uma maneira prática de agrupar blobs relacionados. Você controlar quem pode ler e gravar blobs dentro de um contêiner no nível do contêiner. 
 
 Dentro de um contêiner, você pode organizar blobs em uma hierarquia de pastas virtuais. Você não pode executar operações no nível da pasta para controlar o acesso ou executar operações em massa.
 
