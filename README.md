@@ -23,9 +23,11 @@ Icons: ☁️🔸
 
 ### 🔸 Describe ways to represent data
 
-- Os dados são uma coleção de fatos, como números, descrições e observações usados para registrar informações. 
-- As estruturas de dados representam entidades de uma organização (clientes, produtos, pedidos de vendas, etc). 
-- Cada entidade tem um ou mais atributos ou características (nome, endereço, número de telefone, etc).
+Os dados são uma coleção de fatos, como números, descrições e observações usados para registrar informações. 
+
+As estruturas de dados representam entidades de uma organização (clientes, produtos, pedidos de vendas, etc). 
+
+Cada entidade tem um ou mais atributos ou características (nome, endereço, número de telefone, etc).
 
 Podemos classificar os dados como estruturados, semiestruturados ou não estruturados.
 
@@ -34,7 +36,7 @@ Podemos classificar os dados como estruturados, semiestruturados ou não estrutu
 - Dados estruturados obedecem a um **esquema fixo**, possuem os mesmos campos ou propriedades
 - O esquema para entidades de dados estruturados é tabular.
   - linhas representam cada **instância de uma entidade**.
-  - colunas representam os atributos da entidade.
+  - colunas representam os **atributos** da entidade.
 - Os dados estruturados são armazenados em um banco de dados.
   - Várias tabelas podem referenciar umas às outras usando valores de chave em um modelo relacional.
 
@@ -48,7 +50,7 @@ Podemos classificar os dados como estruturados, semiestruturados ou não estrutu
 
 > O JSON (JavaScript Object Notation) é apenas uma das muitas maneiras pelas quais os dados semiestruturados podem ser representados.
 
-Dados semiestruturados com cada entidade fornecendo suas próprias definições de campo são uma descrição de dados de tipo documento e, portanto, um armazenamento de documentos é sua melhor escolha. Os documentos são escritos e recuperados como documentos completos. As definições de campo incorporadas possibilitam consultar documentos para recuperar valores de campo. Normalmente, você usaria uma solução de armazenamento do Azure Cosmos DB.
+Dados semiestruturados onde cada entidade fornece suas próprias definições de campo são uma descrição de dados de tipo **documento** e, portanto, um armazenamento de documentos é sua melhor escolha. Os documentos são escritos e recuperados como documentos completos. As definições de campo incorporadas possibilitam consultar documentos para recuperar valores de campo. Normalmente, você usaria uma solução de armazenamento do Azure Cosmos DB.
 
 ### Describe features of unstructured data
 
@@ -84,7 +86,7 @@ O formato de arquivo específico depende de alguns fatores:
 
 Os dados são armazenados em formato de texto sem formatação com delimitadores de campo e terminadores de linha específicos. 
 
-- **CSV (tab-separated values)** - O formato mais comum é CSV. Opcionalmente, a primeira linha pode incluir os nomes de campo. 
+- **CSV (comma-separated values)** - O formato mais comum é CSV. Opcionalmente, a primeira linha pode incluir os nomes de campo. 
 - **TSV (tab-separated values) e space-delimited** - em que as tabulações ou os espaços são usados para separar campos 
 - **Fixed-width data** - Dados de largura fixa em que a cada campo é alocado um número fixo de caracteres. Para dados estruturados que precisam ser acessados por vários aplicativos e serviços em um formato legível.
 
